@@ -1,0 +1,13 @@
+Master plugin required by several mods in the TCGiSO series.
+
+TLDR: This file is a requirement for several TCGiSOLux's mods, allowing them to be safely ESL-flagged.
+
+This plugin is necessary is to avoid several engine-level bugs that can occur with ESL-flagged mods when they add new interior cells. It allows several mods in the TCGiSOLux's mods to be ESL-flagged while safely avoiding these bugs. 
+
+Basically, there's a bug that that can break interior cells when they’re defined in ESL-flagged plugins and are then edited by other plugins (a patch, for example). You can read more on this here, and here. In addition, wSkeever has documented another bug on his post here, related to saves and object persistence. It also seems to pertain to ESL-flagged mods which add new cells.
+
+This file solves these issues by using an ESM plugin to create new empty cells which can then be safely used by ESL-flagged plugins. On a side note, the vanilla Update.esm actually does this same thing for several Creation Club add-ons. 
+
+I don’t know what causes these bugs, I am not a clever man. I only know that they exist and that this method avoids them. 
+
+This file also contains several shared scripts used in the TCGiSOLux's series in order to reduce redundancy. If you still notice any conflicting files with any other TCGiSOLux's mods, don't worry about it, they're identical scripts (It's fine and load order doesn't matter).
