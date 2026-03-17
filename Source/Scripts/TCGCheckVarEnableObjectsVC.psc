@@ -1,4 +1,4 @@
-scriptname TCGCheckVarEnableObjectsDawnguard extends ObjectReference  
+scriptname TCGCheckVarEnableObjectsVC extends ObjectReference  
 
 Actor Property PlayerREF Auto
 GlobalVariable property TCGPlayerLevelGlobalVariable AUTO
@@ -6,7 +6,6 @@ Int Property DaysPassedRequirements AUTO
 GlobalVariable property GameDaysPassedVar AUTO
 ObjectReference[] Property EnableObjects AUTO
 ObjectReference[] Property DisableObjects AUTO
-Actor Property NPCREF Auto
 GlobalVariable property DLC1PlayingVampireLine AUTO
 
 Auto STATE QuestTrigger
@@ -14,7 +13,7 @@ Auto STATE QuestTrigger
     Event onTriggerEnter(ObjectReference triggerRef)
         int currentdayspassed = GameDaysPassedVar.GetValueInt()
 	    if (triggerRef == (PlayerREF as ObjectReference))
-			if TCGPlayerLevelGlobalVariable.GetValueInt() > 0 && NPCREF.IsDead() == true && DLC1PlayingVampireLine.GetValue()== 1
+			if TCGPlayerLevelGlobalVariable.GetValueInt() > 0 && DLC1PlayingVampireLine.GetValue()== 0
                 If currentdayspassed >= TCGPlayerLevelGlobalVariable.GetValueInt() + DaysPassedRequirements
                     DisableTheObjects(DisableObjects)
                     EnableTheObjects(EnableObjects)
