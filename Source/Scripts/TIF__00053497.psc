@@ -1,0 +1,24 @@
+;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
+;NEXT FRAGMENT INDEX 1
+Scriptname TIF__00053497 Extends TopicInfo Hidden
+
+;BEGIN FRAGMENT Fragment_0
+Function Fragment_0(ObjectReference akSpeakerRef)
+Actor akSpeaker = akSpeakerRef as Actor
+;BEGIN CODE
+Game.GetPlayer().AddItem(pTG06Key,1)
+getowningquest().setstage(25)
+dunMWQQST.SetStage(1)
+
+If FreeformMarkarthO.GetStageDone(20) == 0 && DialogueMarkarth.GetStageDone(120) == 0
+  DialogueMarkarth.SetStage(120)
+Endif
+
+;END CODE
+EndFunction
+;END FRAGMENT
+;END FRAGMENT CODE - Do not edit anything between this and the begin comment
+Key Property pTG06Key  Auto  
+Quest Property dunMWQQST  Auto  
+Quest Property DialogueMarkarth  Auto  
+Quest Property FreeformMarkarthO  Auto  
