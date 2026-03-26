@@ -53,7 +53,7 @@ If T01.GetStageDone(200) == 1 && T01.IsRunning() == True
   T01.stop()
 Endif
 
-;FIX GUARD WARN PLAYER TO STOP ENTER DWEMER MUSEUM WITHOUT PERMISSION TO CALCELMO
+;FIX GUARD WARN PLAYER TO STOP ENTER DWEMER MUSEUM WITHOUT PERMISSION TO CALCELMO IF PERSUADED
 If T02.GetStageDone(70) == 1 && TG06.GetStageDone(25) == 1 && dmWQQST.GetStageDone(1) == 1 && FreeformMarkarthO.GetStageDone(20) == 0 && DialogueMarkarth.GetStageDone(120) == 0
   DialogueMarkarth.SetStage(120)
 Endif
