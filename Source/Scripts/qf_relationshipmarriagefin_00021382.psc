@@ -223,7 +223,7 @@ Function Fragment_2()
 ;Spouse is dead, shut down the quest
 
 Game.GetPlayer().RemoveFromFaction(PlayerMarriedFaction)
-;If spouse dies, make restart The Gift and Relationship Marriage
+;If spouse dies, make restart The Gift and Relationship Marriage quests
 RelationshipMarriage.SetStage(10)
 DLC1RV06DoOnce.SetValue(0)
 Stop()
