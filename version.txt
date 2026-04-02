@@ -1,0 +1,13 @@
+v2.05 - PUBLIC RELEASE
+Added radiant quests for Volkihar Vampires Clan, they are imported from Dawnguard side
+Added 5 members to Volkihar Keep
+Re-worked RelationshipMarriage
+Your plugin will update by using script after loading any save the game
+Some Jarls, Stewards and Housecarls NPCs are enabled multi-level.
+Idgrod The Younger was changed Assistance from Helps Alies to Helps Nodody.
+Some Jarls, Stewards and Housecarls was changed Aggression, Confidence and Assistance.
+DialogueMorthal are uses as a correctly changed Gorm are housecarl to Idgrod Ravencrone.
+
+Known Issues:
+Some NPCs are still uses dark face.
+Some Dialogues are still unvoiced.

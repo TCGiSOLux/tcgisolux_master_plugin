@@ -232,15 +232,8 @@ Function Fragment_9()
 ;Game.EnableFastTravel()
 MS07.Setstage(3)
 Alias_Prisoner.GetActorRef().RemoveFromFaction(TownSolitudeFaction)
+Alias_Prisoner.GetActorRef().SetActorValue( "aggression", 1 )
 SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionHaafingar)
-SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionReach)
-SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionHjaalmarch)
-SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionWhiterun)
-SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionFalkreath)
-SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionPale)
-SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionWinterhold)
-SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionRift)
-SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionEastmarch)
 SolitudeOpeningPrisonerFaction.SetEnemy(DLC1VampireCrimeFaction)
 SolitudeOpeningPrisonerFaction.SetEnemy(DLC1VampireFaction)
 SolitudeOpeningPrisonerFaction.SetEnemy(TownSolitudeFaction)
@@ -292,18 +285,10 @@ If  !alias_prisoner.GetActorRef().IsDead()
      Alias_Ahtar.GetActorRef().startcombat(Alias_Prisoner.GetActorRef())
      Alias_PlatformGuard.GetActorRef().startcombat(Alias_Prisoner.GetActorRef())
      Alias_Prisoner.GetActorRef().RemoveFromFaction(TownSolitudeFaction)
+     Alias_Prisoner.GetActorRef().RemoveFromFaction(CrimeFactionHaafingar)
+     alias_prisoner.GetActorRef().SetCrimeFaction(None)
      SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionHaafingar)
-     SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionReach)
-     SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionHjaalmarch)
-     SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionWhiterun)
-     SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionFalkreath)
-     SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionPale)
-     SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionWinterhold)
-     SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionRift)
-     SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionEastmarch)
      SolitudeOpeningPrisonerFaction.SetEnemy(DLC1VampireCrimeFaction)
-     SolitudeOpeningPrisonerFaction.SetEnemy(DLC1VampireFaction)
-     SolitudeOpeningPrisonerFaction.SetEnemy(TownSolitudeFaction)
      SolitudeOpeningPrisonerFaction.SetEnemy(DLC1VampireFaction)
      SolitudeOpeningPrisonerFaction.SetEnemy(TownSolitudeFaction)
 EndIf
@@ -372,12 +357,4 @@ Faction Property TownSolitudeFaction  Auto
 Faction Property DLC1VampireFaction  Auto  
 Faction Property SolitudeOpeningPrisonerFaction  Auto  
 Faction Property CrimeFactionHaafingar Auto
-Faction Property CrimeFactionReach Auto
-Faction Property CrimeFactionHjaalmarch Auto
-Faction Property CrimeFactionWhiterun Auto
-Faction Property CrimeFactionFalkreath Auto
-Faction Property CrimeFactionPale Auto
-Faction Property CrimeFactionWinterhold Auto
-Faction Property CrimeFactionEastmarch Auto
-Faction Property CrimeFactionRift Auto
 Faction Property DLC1VampireCrimeFaction  Auto  

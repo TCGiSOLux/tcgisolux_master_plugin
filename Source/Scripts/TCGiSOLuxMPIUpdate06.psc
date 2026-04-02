@@ -46,33 +46,19 @@ if Alias_NPC4.GetActorReference().GetItemCount(SarethiFarmKey) == 0 && Alias_NPC
 endif
 Alias_NPC6.GetActorReference().AddToFaction(DLC1VolkiharClanFaction)
 If SolitudeOpening.GetStageDone(30) == 0 && SolitudeOpening.GetStageDone(200) == 1
+  Alias_NPC1.GetActorReference().SetActorValue( "aggression", 1 )
   Alias_NPC1.GetActorReference().RemoveFromFaction(CrimeFactionHaafingar)
   Alias_NPC1.GetActorReference().SetCrimeFaction(None)
   SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionHaafingar)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionReach)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionHjaalmarch)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionWhiterun)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionFalkreath)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionPale)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionWinterhold)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionRift)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionEastmarch)
   SolitudeOpeningPrisonerFaction.SetEnemy(DLC1VampireCrimeFaction)
   SolitudeOpeningPrisonerFaction.SetEnemy(DLC1VampireFaction)
 Endif
 
 If SolitudeOpening.GetStageDone(200) == 1 && SolitudeOpening.GetStageDone(30) == 1
+  Alias_NPC1.GetActorReference().SetActorValue( "aggression", 1 )
   Alias_NPC1.GetActorReference().RemoveFromFaction(CrimeFactionHaafingar)
   Alias_NPC1.GetActorReference().SetCrimeFaction(None)
   SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionHaafingar)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionReach)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionHjaalmarch)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionWhiterun)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionFalkreath)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionPale)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionWinterhold)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionRift)
-  SolitudeOpeningPrisonerFaction.SetEnemy(CrimeFactionEastmarch)
   SolitudeOpeningPrisonerFaction.SetEnemy(DLC1VampireCrimeFaction)
   SolitudeOpeningPrisonerFaction.SetEnemy(DLC1VampireFaction)
 Endif
@@ -84,14 +70,6 @@ EndFunction
 Quest Property SolitudeOpening  Auto  
 Faction Property SolitudeOpeningPrisonerFaction  Auto  
 Faction Property CrimeFactionHaafingar Auto
-Faction Property CrimeFactionReach Auto
-Faction Property CrimeFactionHjaalmarch Auto
-Faction Property CrimeFactionWhiterun Auto
-Faction Property CrimeFactionFalkreath Auto
-Faction Property CrimeFactionPale Auto
-Faction Property CrimeFactionWinterhold Auto
-Faction Property CrimeFactionEastmarch Auto
-Faction Property CrimeFactionRift Auto
 Faction Property DLC1VampireCrimeFaction Auto
 Faction Property DLC1VampireFaction  Auto  
 Key Property SarethiFarmKey  Auto  

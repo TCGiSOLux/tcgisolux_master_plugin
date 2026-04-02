@@ -2,6 +2,31 @@
 ;NEXT FRAGMENT INDEX 36
 Scriptname DLC1_QF_DLC1VQ03Vampire_01004C3D Extends Quest Hidden
 
+;BEGIN ALIAS PROPERTY Sorine
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Sorine Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Florentius
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Florentius Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Beleval
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Beleval Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Gunmar
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Gunmar Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Ingjard
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Ingjard Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY Spectator7
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Spectator7 Auto
@@ -324,6 +349,25 @@ EndFunction
 Function Fragment_2()
 ;BEGIN CODE
 ;Stage 10, set up scene elements, Harkon paths to guild hall to make speech
+Alias_Spouse.GetActorReference().AddToFaction(DLC1VampireFaction)
+Alias_Spouse.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+Alias_Spouse.GetActorReference().SetOutfit(VampireOutfit)
+Alias_Spouse.GetActorReference().SetCrimeFaction(DLC1VampireCrimeFaction)
+Alias_SpouseRadiantQAdd.GetActorReference().AddToFaction(DLC1RadiantQuestgiverTopicFaction)
+DLC1DawnguardHQ01.SetFactionOwner(DLC1HunterFaction)
+DLC1DawnguardHQ01.SetPublic(false)
+DLC1HunterHQAlcInitEnabled.Disable()
+DLC1HunterHQBSmithInitEnabled.Disable()
+DLC1HunterHQEncInitEnabled.Disable()
+DLC1HunterHQTrollInitEnabled.Disable()
+DLC1HunterHQBarracksInitEnabled.Disable()
+Alias_Sorine.TryToEnable()
+Alias_Ingjard.TryToEnable()
+Alias_Beleval.TryToEnable()
+Alias_Gunmar.TryToEnable()
+Alias_Florentius.TryToEnable()
+Alias_Sorine.GetActorReference().SetOutfit(DLC1OutfitSorine)
+Alias_Gunmar.GetActorReference().SetOutfit(DLC1OutfitGunmar)
 SetObjectiveCompleted(10,1)
 SetObjectiveDisplayed(20,1)
 DLC1VQ03VampireHarkonSpeechFindScroll.Start()
@@ -366,9 +410,6 @@ EndFunction
 Function Fragment_7()
 ;BEGIN CODE
 ;Debug setup
-;In Enemy Dawnguard base we will make all items are owned to Dawnguard faction to prevent vampires stealing any items from Fort Dawnguard
-DLC1DawnguardHQ01.SetFactionOwner(DLC1HunterFaction)
-DLC1DawnguardHQ01.SetPublic(false)
 Alias_Harkon.GetReference().MoveTo(DLC1VQ02HarkonWaitMarker)
 Alias_Serana.GetReference().MoveTo(DLC1VQ03Stage20SeranaStandMarker)
 ;DLC1VQ01.SetStage(200)
@@ -378,13 +419,6 @@ SetStage(5)
 Utility.Wait(3)
 Game.GetPlayer().AddtoFaction(DLC1VampireFaction)
 DLC1Radiant.SetStage(10)
-;If spouse are already vampire, so quest The Gift will be skipped and also will add spouse to Vampire Faction
-Utility.Wait(3)
-Alias_Spouse.GetActorReference().AddToFaction(DLC1VampireFaction)
-Alias_Spouse.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
-Alias_Spouse.GetActorReference().SetOutfit(VampireOutfit)
-Alias_Spouse.GetActorReference().SetCrimeFaction(DLC1VampireCrimeFaction)
-Alias_SpouseRadiantQAdd.GetActorReference().AddToFaction(DLC1RadiantQuestgiverTopicFaction)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -704,3 +738,10 @@ Faction Property CrimeFactionEastmarch Auto
 Faction Property CrimeFactionRift Auto
 Keyword Property Vampire Auto
 Cell Property DLC1DawnguardHQ01 Auto
+ObjectReference Property DLC1HunterHQAlcInitEnabled  Auto  
+ObjectReference Property DLC1HunterHQTrollInitEnabled  Auto  
+ObjectReference Property DLC1HunterHQBSmithInitEnabled  Auto  
+ObjectReference Property DLC1HunterHQEncInitEnabled  Auto  
+ObjectReference Property DLC1HunterHQBarracksInitEnabled  Auto 
+Outfit Property DLC1OutfitSorine  Auto  
+Outfit Property DLC1OutfitGunmar  Auto  

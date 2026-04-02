@@ -41,7 +41,6 @@ ReferenceAlias Property Alias_MapMarker Auto
 Function Fragment_2()
 ;BEGIN CODE
 DLC1Radiant.QuestAccepted(self)
-DLC1RV11NextAllowed.setValue(Utility.GetCurrentGameTime() + 3)
 Alias_Dawnguard.TryToEnable()
 Alias_MapMarker.GetReference().AddToMap()
 SetObjectiveDisplayed(10)

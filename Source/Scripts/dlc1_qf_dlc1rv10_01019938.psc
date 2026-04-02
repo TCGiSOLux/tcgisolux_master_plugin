@@ -71,7 +71,8 @@ ReferenceAlias Property Alias_Ingjard Auto
 Function Fragment_2()
 ;BEGIN CODE
 CompleteAllObjectives()
-DLC1DawnguardHQ01.SetPublic(false)
+DLC1DialogueHunterBase.Stop()
+DLC1DialogueHunterVampireBlock.Stop()
 DLC1Radiant.GiveQuestReward(ChanceForBloodPotion = 25)
 DLC1Radiant.StopQuestAndStartNewOneVampire(self)   ;THIS WILL CALL STOP() ON THIS QUEST
 ;END CODE
@@ -82,6 +83,8 @@ EndFunction
 Function Fragment_1()
 ;BEGIN CODE
 SetObjectiveCompleted(10)
+DLC1DawnguardHQ01.SetFactionOwner(DLC1HunterFaction) ; Added By TCGiSOLux Master Plugin Interior
+DLC1DawnguardHQ01.SetPublic(false) ; Added By TCGiSOLux Master Plugin Interior
 SetObjectiveDisplayed(100)
 ;END CODE
 EndFunction
@@ -97,11 +100,11 @@ DLC1RV10Script kmyQuest = __temp as DLC1RV10Script
 DLC1Radiant.QuestAccepted(self)
 DLC1RV10DoOnce.SetValue(1)
 If DLC1VQ01MiscObjective.GetStageDone(200) == 1 && DLC1VQ01MiscObjective.GetStageDone(250) == 0
-  DLC1VQ01MiscObjective.setStage(250) ; ADDED IN UPDATE v1.1
+  DLC1VQ01MiscObjective.setStage(250) ; Added By TCGiSOLux Master Plugin Interior
 Endif
-DLC1DawnguardHQ01.SetPublic(true)
+DLC1DawnguardHQ01.SetFactionOwner(DLC1HunterFaction) ; Added By TCGiSOLux Master Plugin Interior
+DLC1DawnguardHQ01.SetPublic(true) ; Added By TCGiSOLux Master Plugin Interior
 Alias_MapMarker.GetReference().AddToMap()
-
 SetObjectiveDisplayed(10)
 
 Alias_Door.GetReference().SetLockLevel(0)
@@ -114,7 +117,7 @@ kmyquest.StripEssentialAndEnable(Alias_Agmaer)
 kmyquest.StripEssentialAndEnable(Alias_Beleval)
 kmyquest.StripEssentialAndEnable(Alias_Celann)
 kmyquest.StripEssentialAndEnable(Alias_Durak)
-kmyquest.StripEssentialAndEnable(Alias_Ingjard)
+kmyquest.StripEssentialAndEnable(Alias_Ingjard) ; Added By TCGiSOLux Master Plugin Interior
 DLC1DawnguardGateRef1.Disable()
 DLC1DawnguardGateRef2.Disable()
 DLC1DawnguardGateRef3.Disable()
@@ -127,17 +130,14 @@ EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
-
 DLC1RadiantScript Property DLC1Radiant  Auto  
-
 ObjectReference Property DLC1DawnguardGateRef1  Auto  
-
 ObjectReference Property DLC1DawnguardGateRef2  Auto  
-
 ObjectReference Property DLC1DawnguardGateRef3  Auto  
-
-GlobalVariable Property DLC1RV10DoOnce  Auto  
-
+GlobalVariable Property DLC1RV10DoOnce  Auto   
 Outfit Property DLC1FlorentiusOutfit  Auto  
-Cell Property DLC1DawnguardHQ01 Auto ; Added in v1.0
-Quest Property DLC1VQ01MiscObjective  Auto  ; Added in UPDATE v1.1
+Cell Property DLC1DawnguardHQ01 Auto  ; Added By TCGiSOLux Master Plugin Interior
+Quest Property DLC1VQ01MiscObjective  Auto  ; Added By TCGiSOLux Master Plugin Interior
+Faction Property DLC1HunterFaction  Auto  ; Added By TCGiSOLux Master Plugin Interior
+Quest Property DLC1DialogueHunterBase  Auto  ; Added By TCGiSOLux Master Plugin Interior
+Quest Property DLC1DialogueHunterVampireBlock  Auto  ; Added By TCGiSOLux Master Plugin Interior
