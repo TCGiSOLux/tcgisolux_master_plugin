@@ -1,13 +1,119 @@
 v2.05 - PUBLIC RELEASE
-Added radiant quests for Volkihar Vampires Clan, they are imported from Dawnguard side
+Added 3 radiant quests for Volkihar Vampires Clan, they are imported from Dawnguard side
+Added 1 radiant quest for Dawnguard, they are imported from Volkihar Vampires Clan side
 Added 5 members to Volkihar Keep
 Re-worked RelationshipMarriage
-Your plugin will update by using script after loading any save the game
-Some Jarls, Stewards and Housecarls NPCs are enabled multi-level.
-Idgrod The Younger was changed Assistance from Helps Alies to Helps Nodody.
-Some Jarls, Stewards and Housecarls was changed Aggression, Confidence and Assistance.
+Idgrod The Younger was changed Assistance from Helps Alies to Helps Nobody.
+Some Jarls, Stewards and Housecarls was are changed Aggression, Confidence and Assistance and enabled multi-level.
 DialogueMorthal are uses as a correctly changed Gorm are housecarl to Idgrod Ravencrone.
+Your plugin will update by using script after loading any save the game
+If spouse dies after marrying, "The Gift" for Volkihar Vampire Clan side and RelationshipMarriage quests will automatically restart
+Added Ingun Black-Briar to marriage candidate
 
 Known Issues:
 Some NPCs are still uses dark face.
 Some Dialogues are still unvoiced.
+DLC1MaleVampire many voices from Vanilla are still unvoiced.
+DLC1FemaleVampire some voices from Vanilla are still unvoiced.
+
+V2.06 - PUBLIC RELEASE
+5 members from Volkihar Clan on the Volkihar Keep will temporarily disable due Banquet on the Volkihar Keep during quest of the Bloodline.
+Also DLC1DialogueVampireBase will automatically change to Stalf, Rargal and Salonia to BackupAlias
+Fixes some bug of radiant quests for Volkihar Vampires Clan.
+A Jarl's Justice for Volkihar Vampires Clan side after completing quest will be delayed to 3 days. Unlike a Dawnguard variant after completing the quest where it's delayed to 12 days.
+Marriage NPC AI-Package, for AI-Package to female vampires and also AI-Package after you adopt children are added.
+New game not required, because this small update. You can use to continue save.
+
+Spouse's schedule for each town if you adopted to children and also including vampires spouses:
+WHITERUN
+6:00AM to 8:00AM - Wake up, sanbox inside Breezehome
+8:00AM to 2:00PM - Browse at market
+2:00PM to 6:00PM - If female, patrol in the streets of Whiterun with a flower basket. If male, wandering around the Gildergreen area
+6:00PM to 9:00PM - Visit the Bannered Mare
+9:00PM to 0:00AM - Sandbox inside Breezehome
+0:00AM to 6:00AM - Sleep
+
+RIFTEN
+6:00AM to 8:00AM - Wake up, sanbox inside Honeyside
+8:00AM to 2:00PM - Browse at market
+2:00PM to 4:00PM - Visit the Temple of Mara
+4:00PM to 6:00PM - If female, patrol in the streets of Riften with a flower basket. If male, same but without the basket.
+6:00PM to 9:00PM - Visit the Bee and Barb
+9:00PM to 0:00AM - Sandbox inside Honeyside
+0:00AM to 6:00AM - Sleep
+
+MARKARTH
+6:00AM to 8:00AM - Wake up, sanbox inside Vlindrel Hall
+8:00AM to 12:00AM - Browse at market (Only if MS01IntroWorldScene are completed)
+12:00AM to 3:00PM - Visit the Silver Blood inn
+3:00PM to 6:00PM - If female, patrol in the streets of Markarth with a flower basket. If male, same but without the basket.
+6:00PM to 9:00PM - Visit the Silver Blood inn
+9:00PM to 0:00AM - Sandox inside Vlindrel Hall
+0:00AM to 6:00AM - Sleep
+
+SOLITUDE
+6:00AM to 8:00AM - Wake up, sanbox inside Proudspire Manor
+8:00AM to 12:00AM - Browse at market
+12:00AM to 3:00PM - Visit the Winking Skeever inn
+3:00PM to 6:00PM - If female, patrol in the streets of Solitude with a flower basket. If male, same but without the basket.
+6:00PM to 9:00PM - Visit the Winking Skeever inn
+9:00PM to 0:00AM - Sandox inside Proudspire Manor
+0:00AM to 6:00AM - Sleep
+
+WINDHELM
+6:00AM to 8:00AM - Wake up, sanbox inside Hjerim
+8:00AM to 12:00AM - Browse at market
+12:00AM to 3:00PM - Visit the Candlehearth Hall
+3:00PM to 6:00PM - If female, patrol in the streets of Windhelm with a flower basket. If male, same but without the basket.
+6:00PM to 9:00PM - Visit the Candlehearth Hall
+9:00PM to 0:00AM - Sandox inside Hjerim
+0:00AM to 6:00AM - Sleep
+
+Female vampires only can use schedule for each town:
+WHITERUN
+8:00AM to 4:00PM - Sleeping
+4:00PM to 5:00PM - Wake up, sandbox inside Breezehome
+5:00PM to 7:00PM - Browse at market
+9:00PM to 7:00AM - Visit the Bannered Mare
+7:00AM to 8:00AM - Sandbox inside Breezehome
+
+RIFTEN
+4:00AM to 5:00AM - Sandbox inside Honeyside
+5:00AM to 4:00PM - Sleeping
+4:00PM to 5:00PM - Wake up, sandbox inside Honeyside
+5:00PM to 7:00PM - Browse at market
+7:00PM to 9:00PM - Visit the Temple of Mara
+9:00PM to 4:00AM - Visit the Bee and Barb
+
+MARKARTH
+5:00AM to 4:00PM - Sleeping
+4:00PM to 5:00PM - Wake up, sandbox inside Vlindrel Hall
+5:00PM to 7:00PM - Browse at market (Only if MS01IntroWorldScene are completed)
+7:00PM to 9:00PM - Visit the Temple of Dibella (Only if The Heart of Dibella are completed)
+9:00PM to 4:00AM - Visit the Silver Blood inn
+4:00AM to 5:00AM - Sandbox inside Vlindrel Hall
+
+SOLITUDE
+5:00AM to 4:00PM - Sleeping
+4:00PM to 5:00PM - Wake up, sandbox inside Proudspire Manor
+5:00PM to 7:00PM - Browse at market
+7:00PM to 4:00AM - Visit the Winking Skeever inn
+4:00AM to 5:00AM - Sandbox inside Proudspire Manor
+
+WINDHELM
+5:00AM to 5:00PM - Sleeping
+5:00PM to 7:00PM - Browse at market
+7:00PM to 4:00AM - Visit the Candlehearth Hall
+4:00AM to 5:00AM - Sandbox inside Hjerim
+
+Known Issues:
+Some NPCs are still uses dark face.
+Some Dialogues are still unvoiced.
+Hert from Volkihar Vampire Clan are still unvoiced after replacing from Salonia Caelia to Hert from Volkihar Vampire Clan.
+DLC1MaleVampire many voices from Vanilla are still unvoiced.
+DLC1FemaleVampire some voices from Vanilla are still unvoiced.
+
+COMING SOON:
+We will add backup 5 members to Dawnguard, if Celann, Agmaer, Beleval, Ingjard and Durak are dies for any reason, where a happened to replacement BackupAlias
+We will add backup 2 members to Volkihar Clan, if they will die and a will to replacement to BackupAlias, where a happened to replacement from Stalf and Salonia Caelia are replaced to BackupAlias
+New game will required during changes some quests. If you will continue use save after upgrading plugin, this plugin will damage to your save.
