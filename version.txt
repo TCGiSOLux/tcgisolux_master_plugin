@@ -16,7 +16,7 @@ Some Dialogues are still unvoiced.
 DLC1MaleVampire many voices from Vanilla are still unvoiced.
 DLC1FemaleVampire some voices from Vanilla are still unvoiced.
 
-V2.06 - PUBLIC RELEASE
+V2.06 - BETA
 5 members from Volkihar Clan on the Volkihar Keep will temporarily disable due Banquet on the Volkihar Keep during quest of the Bloodline.
 Also DLC1DialogueVampireBase will automatically change to Stalf, Rargal and Salonia to BackupAlias
 Fixes some bug of radiant quests for Volkihar Vampires Clan.
