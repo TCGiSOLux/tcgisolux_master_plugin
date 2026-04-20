@@ -1,0 +1,5 @@
+V1.00 - PUBLIC RELEASE
+This Patch designed for Female Monsters Of Skyrim (F.M.S.) mod only. Use this patch only if you using mod Female Monsters Of Skyrim (F.M.S.).
+Reworked quests The Gift (Volkihar Clan side quest) and The Bonds of Matrimony (quest to marriage)
+In the The Bonds of Matrimony and The Gift quests, your spouse won't be changing outfit to Vampire outfit, if spouse are using race in Mermaid, Harpy, Dragonia and Luna Moth. However, your spouse still will change outfit to Vampire, only if your spouse are not using race in Mermaid, Harpy, Dragonia and Luna Moth.
+And also fixes Race compatibility if you character was without vampirism status and you playing these races (Luna Moth, Harpy, Dragonia and Mermaid) after accepting Harkon's offer.

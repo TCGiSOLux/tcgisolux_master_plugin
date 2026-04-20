@@ -15,6 +15,7 @@ ReferenceAlias Property Alias_Spouse Auto
 ;BEGIN FRAGMENT Fragment_6
 Function Fragment_6()
 ;BEGIN CODE
+DLC1RV06DoOnce.SetValue(0)
 FailAllObjectives()
 DLC1Radiant.StopQuestAndStartNewOneVampire(self)   ;THIS WILL CALL STOP() ON THIS QUEST
 ;END CODE

@@ -67,12 +67,39 @@ LocationAlias Property Alias_Location Auto
 ReferenceAlias Property Alias_Ingjard Auto
 ;END ALIAS PROPERTY
 
+;BEGIN ALIAS PROPERTY Ingmarne
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Ingmarne Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Jill
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Jill Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Sillina
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Sillina Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Tristyval
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Tristyval Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Kirsten
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Kirsten Auto
+;END ALIAS PROPERTY
+
 ;BEGIN FRAGMENT Fragment_2
 Function Fragment_2()
 ;BEGIN CODE
-CompleteAllObjectives()
+;Quest completed. Remove hostility Dawnguard agents to Volkihar Clan.
 DLC1DialogueHunterBase.Stop()
 DLC1DialogueHunterVampireBlock.Stop()
+DawnguardAgents.Stop()
+CompleteAllObjectives()
 DLC1Radiant.GiveQuestReward(ChanceForBloodPotion = 25)
 DLC1Radiant.StopQuestAndStartNewOneVampire(self)   ;THIS WILL CALL STOP() ON THIS QUEST
 ;END CODE
@@ -83,9 +110,9 @@ EndFunction
 Function Fragment_1()
 ;BEGIN CODE
 SetObjectiveCompleted(10)
+SetObjectiveDisplayed(100)
 DLC1DawnguardHQ01.SetFactionOwner(DLC1HunterFaction) ; Added By TCGiSOLux Master Plugin Interior
 DLC1DawnguardHQ01.SetPublic(false) ; Added By TCGiSOLux Master Plugin Interior
-SetObjectiveDisplayed(100)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -118,6 +145,11 @@ kmyquest.StripEssentialAndEnable(Alias_Beleval)
 kmyquest.StripEssentialAndEnable(Alias_Celann)
 kmyquest.StripEssentialAndEnable(Alias_Durak)
 kmyquest.StripEssentialAndEnable(Alias_Ingjard) ; Added By TCGiSOLux Master Plugin Interior
+kmyquest.StripEssentialAndEnable(Alias_Kirsten) ; Added By TCGiSOLux Master Plugin Interior
+kmyquest.StripEssentialAndEnable(Alias_Tristyval) ; Added By TCGiSOLux Master Plugin Interior
+kmyquest.StripEssentialAndEnable(Alias_Sillina) ; Added By TCGiSOLux Master Plugin Interior
+kmyquest.StripEssentialAndEnable(Alias_Jill) ; Added By TCGiSOLux Master Plugin Interior
+kmyquest.StripEssentialAndEnable(Alias_Ingmarne) ; Added By TCGiSOLux Master Plugin Interior
 DLC1DawnguardGateRef1.Disable()
 DLC1DawnguardGateRef2.Disable()
 DLC1DawnguardGateRef3.Disable()
@@ -141,3 +173,4 @@ Quest Property DLC1VQ01MiscObjective  Auto  ; Added By TCGiSOLux Master Plugin I
 Faction Property DLC1HunterFaction  Auto  ; Added By TCGiSOLux Master Plugin Interior
 Quest Property DLC1DialogueHunterBase  Auto  ; Added By TCGiSOLux Master Plugin Interior
 Quest Property DLC1DialogueHunterVampireBlock  Auto  ; Added By TCGiSOLux Master Plugin Interior
+Quest Property DawnguardAgents  Auto  ; Added By TCGiSOLux Master Plugin Interior

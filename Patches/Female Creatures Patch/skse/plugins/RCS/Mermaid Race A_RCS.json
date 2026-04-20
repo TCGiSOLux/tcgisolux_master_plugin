@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/shuc1/race-compatibility-skse/main/res/schema/schema",
+    "RCS": [
+        {
+            "name": "Mermaid",
+            "race": {
+                "form": "MermaidRace",
+                "proxies": [
+                    "ImperialRace"
+                ]
+            },
+            "vampireRace": {
+                "form": "MermaidRaceVampire",
+                "proxies": [
+                    "ImperialRaceVampire"
+                ]
+            },
+            "headPart": "Human"
+        }
+    ]
+}

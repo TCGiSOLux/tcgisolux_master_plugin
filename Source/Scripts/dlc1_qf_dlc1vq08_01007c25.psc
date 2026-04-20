@@ -433,8 +433,8 @@ if pDLC1PlayingVampireLine.GetValue() == 0
 	alias_DLC1VQ08SorineAlias.TryToRemoveFromFaction(DLC1VQ08HunterSiegeFaction)
 	alias_TrollAlias.TryToRemoveFromFaction(DLC1VQ08HunterSiegeFaction)
 	
-	DLC1DialogueVampireBase.Stop() ; Added by UDGP 2.0 so the Volkihar vampire bodies will eventually clear away.
-	DLC1DialogueVampireCuredBlock.Stop() ; Added by UDGP 2.0.4, same as above.
+	DialogueVampireBase.Stop()
+	DialogueVampireCuredBlock.Stop()
 endif
 ;END CODE
 EndFunction
@@ -562,6 +562,6 @@ ReferenceAlias Property pAurielBow  Auto
 
 ReferenceAlias Property TutorialThrall  Auto  
 
-Quest Property DLC1DialogueVampireBase  Auto  ;UDGP 2.0.0
-Quest Property DLC1DialogueVampireCuredBlock Auto ;UDGP 2.0.4
+Quest Property DialogueVampireBase  Auto  ;UDGP 2.0.0
+Quest Property DialogueVampireCuredBlock Auto ;UDGP 2.0.4
 ObjectReference Property DLC1VQ08DawnguardPreSceneIdle2 Auto ;UDGP 2.0.7

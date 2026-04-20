@@ -85,6 +85,7 @@ endif
 if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionRift)
    Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionRift)
 endif
+
 Alias_Candidate.GetActorReference().RemoveFromFaction(DLC1VampireFeedNoCrimeFaction)
 Alias_Candidate.GetActorReference().RemoveFromFaction(DLC1VampireSeductionBoostFaction)
 Alias_Candidate.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)

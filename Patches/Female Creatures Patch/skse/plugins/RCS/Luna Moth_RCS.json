@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/shuc1/race-compatibility-skse/main/res/schema/schema",
+    "RCS": [
+        {
+            "name": "Luna Moth",
+            "race": {
+                "form": "00_MothRace",
+                "proxies": [
+                    "BretonRace"
+                ]
+            },
+            "vampireRace": {
+                "form": "00_MothRaceVampire",
+                "proxies": [
+                    "BretonRaceVampire"
+                ]
+            },
+            "headPart": "Human"
+        }
+    ]
+}

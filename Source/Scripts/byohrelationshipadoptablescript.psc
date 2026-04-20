@@ -468,6 +468,7 @@ Function UpdateOrphanablesStatus()
 						child.SetFactionRank(BYOHRelationshipAdoptableFaction, 0)
 			
 						;Reset RelationshipRank to avoid awkward "I Hate You" dialogue.
+						child.Reset()
 						child.SetRelationshipRank(Game.GetPlayer(), 0)
 			
 						;Set Variable06 to identify which lines they should use.

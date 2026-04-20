@@ -1,28 +1,56 @@
-v2.05 - PUBLIC RELEASE
-Added 3 radiant quests for Volkihar Vampires Clan, they are imported from Dawnguard side
-Added 1 radiant quest for Dawnguard, they are imported from Volkihar Vampires Clan side
-Added 5 members to Volkihar Keep
-Re-worked RelationshipMarriage
-Idgrod The Younger was changed Assistance from Helps Alies to Helps Nobody.
-Some Jarls, Stewards and Housecarls was are changed Aggression, Confidence and Assistance and enabled multi-level.
-DialogueMorthal are uses as a correctly changed Gorm are housecarl to Idgrod Ravencrone.
-Your plugin will update by using script after loading any save the game
-If spouse dies after marrying, "The Gift" for Volkihar Vampire Clan side and RelationshipMarriage quests will automatically restart
-Added Ingun Black-Briar to marriage candidate
+V2.10 - PUBLIC RELEASE
+ATTENTION! You need delete old version! New game will be required, after upgrading this plugin because it's marked with ESM-flag.
+Please note: Dawnguard questline on the Human path are still in WIP, but soon will be available. Dawnguard questline are still in WIP on the Human path, because we temporally removing refusal to Harkon's offer.
 
-Known Issues:
-Some NPCs are still uses dark face.
-Some Dialogues are still unvoiced.
-DLC1MaleVampire many voices from Vanilla are still unvoiced.
-DLC1FemaleVampire some voices from Vanilla are still unvoiced.
+OTHERS:
+Crime system was re-worked.
 
-V2.06 - BETA
+VOICES:
+DLC1MaleVampire voicetype are removed from vanilla dialogues.
+
+NPCS:
+Dawnguard Exterior patrols are changed from CrimeFactionRift to DLC1DawnguardCrimeFaction
 5 members from Volkihar Clan on the Volkihar Keep will temporarily disable due Banquet on the Volkihar Keep during quest of the Bloodline.
-Also DLC1DialogueVampireBase will automatically change to Stalf, Rargal and Salonia to BackupAlias
-Fixes some bug of radiant quests for Volkihar Vampires Clan.
-A Jarl's Justice for Volkihar Vampires Clan side after completing quest will be delayed to 3 days. Unlike a Dawnguard variant after completing the quest where it's delayed to 12 days.
 Marriage NPC AI-Package, for AI-Package to female vampires and also AI-Package after you adopt children are added.
-New game not required, because this small update. You can use to continue save.
+Added patrols. Volkihar Vampires Clan will patrol entire territory in Skyrim.
+If child dies before becoming orphan will reset automatically.
+Elisif the Fair was re-voiced and changed voice type from FemaleYoungEager to FemaleCommander voice type
+AI Data for Laelette the Vampire are updated. Aggression was changed from Unaggressive to Aggressive. And also aggro radius was extended, Warn was extended radius from 768 to 2048, Warn/Attack was extended radius from 600 to 1024.
+Uthgerd, Aeri, Romlyn Dreth, Ysolda, Viola Giordano and Gilfre will share to beds in their house after you getting to married.
+Added 2 NPCs to Volkihar Clan members.
+Added 3 NPC backups to Volkihar Clan faction and will replace to them if they dies for any reasons. These backups NPCs will be replaced to vanillas Volkihar Clan faction, only if you accepted Harkon's gift.
+Added 5 NPC backups to Dawnguard faction and will be replaced to them if they dies for any reasons. These backups NPCs will be replaced to vanillas Dawnguard faction, only if you rejected Harkon's gift.
+Gisli and Marise Aravel was added to Marriage Candidates. (You can marry Gisli only by using with console commands.)
+Added generic NPCs vampires from Volkihar Clan. It's was set "No Crime" morality, this means that they will not commit to any crimes, unlike a counterpart of Dawnguard faction.
+Aggro radius was added for generic NPCs to Dawnguard faction, for unique NPCs to Dawnguard faction was unchanged.
+Added Lucan Scribonia, Marlena Scribonia and Maesa Scribonia.
+
+WORLD ENCOUNTERS:
+You won't be encounter Skooma Dealer if Laila Law-Giver are as a Jarl of Riften.
+
+BUILDINGS:
+All plugins Fort Volkihar Clan, Ogmund's and Vittoria Vici's houses and Temple of Azura are merged to all to one.
+Added Hawksmith's house. It will replace building to the Addvar's house if Addvar and Greta dies for any reason.
+Added Scribonia's House. It will replace building to the Amren's House if Amren and Saffir dies for any reason.
+
+FACTIONS:
+Added Dawnguard Crime Faction. NPCs from Dawnguard now uses to custom Crime Faction.
+
+QUESTS:
+Also DLC1DialogueVampireBase will automatically change to BackupAlias, if they are dies
+Completing quest Prophet on the Dawnguard side, now will count to become to Thane of Riften.
+The Hunt quest was renamed to Hide and Seek.
+Culling the Beast quest was renamed to Cleansing the Beast.
+Protecting the Bloodline quest was renamed to Preemptive Strike.
+Hunting the Vampire quest was renamed to Hunting the Feral-blooded Vampire
+New Allegiances quest are added fourth candidate to Sorli the Builder.
+These Dawnguard Agents will now attack you on the sight after completion quest of The Bloodstone Chalice. Hostility Dawnguard Agents to Volkihar Clan will begin after completing quest of The Bloodstone Chalice.
+Fixed alias SaloniaAliasBackup in the quest DLC1DialogueVampireBase, Now instead Hert will replace to Lalaine Catia.
+
+RADIANT QUESTS:
+Lalaine Catia now are radiant quest giver to Hide and Seek and Cleansing the Feral Vampires.
+Orthjolf now are radiant quest giver to Preemptive Strike and A Jarl's Justice (Vampire Side).
+Feran Sadri and Lalaine Catia now radiant quest givers to Rescue. Vingalmo no longer radiant quest giver to Rescue.
 
 Spouse's schedule for each town if you adopted to children and also including vampires spouses:
 WHITERUN
@@ -69,7 +97,7 @@ WINDHELM
 9:00PM to 0:00AM - Sandox inside Hjerim
 0:00AM to 6:00AM - Sleep
 
-Female vampires only can use schedule for each town:
+Only for female vampires can use schedule for each towns:
 WHITERUN
 8:00AM to 4:00PM - Sleeping
 4:00PM to 5:00PM - Wake up, sandbox inside Breezehome
@@ -106,14 +134,26 @@ WINDHELM
 7:00PM to 4:00AM - Visit the Candlehearth Hall
 4:00AM to 5:00AM - Sandbox inside Hjerim
 
+FIXED BUGS:
+Fixed bug of radiant quest "A Jarl's Justice" for Volkihar Vampires Clan.
+
 Known Issues:
+Housecarls of Player still can't share beds in your own house after you getting to married.
 Some NPCs are still uses dark face.
 Some Dialogues are still unvoiced.
-Hert from Volkihar Vampire Clan are still unvoiced after replacing from Salonia Caelia to Hert from Volkihar Vampire Clan.
-DLC1MaleVampire many voices from Vanilla are still unvoiced.
+Some Scenes with Elisif the Fair was unvoiced.
 DLC1FemaleVampire some voices from Vanilla are still unvoiced.
 
 COMING SOON:
-We will add backup 5 members to Dawnguard, if Celann, Agmaer, Beleval, Ingjard and Durak are dies for any reason, where a happened to replacement BackupAlias
+After completing quest Kindred Judgment in the Dawnguard side only, Order of the Virtuous Blood will be begin to reforming and will protect people from Vampires. Also Generic NPCs from Dawnguard will arrive in all cities and protect people from Vampires.
+If you complete quests Kindred Judgment and Destroying the Dawnguard in the Vampire side, Generic NPCs Vampires from Volkihar Clan will arrive in the all cities and protect cities from Dawnguard to prevent reforming the Dawnguard again after death Isran.
+You can take Followers from Volkihar Clan faction after completing quest Prophet.
+Races voicetype for player will be changed: except Altmer, Khajiit, Argonian and Orc races.
+Zaria, Thonnir, Voldsea Giryon will be added to marriage candidate. You can marry Voldsea Giryon by using only with console commands.
 We will add backup 2 members to Volkihar Clan, if they will die and a will to replacement to BackupAlias, where a happened to replacement from Stalf and Salonia Caelia are replaced to BackupAlias
-New game will required during changes some quests. If you will continue use save after upgrading plugin, this plugin will damage to your save.
+New game will be required after changes some quests. If you will continue use save after upgrading plugin, this plugin will damage to your save.
+
+Credits:
+XvaSynth - Dan Ruta
+Siddgeir's Rare Gifts and Hearthfire BYOH Quest Compatibility - johnboy3434
+Jill Valentine - MichaelDovah

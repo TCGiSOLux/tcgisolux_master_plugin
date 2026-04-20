@@ -10,6 +10,11 @@ ReferenceAlias Property Beleval auto
 ReferenceAlias Property Celann auto
 ReferenceAlias Property Durak auto
 ReferenceAlias Property Ingjard auto
+ReferenceAlias Property Jill auto
+ReferenceAlias Property Kirsten auto
+ReferenceAlias Property Tristyval auto
+ReferenceAlias Property Sillina auto
+ReferenceAlias Property Ingmarne auto
 
 
 Outfit Property DLC1OutfitSorine  Auto  
@@ -18,6 +23,11 @@ Outfit Property DLC1OutfitGunmar  Auto
 Function CheckDead()
 	if Isran.GetActorReference().IsDead() \
 		&& Ingjard.GetActorReference().IsDead() \
+		&& Jill.GetActorReference().IsDead() \
+		&& Tristyval.GetActorReference().IsDead() \
+		&& Sillina.GetActorReference().IsDead() \
+		&& Ingmarne.GetActorReference().IsDead() \
+		&& Kirsten.GetActorReference().IsDead() \
 		&& Sorine.GetActorReference().IsDead() \
 		&& Gunmar.GetActorReference().IsDead() \
 		&& Florentius.GetActorReference().IsDead() \

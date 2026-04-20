@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/shuc1/race-compatibility-skse/main/res/schema/schema",
+    "RCS": [
+        {
+            "name": "Dragonia",
+            "race": {
+                "form": "DragoniaRace",
+                "proxies": [
+                    "BretonRace"
+                ]
+            },
+            "vampireRace": {
+                "form": "DragoniaRaceVampire",
+                "proxies": [
+                    "BretonRaceVampire"
+                ]
+            },
+            "headPart": "Human"
+        }
+    ]
+}

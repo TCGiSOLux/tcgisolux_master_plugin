@@ -12,29 +12,9 @@ ReferenceAlias Property Alias_SceneMarker1 Auto
 ReferenceAlias Property Alias_TRIGGER Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY WritofDawn
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_WritofDawn Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY Writ
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Writ Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY WritB
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_WritB Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY WritC
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_WritC Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Spouse
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Spouse Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY myHoldSons
@@ -77,6 +57,11 @@ ReferenceAlias Property Alias_SceneCenterMarker Auto
 ReferenceAlias Property Alias_SceneMarker2 Auto
 ;END ALIAS PROPERTY
 
+;BEGIN ALIAS PROPERTY Spouse
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Spouse Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY Dawnguard03
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Dawnguard03 Auto
@@ -102,9 +87,7 @@ WEScript kmyQuest = __temp as WEScript
 ;END AUTOCAST
 ;BEGIN CODE
 ; debug.trace(self + "stage 0")
-Alias_Dawnguard01.GetReference().AddItem(Alias_WritofDawn.GetReference())
-Alias_Dawnguard02.GetReference().AddItem(Alias_WritofDawn.GetReference())
-Alias_Dawnguard03.GetReference().AddItem(Alias_WritofDawn.GetReference())
+Alias_Dawnguard01.GetReference().AddItem(Alias_Writ.GetReference())
 ;END CODE
 EndFunction
 ;END FRAGMENT

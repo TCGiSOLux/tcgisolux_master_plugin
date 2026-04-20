@@ -276,10 +276,10 @@ Function Fragment_1()
 ;Completion stage
 SetObjectiveCompleted(80,1)
 RNPCDialogueQuest.Stop()
+DialogueVampireBase.SetStage(300)
 VQ04.SetStage(10)
 pDLC1VQElder.SetStage(10)
 DLC1VQ03RoadsideDestroyed.Disable()
-
 Stop()
 ;END CODE
 EndFunction
@@ -722,7 +722,7 @@ ObjectReference Property DLC1ForbearsHoldoutMapMarkerREF  Auto
 Faction Property DLC1VampireCrimeFaction  Auto
 
 Faction Property DLC1MothPriestFaction  Auto  
-
+Quest Property DialogueVampireBase  Auto  
 Faction Property DLC1VampireFeedNoCrimeFaction  Auto  
 Outfit Property VampireOutfit  Auto  
 Faction Property PlayerMarriedFaction  Auto  	

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/shuc1/race-compatibility-skse/main/res/schema/schema",
+    "RCS": [
+        {
+            "name": "Harpy",
+            "race": {
+                "form": "HarpyRace",
+                "proxies": [
+                    "ImperialRace"
+                ]
+            },
+            "vampireRace": {
+                "form": "HarpyRaceVampire",
+                "proxies": [
+                    "ImperialRaceVampire"
+                ]
+            },
+            "headPart": "Human"
+        }
+    ]
+}
