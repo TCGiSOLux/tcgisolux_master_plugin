@@ -38,18 +38,21 @@ Function ProcessArrays()
 	CurrentElement = 0
 	while (currentElement < FriendFactions.Length)
 		FriendFactions[currentElement].SetAlly(TargetFaction, true, true)
+		FriendFactions[currentElement].SetAlly(TargetFaction2, true, true)
 		currentElement += 1
 	endWhile
 	
 	CurrentElement = 0
 	while (currentElement < EnemyFactions.Length)
 		EnemyFactions[currentElement].SetEnemy(TargetFaction)
+		EnemyFactions[currentElement].SetEnemy(TargetFaction2)
 		currentElement += 1
 	endWhile
 
 	CurrentElement = 0
 	while (currentElement < NeutralFactions.Length)
 		NeutralFactions[currentElement].SetEnemy(TargetFaction, true, true)
+		NeutralFactions[currentElement].SetEnemy(TargetFaction2, true, true)
 		currentElement += 1
 	endWhile
 EndFunction

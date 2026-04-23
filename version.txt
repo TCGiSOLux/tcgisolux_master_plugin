@@ -3,7 +3,7 @@ ATTENTION! You need delete old version! New game will be required, after upgradi
 Please note: Dawnguard questline on the Human path are still in WIP, but soon will be available. Dawnguard questline are still in WIP on the Human path, because we temporally removing refusal to Harkon's offer.
 
 OTHERS:
-Crime system was re-worked.
+Crime system are re-worked.
 
 VOICES:
 DLC1MaleVampire voicetype are removed from vanilla dialogues.
@@ -30,7 +30,7 @@ You won't be encounter Skooma Dealer if Laila Law-Giver are as a Jarl of Riften.
 
 BUILDINGS:
 All plugins Fort Volkihar Clan, Ogmund's and Vittoria Vici's houses and Temple of Azura are merged to all to one.
-Added Hawksmith's house. It will replace building to the Addvar's house if Addvar and Greta dies for any reason.
+Added Hawksmith's House. It will replace building to the Addvar's house if Addvar and Greta dies for any reason.
 Added Scribonia's House. It will replace building to the Amren's House if Amren and Saffir dies for any reason.
 
 FACTIONS:
@@ -43,9 +43,11 @@ The Hunt quest was renamed to Hide and Seek.
 Culling the Beast quest was renamed to Cleansing the Beast.
 Protecting the Bloodline quest was renamed to Preemptive Strike.
 Hunting the Vampire quest was renamed to Hunting the Feral-blooded Vampire
-New Allegiances quest are added fourth candidate to Sorli the Builder.
+New Allegiances quest are added third candidate to Sorli the Builder.
+Valindor no longer candidate to quest New Allegiances.
 These Dawnguard Agents will now attack you on the sight after completion quest of The Bloodstone Chalice. Hostility Dawnguard Agents to Volkihar Clan will begin after completing quest of The Bloodstone Chalice.
-Fixed alias SaloniaAliasBackup in the quest DLC1DialogueVampireBase, Now instead Hert will replace to Lalaine Catia.
+To start the Dawnguard questlines, you need to complete quest Alduin's Wall.
+After completing quest "The Bloodstone Chalice", execution scene on the Solitude now will automatically stop, because hostility Dawnguard Agents will begin to Volkihar Clan.
 
 RADIANT QUESTS:
 Lalaine Catia now are radiant quest giver to Hide and Seek and Cleansing the Feral Vampires.
@@ -135,7 +137,10 @@ WINDHELM
 4:00AM to 5:00AM - Sandbox inside Hjerim
 
 FIXED BUGS:
+Fixed alias SaloniaAliasBackup in the quest DLC1DialogueVampireBase, Now instead Hert will replace to Lalaine Catia.
 Fixed bug of radiant quest "A Jarl's Justice" for Volkihar Vampires Clan.
+Fixed bug AI Package for Spouse in the Breezehome house.
+Fixed bug Execution scene on the Solitude after you completed quest The Bloodstone Chalice and you visiting the Solitude at first time.
 
 Known Issues:
 Housecarls of Player still can't share beds in your own house after you getting to married.
@@ -146,10 +151,10 @@ DLC1FemaleVampire some voices from Vanilla are still unvoiced.
 
 COMING SOON:
 After completing quest Kindred Judgment in the Dawnguard side only, Order of the Virtuous Blood will be begin to reforming and will protect people from Vampires. Also Generic NPCs from Dawnguard will arrive in all cities and protect people from Vampires.
-If you complete quests Kindred Judgment and Destroying the Dawnguard in the Vampire side, Generic NPCs Vampires from Volkihar Clan will arrive in the all cities and protect cities from Dawnguard to prevent reforming the Dawnguard again after death Isran.
+If you complete quests Kindred Judgment and Destroying the Dawnguard in the Vampire side, Generic NPCs Vampires from Volkihar Clan will arrive in the all cities and protect cities from Dawnguard.
 You can take Followers from Volkihar Clan faction after completing quest Prophet.
 Races voicetype for player will be changed: except Altmer, Khajiit, Argonian and Orc races.
-Zaria, Thonnir, Voldsea Giryon will be added to marriage candidate. You can marry Voldsea Giryon by using only with console commands.
+Zaria, Thonnir, Voldsea Giryon will be added to marriage candidate. You can marry Zaria and Voldsea Giryon by using only with console commands.
 We will add backup 2 members to Volkihar Clan, if they will die and a will to replacement to BackupAlias, where a happened to replacement from Stalf and Salonia Caelia are replaced to BackupAlias
 New game will be required after changes some quests. If you will continue use save after upgrading plugin, this plugin will damage to your save.
 

@@ -6,13 +6,10 @@ Scriptname TIF__00053497 Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
+DialogueMarkarth.SetStage(120)
 Game.GetPlayer().AddItem(pTG06Key,1)
 getowningquest().setstage(25)
 dunMWQQST.SetStage(1)
-
-If FreeformMarkarthO.GetStageDone(20) == 0 && DialogueMarkarth.GetStageDone(120) == 0
-  DialogueMarkarth.SetStage(120)
-Endif
 
 ;END CODE
 EndFunction

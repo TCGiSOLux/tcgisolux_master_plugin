@@ -100,6 +100,7 @@ Quest Property DLC1VQ05 auto
 Quest Property DLC1VQ06 auto
 Quest Property DLC1VQ07 auto
 Quest Property DLC1VQ08 auto
+Quest Property SolitudeOpening Auto
 
 bool isQuestAccepted
 
@@ -131,6 +132,7 @@ function IntroQuestCompleted(bool isHunterQuest = false, bool isVampireQuest = f
 	elseif isVampireQuest
 		GlobalToSet = DLC1IntroCompletedVampire
 		PlayerRef.addToFaction(DLC1VampireFaction)
+		SolitudeOpening.setStage(200)
 		QuestType = 2
 	endif
 
