@@ -15,6 +15,7 @@ if ((EnterMarkarthCount.GetValueInt() >= 4))
 		T01.Start()
 		T01Prologue.Start()
 		T01PreEssentializing.Stop()
+		InnerSanctum.SetPublic(true)
 	endif
 endif
 Stop()
@@ -30,3 +31,4 @@ Quest Property T01Prologue  Auto
 Quest Property T01PreEssentializing  Auto 
 GlobalVariable Property GameHour  Auto  
 GlobalVariable Property GameDaysPassed  Auto  
+Cell Property InnerSanctum Auto

@@ -12,6 +12,10 @@ if EnterMarkarthCount.GetValue() <= 3 && T01.GetStage() <= 50
   T01Prologue.Stop()
 Endif
 
+if EnterMarkarthCount.GetValue() >= 4 && T01.GetStage() >= 52
+  InnerSanctum.SetPublic(true)
+Endif
+
 Stop()
 ;END CODE
 EndFunction
@@ -19,3 +23,4 @@ EndFunction
 GlobalVariable Property EnterMarkarthCount  Auto  
 Quest Property T01  Auto  
 Quest Property T01Prologue  Auto 
+Cell Property InnerSanctum Auto
