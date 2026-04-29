@@ -15,28 +15,34 @@ Revoiced for DLC1FemaleVampire voicetype some vanilla voicetypes.
 Voiced for FemaleCommander voicetype for Chop Wooding.
 
 NPCS:
-Added NPCs Darene Limax, Buckingfords and Cruiah Grulathil.
+Added NPCs Darene Limax, Buckingfords, Vallisephona Stormus, Ingun Stormus and Cruiah Grulathil.
 Reworked AI Package for Uthgerd the Unbroken. Weekdays going to The Bannered Mare, in Weekends, she sleeps in own house until monday
 Reworked AI Package for Marlena Scribonia and Lucan Scribonia.
-Added AI Package for Cruiah Grulathil, Buckingfords.
+Added AI Package for Cruiah Grulathil and Buckingfords.
 Aeta, Mila, Lars and Grimvar will go to adoption if their parents are killed.
+Default outfit for Mivryna Beloren was changed to Red Vampire Armor.
 
 WORLD ENCOUNTERS:
-WESC10: Fixed bug encounter, where Mivryna Beloren doesn't change to Belted Tunic after forcegreet completed.
+WESC10: Fixed bug encounter, where Mivryna Beloren doesn't change to Belted Tunic after Force Greet are completed.
 
 BUILDINGS:
-Added Darene Limax's House. It will replace to Valindor's house, if Valindor dies for any reason.
-Added to Buckingford Residence and Cruiah Grulathil's House.
-Cruiah Grulathil's House will replace to Carlotta Valentia's house, if Carlotta Valentia dies for any reason.
-Added Trigger script replace to Amren's House.
-Added Trigger script replace to Carlotta Valentia's House.
+Added Darene Limax's House, Buckingford Residence, Vallisephona Stormus House and Cruiah Grulathil's House.
 In building Cruiah Grulathil's House, Cruiah Grulathil's bed was replaced to Dunmer's bed.
 In building Battle-Born Farm, you can use to wait.
+Added Trigger script replace to Amren's House.
+Added Trigger script replace to Carlotta Valentia's House.
+Added Trigger script replace to Valindor's House.
+Added Trigger script replace to Bolli House.
+Added Trigger script replace to Gilfre's House.
+Cruiah Grulathil's House will replace to Carlotta Valentia's house, if Carlotta Valentia dies for any reason.
+Vallisephona Stormus' House will replace to Gilfre's house, if Gilfre dies for any reason.
+Buckingford Residence will replace to Bolli House, if Bolli and Nivenor dies for any reason.
+Darene Limax's House will replace to Valindor's House, if Valindor dies for any reason.
 
 FACTIONS:
-Fixed Serana's Crime Faction for transforming to Vampire Lord or Werewolf.
+Fixed Serana's Crime Faction getting bounty for transforming to Vampire Lord or Werewolf.
 Fixed The Companions Crime Faction getting bounty for transforming to Werewolf.
-Fixed The Reach Crime Faction for getting bounty for escaping during quest No One Escapes Cidhna Mine.
+Fixed The Reach Crime Faction to getting bounty for escaping from jail during quest No One Escapes Cidhna Mine.
 
 QUESTS:
 You can take followers from Volkihar Clan and Fort Volkihar Clan after completing quest Prophet on the Vampires side only.
@@ -44,10 +50,9 @@ Reworked description for quests on the Volkihar Clan side.
 Quest The Heart of Dibella now to delayed. Quest will start, if you will visit to Markarth maximum 4 times, your character must in level 20 and above.
 In the quest Reparations, you need pay Vex to 5000 gold.
 
-RADIANT QUESTS:
-
 SCENES:
 DLC1 Vampire Base Scene 3 was restored. Instead Salonia Caelia will take Lalaine Catia.
+Some Scenes for Elisif the Fair was revoiced, but still incomplete.
 
 FIXED BUGS:
 Fixed navmesh bug to Darene Limax's House.
@@ -56,9 +61,10 @@ Fixed bug radiant quest Rings of Blood Magic for Volkihar Clan side.
 Fixed AI-package for Alva (Original) returning back to Alva's House from Movarth's Lair after completing quest Laid to Rest.
 Fixed AI-package for Uthgerd.
 Fixed AI-package for Anwen and Orla in the quest The Heart of Dibella.
+Fixed unvoiced dialogue in the quest Elisif's Tribute.
 
 Known Issues:
-Housecarls of Player still can't share beds in your own house after you getting to married.
+NPCs still can't share beds in your own house after you getting to married.
 Some NPCs are still uses dark face.
 Some Dialogues are still unvoiced.
 Some Scenes with Elisif the Fair was unvoiced.
