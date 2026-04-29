@@ -10,6 +10,7 @@ Function Fragment_0()
 if EnterMarkarthCount.GetValue() <= 3 && T01.GetStage() <= 50
   T01.Stop()
   T01Prologue.Stop()
+  InnerSanctum.SetPublic(false)
 Endif
 
 if EnterMarkarthCount.GetValue() >= 4 && T01.GetStage() >= 52
