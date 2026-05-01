@@ -92,6 +92,16 @@ ReferenceAlias Property Alias_Tristyval Auto
 ReferenceAlias Property Alias_Kirsten Auto
 ;END ALIAS PROPERTY
 
+;BEGIN ALIAS PROPERTY UthgerdTorbaldsen
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_UthgerdTorbaldsen Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY HekatahMoabul
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HekatahMoabul Auto
+;END ALIAS PROPERTY
+
 ;BEGIN FRAGMENT Fragment_2
 Function Fragment_2()
 ;BEGIN CODE
@@ -150,6 +160,8 @@ kmyquest.StripEssentialAndEnable(Alias_Tristyval) ; Added By TCGiSOLux Master Pl
 kmyquest.StripEssentialAndEnable(Alias_Sillina) ; Added By TCGiSOLux Master Plugin Interior
 kmyquest.StripEssentialAndEnable(Alias_Jill) ; Added By TCGiSOLux Master Plugin Interior
 kmyquest.StripEssentialAndEnable(Alias_Ingmarne) ; Added By TCGiSOLux Master Plugin Interior
+kmyquest.StripEssentialAndEnable(Alias_HekatahMoabul) ; Added By TCGiSOLux Master Plugin Interior
+kmyquest.StripEssentialAndEnable(Alias_UthgerdTorbaldsen) ; Added By TCGiSOLux Master Plugin Interior
 DLC1DawnguardGateRef1.Disable()
 DLC1DawnguardGateRef2.Disable()
 DLC1DawnguardGateRef3.Disable()

@@ -15,6 +15,8 @@ ReferenceAlias Property Kirsten auto
 ReferenceAlias Property Tristyval auto
 ReferenceAlias Property Sillina auto
 ReferenceAlias Property Ingmarne auto
+ReferenceAlias Property UthgerdTorbaldsen auto
+ReferenceAlias Property HekatahMoabul auto
 
 
 Outfit Property DLC1OutfitSorine  Auto  
@@ -34,6 +36,8 @@ Function CheckDead()
 		&& Agmaer.GetActorReference().IsDead() \
 		&& Beleval.GetActorReference().IsDead() \
 		&& Celann.GetActorReference().IsDead() \
+		&& UthgerdTorbaldsen.GetActorReference().IsDead() \
+		&& HekatahMoabul.GetActorReference().IsDead() \
 		&& Durak.GetActorReference().IsDead()
 
 
