@@ -16,13 +16,15 @@ ReferenceAlias Property Alias_HekatahMoabul Auto
 Function Fragment_0()
 ;BEGIN CODE
 ;Start update
+Utility.Wait(2)
+
 if DLC1RV10.GetStageDone(10) == 1 && DLC1RV10.GetStageDone(255) == 1
   Alias_UthgerdTorbaldsen.GetActorReference().GetActorBase().SetEssential(False)
   Alias_HekatahMoabul.GetActorReference().GetActorBase().SetEssential(False)
-  Utility.Wait(2)
   Alias_UthgerdTorbaldsen.GetActorReference().Kill(game.getPlayer())
   Alias_HekatahMoabul.GetActorReference().Kill(game.getPlayer())
 Endif
+
 Stop()
 ;END CODE
 EndFunction

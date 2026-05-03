@@ -21,6 +21,7 @@ Reworked AI Package for Marlena Scribonia and Lucan Scribonia.
 Added AI Package for Cruiah Grulathil and Buckingfords.
 Aeta, Mila, Lars and Grimvar will go to adoption if their parents are killed.
 Default outfit for Mivryna Beloren was changed to Red Vampire Armor.
+Added 2 NPCs Hekatah Moabul (Dunmer) and Uthgerd Torbaldsen (Nord) for Dawnguard Faction. Dawnguard Faction now extended to six leaders instead four leaders.
 
 WORLD ENCOUNTERS:
 WEJS15: If you completed quest The Only Cure with quest expansion The Only Cure mod, was changed from GetStageDone to GetQuestCompleted.
@@ -51,10 +52,13 @@ You can take followers from Volkihar Clan and Fort Volkihar Clan after completin
 Reworked description for quests on the Volkihar Clan side.
 Quest The Heart of Dibella now to delayed. Quest will start, if you will visit to Markarth maximum 4 times, your character must in level 20 and above.
 In the quest Reparations, you need pay Vex to 5000 gold.
+Added NPCs radiant quest for Dawnguard Faction.
+Miraak Cultists ambush to against you reset was reduced from 72 hours to 48 hours.
 
 SCENES:
 DLC1 Vampire Base Scene 3 was restored. Instead Salonia Caelia will take Lalaine Catia.
 Some Scenes for Elisif the Fair was revoiced, but still incomplete.
+Added Hearthfire DLC voiced dialogue for DLC1FemaleVampire voice type.
 
 FIXED BUGS:
 Fixed navmesh bug to Darene Limax's House.
@@ -62,6 +66,7 @@ Fixed bug some radiant quests for Dawnguard side.
 Fixed bug radiant quest Rings of Blood Magic for Volkihar Clan side.
 Fixed AI-package for Alva (Original) returning back to Alva's House from Movarth's Lair after completing quest Laid to Rest.
 Fixed AI-package for Uthgerd.
+Fixed AI-package for Buckingfords.
 Fixed AI-package for Anwen and Orla in the quest The Heart of Dibella.
 Fixed unvoiced dialogue in the quest Elisif's Tribute.
 Fixed AI-Package for Gwynabyth Buckingford.
@@ -79,9 +84,10 @@ After completing quest Kindred Judgment in the Dawnguard side only, Order of the
 If you complete quests Kindred Judgment and Destroying the Dawnguard in the Vampire side, Generic NPCs Vampires from Volkihar Clan will arrive in the all cities and protect cities from Dawnguard.
 Zaria, Thonnir, Voldsea Giryon will be added to marriage candidate. You can marry Zaria and Voldsea Giryon by using only with console commands.
 We will add backup 2 members to Volkihar Clan, if they will die and a will to replacement to BackupAlias, where a happened to replacement from Stalf and Salonia Caelia are replaced to BackupAlias
-Hekatah Moabul (Dunmer) and Uthgerd Torbaldsen (Nord) will be added. Hekatah Moabul will be to one of 5th leaders of Dawnguard, Uthgerd Torbaldsen will be to one of 6th leaders of Dawnguard.
-Dawnguard faction will get extended to 6 leaders of Dawnguard. Another are normal members.
 New game will be required after changes some quests. If you will continue use save after upgrading plugin, this plugin will damage to your save.
 
 Credits:
 Google's Simple Vampire Hunting - GOOGLEPOX
+Vivid Eyes - Fissure Pack - TREBoy
+Kalilies Brows - Kalilies
+KS Hairdos SSE - Kalilies
