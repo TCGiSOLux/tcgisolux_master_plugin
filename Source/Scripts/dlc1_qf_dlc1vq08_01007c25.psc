@@ -276,6 +276,7 @@ Function Fragment_2()
 ;It is now set once Harkon has died and turned to ash.
 MMQuest.SimpleFollow = false
 CompleteAllObjectives()
+
 pDLC1HarkonDead.SetValue(1)
 ;Unlock the door and allow normal access
 CastleController.UnlockBossRoomDoor()
@@ -286,6 +287,11 @@ Game.AddAchievement(53)
 
 ;Swap gargoyles on the bridge back
 pVQ08ExtGargoyleParent.Disable(pVQ08ExtGargoyleParent)
+
+;Quest Completed. Remove hostility for Volkihar Clan agents to Dawnguard.
+if pDLC1PlayingVampireLine.GetValue() == 0
+VampireAgents.Stop()
+endif
 
 ;fightController.StopFight()
 MMQuest.IsWillingToWait = true
@@ -492,76 +498,42 @@ EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
-
+Quest Property VampireAgents  Auto
 ObjectReference Property PlayerStart  Auto  
-
 ObjectReference Property RNPCStart  Auto  
-
 DLC1_NPCMentalModelScript Property MMQuest  Auto
-
 WEAPON Property DLC1AurielsBow  Auto  
-
 Ammo Property DLC1ElvenArrowBlessed  Auto  
-
 Ammo Property DLC1ElvenArrowBlood  Auto  
-
 ObjectReference Property DLC1VolkiharFerryRef  Auto  
-
 Faction Property DLC1VampireFaction  Auto  
-
-
 GlobalVariable Property pDLC1HarkonDead  Auto  
-
 Race Property DLC1VampireLordRace  Auto  
-
 Armor Property DLC1VampireLordRoyalArmor  Auto  
-
 SPELL Property DLC1AbVampireFloatBodyFX  Auto  
-
 ActorBase Property pDLC1Harkon  Auto  
-
 GlobalVariable Property pDLC1PlayingVampireLine  Auto  
-
 Scene Property pDLC1VQ08DawnguardCelebrate  Auto  
-
 Scene Property pDLC1VQ08HarkonConfrontScene  Auto  
-
 ObjectReference Property pDLC1VQ08LoadDoorEnableMarker  Auto  
-
 ObjectReference Property pDLC1VQ08SeranaStartRoomMarker  Auto  
-
 Quest Property DLC1VQ08Post  Auto
-
 DLC1VampireCastleControllerScript Property CastleController auto
-
 Quest Property DLC1VQ08RNPC  Auto  
-
 ObjectReference Property DLC1VQ08HarkonStartMarker  Auto  
-
 Faction Property DLC1VampireCrimeFaction  Auto  
-
 ObjectReference[] Property HarkonMinions  Auto  
-
 Faction Property DLC1dunHarkonBattleAllyFaction Auto  
 Faction Property PlayerFaction Auto
 Faction Property DLC1SeranaFaction Auto
-
 Faction Property CreatureFriendFaction  Auto  
-
 Race Property VampireBeastRace  Auto  
-
 Faction Property DLC1dunHarkonBattleEnemyFaction  Auto  
-
 ObjectReference Property pDLC1VCTableThrallEnableParent  Auto  
-
 ObjectReference Property pVQ08ExtGargoyleParent  Auto
-
 Faction Property DLC1VQ08HunterSiegeFaction  Auto
-
 ReferenceAlias Property pAurielBow  Auto  
-
 ReferenceAlias Property TutorialThrall  Auto  
-
 Quest Property DialogueVampireBase  Auto  ;UDGP 2.0.0
 Quest Property DialogueVampireCuredBlock Auto ;UDGP 2.0.4
 ObjectReference Property DLC1VQ08DawnguardPreSceneIdle2 Auto ;UDGP 2.0.7

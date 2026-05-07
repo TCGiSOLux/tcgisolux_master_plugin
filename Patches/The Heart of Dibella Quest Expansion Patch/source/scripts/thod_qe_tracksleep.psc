@@ -11,8 +11,10 @@ GlobalVariable Property FriendsCountReach Auto
 GlobalVariable Property EnterMarkarthCount  Auto  
 
 Event OnInit()
+If EnterMarkarthCount.GetValueInt() >= 4
 Utility.Wait(3)
 MadanachAlias.ForceRefTo(MadanachRef)
+endif
 
 If T01.GetStage() < 55 && EnterMarkarthCount.GetValueInt() >= 4
 	 RegisterForSleep()

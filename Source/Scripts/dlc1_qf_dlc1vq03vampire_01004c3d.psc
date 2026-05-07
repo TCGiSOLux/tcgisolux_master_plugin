@@ -2,31 +2,6 @@
 ;NEXT FRAGMENT INDEX 36
 Scriptname DLC1_QF_DLC1VQ03Vampire_01004C3D Extends Quest Hidden
 
-;BEGIN ALIAS PROPERTY Sorine
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Sorine Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Florentius
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Florentius Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Beleval
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Beleval Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Gunmar
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Gunmar Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Ingjard
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Ingjard Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY Spectator7
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Spectator7 Auto
@@ -150,6 +125,31 @@ ReferenceAlias Property Alias_MalkusCorpse Auto
 ;BEGIN ALIAS PROPERTY BarrierControl
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_BarrierControl Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Sorine
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Sorine Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Florentius
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Florentius Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Beleval
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Beleval Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Gunmar
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Gunmar Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Ingjard
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Ingjard Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY Spouse
