@@ -109,6 +109,7 @@ Function Fragment_2()
 DLC1DialogueHunterBase.Stop()
 DLC1DialogueHunterVampireBlock.Stop()
 DawnguardAgents.Stop()
+VampireAgents.Stop()
 CompleteAllObjectives()
 DLC1Radiant.GiveQuestReward(ChanceForBloodPotion = 25)
 DLC1Radiant.StopQuestAndStartNewOneVampire(self)   ;THIS WILL CALL STOP() ON THIS QUEST
@@ -186,3 +187,4 @@ Faction Property DLC1HunterFaction  Auto  ; Added By TCGiSOLux Master Plugin Int
 Quest Property DLC1DialogueHunterBase  Auto  ; Added By TCGiSOLux Master Plugin Interior
 Quest Property DLC1DialogueHunterVampireBlock  Auto  ; Added By TCGiSOLux Master Plugin Interior
 Quest Property DawnguardAgents  Auto  ; Added By TCGiSOLux Master Plugin Interior
+Quest Property VampireAgents  Auto  ; Added By TCGiSOLux Master Plugin Interior

@@ -101,6 +101,8 @@ Quest Property DLC1VQ06 auto
 Quest Property DLC1VQ07 auto
 Quest Property DLC1VQ08 auto
 Quest Property SolitudeOpening Auto
+Quest Property VampireAgents Auto
+Quest Property DawnguardAgents Auto
 
 bool isQuestAccepted
 
@@ -128,11 +130,16 @@ function IntroQuestCompleted(bool isHunterQuest = false, bool isVampireQuest = f
 	if isHunterQuest
 		GlobalToSet = DLC1IntroCompletedHunter
 		PlayerRef.AddToFaction(DLC1HunterFaction)
+		SolitudeOpening.setStage(200)
+		DawnguardAgents.Start()
+		VampireAgents.Start()
 		QuestType = 1
 	elseif isVampireQuest
 		GlobalToSet = DLC1IntroCompletedVampire
 		PlayerRef.addToFaction(DLC1VampireFaction)
 		SolitudeOpening.setStage(200)
+		DawnguardAgents.Start()
+		VampireAgents.Start()
 		QuestType = 2
 	endif
 

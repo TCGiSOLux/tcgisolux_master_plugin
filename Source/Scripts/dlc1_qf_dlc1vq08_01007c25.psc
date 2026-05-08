@@ -290,6 +290,7 @@ pVQ08ExtGargoyleParent.Disable(pVQ08ExtGargoyleParent)
 
 ;Quest Completed. Remove hostility for Volkihar Clan agents to Dawnguard.
 if pDLC1PlayingVampireLine.GetValue() == 0
+DawnguardAgents.Stop()
 VampireAgents.Stop()
 endif
 
@@ -499,6 +500,7 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 Quest Property VampireAgents  Auto
+Quest Property DawnguardAgents  Auto
 ObjectReference Property PlayerStart  Auto  
 ObjectReference Property RNPCStart  Auto  
 DLC1_NPCMentalModelScript Property MMQuest  Auto

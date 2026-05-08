@@ -50,39 +50,39 @@ EndFunction
 Function Fragment_4()
 ;BEGIN CODE
 CompleteAllObjectives()
-if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionHaafingar)
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionHaafingar) == 1
    Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionHaafingar)
 endif
 
-if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionReach)
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionReach) == 1
    Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionReach)
 endif
 
-if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionHjaalmarch)
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionHjaalmarch) == 1
    Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionHjaalmarch)
 endif
 
-if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionWhiterun)
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionWhiterun) == 1
    Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionWhiterun)
 endif
 
-if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionFalkreath)
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionFalkreath) == 1
    Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionFalkreath)
 endif
 
-if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionPale)
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionPale) == 1
    Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionPale)
 endif
 
-if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionWinterhold)
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionWinterhold) == 1
    Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionWinterhold)
 endif
 
-if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionEastmarch)
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionEastmarch) == 1
    Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionEastmarch)
 endif
 
-if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionRift)
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionRift) == 1
    Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionRift)
 endif
 
@@ -136,13 +136,9 @@ EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
-
 DLC1RadiantScript Property DLC1Radiant  Auto  
-
 Perk Property DLC1VampireSeductionBoost Auto  
-
 Faction Property DLC1VampireSeductionBoostFaction  Auto  
-
 Outfit Property VampireOutfit  Auto  
 Faction Property DLC1VampireFaction  Auto  
 Faction Property DLC1VampireCrimeFaction  Auto  

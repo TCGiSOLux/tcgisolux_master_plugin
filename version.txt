@@ -27,7 +27,7 @@ WORLD ENCOUNTERS:
 WEJS15: If you completed quest The Only Cure with quest expansion The Only Cure mod, was changed from GetStageDone to GetQuestCompleted.
 WESC10: Fixed bug encounter, where Mivryna Beloren doesn't change to Belted Tunic after Force Greet are completed.
 Fixed bugs world encounters: DLC1WE07 and DLC1WEDB04.
-Added World encounter DLC1_WESC11.
+Added new world encounter: Vampire Outrider (11 / Northlands Caches).
 
 BUILDINGS:
 Added 7 houses.
@@ -42,11 +42,12 @@ Cruiah Grulathil's House will replace to Carlotta Valentia's house, if Carlotta 
 Vallisephona Stormus' House will replace to Gilfre's house, if Gilfre dies for any reason.
 Buckingford Residence will replace to Bolli House, if Bolli and Nivenor dies for any reason.
 Darene Limax's House will replace to Valindor's House, if Valindor dies for any reason.
+Added Jensine's House. It will replace to his house if you Show Mead to Indaryn.
+Added Trigger script replace to Jensine's House from Romlyn Dreth's House.
 
 FACTIONS:
 Fixed Serana's Crime Faction getting bounty for transforming to Vampire Lord or Werewolf.
 Fixed The Companions Crime Faction getting bounty for transforming to Werewolf.
-Fixed The Reach Crime Faction to getting bounty for escaping from jail during quest No One Escapes Cidhna Mine.
 
 QUESTS:
 You can take followers from Volkihar Clan and Fort Volkihar Clan after completing quest Prophet on the Vampires side only.
@@ -54,8 +55,9 @@ Reworked description for quests on the Volkihar Clan side.
 Quest The Heart of Dibella now delayed. Quest will start, if you will visit to Markarth maximum 4 times, your character must in level 20 and above.
 In the quest Reparations, you need pay Vex to 5000 gold.
 Added NPCs radiant quest giver for Dawnguard Faction.
-Miraak Cultists ambush will delayed to in 48 hours, after failure attempt after appearing.
+Miraak Cultists ambush against to you will delayed to in 48 hours, after failure attempt and respawning.
 Added Bounty: Master Vampire quest. It's uses as a BQ05.
+Added Bryling, Lisbet and Vivienne Onis Candidates to New Allegiances. Removed Haran and Cairine from Candidates to New Allegiances, because these voicetypes doesn't participating to Volkihar Clan.
 
 SCENES:
 DLC1 Vampire Base Scene 3 was restored. Instead Salonia Caelia will take Lalaine Catia.
@@ -72,6 +74,7 @@ Fixed AI-package for Buckingfords.
 Fixed AI-package for Anwen and Orla in the quest The Heart of Dibella.
 Fixed unvoiced dialogue in the quest Elisif's Tribute.
 Fixed AI-Package for Gwynabyth Buckingford.
+Added AI-Package for Jensine.
 
 Known Issues:
 NPCs still can't share beds in your own house after you getting to married.
@@ -89,6 +92,7 @@ Stormcloaks Guards will replace to Volkihar Vampire Clan Guards on the Stormcloa
 Imperial Guards will replace to Dawnguard Clan Guards on the Imperial faction excluding guards in Dwemer Museum.
 We will add backup 2 members to Volkihar Clan, if they will die and a will to replacement to BackupAlias, where a happened to replacement from Stalf and Salonia Caelia are replaced to BackupAlias
 New game will be required after changes some quests. If you will continue use save after upgrading plugin, this plugin will damage to your save.
+Altmer Vampiric Race will use voicetype MaleSlyCynical for males, FemaleCondescending for females
 
 Credits:
 Google's Simple Vampire Hunting - GOOGLEPOX
