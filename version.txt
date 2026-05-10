@@ -57,12 +57,13 @@ In the quest Reparations, you need pay Vex to 5000 gold.
 Added NPCs radiant quest giver for Dawnguard Faction.
 Miraak Cultists ambush against to you will delayed to in 48 hours, after failure attempt and respawning.
 Added Bounty: Master Vampire quest. It's uses as a BQ05.
-Added Bryling, Lisbet and Vivienne Onis Candidates to New Allegiances. Removed Haran and Cairine from Candidates to New Allegiances, because these voicetypes doesn't participating to Volkihar Clan.
+Added Bryling, Lisbet and Vivienne Onis Candidates to New Allegiances. Removed Haran and Cairine from Candidates to New Allegiances, because these voicetypes doesn't participating to Volkihar Clan faction.
 
 SCENES:
 DLC1 Vampire Base Scene 3 was restored. Instead Salonia Caelia will take Lalaine Catia.
 Some Scenes for Elisif the Fair was revoiced, but still incomplete.
 Added Hearthfire DLC voiced dialogue for DLC1FemaleVampire voice type.
+Scene Braith with Lars Battle-Born will be avaiable until The Bloodstone Chalice quest was completed.
 
 FIXED BUGS:
 Fixed navmesh bug to Darene Limax's House.
@@ -85,6 +86,7 @@ DLC1FemaleVampire some voices from Vanilla are still unvoiced.
 Rargal and Ronthil still can't be hired to followers.
 
 COMING SOON:
+Will be added Dawnguard Patrols on entire Skyrim. Patrols from Dawnguard will be available since at beginning the game, but patrols from Volkihar Clan Vampires will be disabled at beginning the game. Once quest Destroying the Dawnguard are completed, all patrols from Dawnguard will be replaced to Volkihar Clan Vampires.
 After completing quest Kindred Judgment in the Dawnguard side only, Order of the Virtuous Blood will be begin to reforming and will protect people from Vampires. Also Generic NPCs from Dawnguard will arrive in all cities and protect people from Vampires.
 If you complete quests Kindred Judgment and Destroying the Dawnguard in the Vampire side, Generic NPCs Vampires from Volkihar Clan will arrive in the all cities and protect cities from Dawnguard.
 Zaria, Thonnir, Voldsea Giryon will be added to marriage candidate. You can marry Zaria and Voldsea Giryon by using only with console commands.

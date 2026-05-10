@@ -2,6 +2,46 @@
 ;NEXT FRAGMENT INDEX 36
 Scriptname DLC1_QF_DLC1VQ03Vampire_01004C3D Extends Quest Hidden
 
+;BEGIN ALIAS PROPERTY DawnguardLieutenant
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DawnguardLieutenant Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Spectator3
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Spectator3 Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY BarrierWidget
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_BarrierWidget Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY SpouseRadiantQAdd
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_SpouseRadiantQAdd Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Florentius
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Florentius Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY SorexVinius
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_SorexVinius Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DeadVampire
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DeadVampire Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Spectator8
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Spectator8 Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY Spectator7
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Spectator7 Auto
@@ -12,84 +52,9 @@ ReferenceAlias Property Alias_Spectator7 Auto
 ReferenceAlias Property Alias_DragonBridge Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY ForbearsHoldout
-;ALIAS PROPERTY TYPE LocationAlias
-LocationAlias Property Alias_ForbearsHoldout Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Dexion
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Dexion Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Vanik
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Vanik Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Serana
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Serana Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Spectator1
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Spectator1 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Spectator5
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Spectator5 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Urag
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Urag Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY SorexVinius
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_SorexVinius Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Spectator2
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Spectator2 Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY Spectator4
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Spectator4 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Spectator6
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Spectator6 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Hulda
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Hulda Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Spectator3
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Spectator3 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY CorpulusVinius
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_CorpulusVinius Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Spectator8
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Spectator8 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Harkon
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Harkon Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY Innkeeper
@@ -97,34 +62,19 @@ ReferenceAlias Property Alias_Harkon Auto
 ReferenceAlias Property Alias_Innkeeper Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY BarrierWidget
+;BEGIN ALIAS PROPERTY Dexion
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_BarrierWidget Auto
+ReferenceAlias Property Alias_Dexion Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY DeadVampire
+;BEGIN ALIAS PROPERTY Serana
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DeadVampire Auto
+ReferenceAlias Property Alias_Serana Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY VampiresNote
+;BEGIN ALIAS PROPERTY Spectator5
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_VampiresNote Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DawnguardLieutenant
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DawnguardLieutenant Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY MalkusCorpse
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_MalkusCorpse Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY BarrierControl
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_BarrierControl Auto
+ReferenceAlias Property Alias_Spectator5 Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY Sorine
@@ -132,24 +82,29 @@ ReferenceAlias Property Alias_BarrierControl Auto
 ReferenceAlias Property Alias_Sorine Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY Florentius
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Florentius Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY Beleval
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Beleval Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY Gunmar
+;BEGIN ALIAS PROPERTY Harkon
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Gunmar Auto
+ReferenceAlias Property Alias_Harkon Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY Ingjard
+;BEGIN ALIAS PROPERTY MalkusCorpse
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Ingjard Auto
+ReferenceAlias Property Alias_MalkusCorpse Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Vanik
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Vanik Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Spectator6
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Spectator6 Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY Spouse
@@ -157,72 +112,55 @@ ReferenceAlias Property Alias_Ingjard Auto
 ReferenceAlias Property Alias_Spouse Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY SpouseRadiantQAdd
+;BEGIN ALIAS PROPERTY BarrierControl
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_SpouseRadiantQAdd Auto
+ReferenceAlias Property Alias_BarrierControl Auto
 ;END ALIAS PROPERTY
 
-;BEGIN FRAGMENT Fragment_3
-Function Fragment_3()
-;BEGIN CODE
-;Harkon's speech is over, player must locate a moth priest. Serana will now forcegreet.
-SetObjectiveCompleted(20,1)
-SetObjectiveDisplayed(23,1)
-SetObjectiveDisplayed(24,1)
-SetObjectiveDisplayed(26,1)
+;BEGIN ALIAS PROPERTY Ingjard
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Ingjard Auto
+;END ALIAS PROPERTY
 
-;Start the reaction scene
-DLC1VQ03VampireSpeechReactionScene.Start()
+;BEGIN ALIAS PROPERTY VampiresNote
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_VampiresNote Auto
+;END ALIAS PROPERTY
 
-;Enable wagon and driver
-DLC1VQ03RoadsideDestroyed.Enable()
+;BEGIN ALIAS PROPERTY Urag
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Urag Auto
+;END ALIAS PROPERTY
 
-;Open Forbears' Holdout cave entrance
-DLC1VQ03DoorEnableMarker.Enable()
+;BEGIN ALIAS PROPERTY Gunmar
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Gunmar Auto
+;END ALIAS PROPERTY
 
-(RNPCDialogueQuest as DLC1VQ03RNPCQuestScript).LookingForMothPriest = true
-;END CODE
-EndFunction
-;END FRAGMENT
+;BEGIN ALIAS PROPERTY Spectator1
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Spectator1 Auto
+;END ALIAS PROPERTY
 
-;BEGIN FRAGMENT Fragment_18
-Function Fragment_18()
-;BEGIN CODE
-;Moth priest broken, command him to read the scroll
-;Update objectives
-;END CODE
-EndFunction
-;END FRAGMENT
+;BEGIN ALIAS PROPERTY CorpulusVinius
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_CorpulusVinius Auto
+;END ALIAS PROPERTY
 
-;BEGIN FRAGMENT Fragment_14
-Function Fragment_14()
-;BEGIN AUTOCAST TYPE DLC1VQ03MothpriestFightScript
-Quest __temp = self as Quest
-DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
-;END AUTOCAST
-;BEGIN CODE
-;Enthralled moth priest defeated, player must now charm and enthrall
-SetObjectiveCompleted(45)
-SetObjectiveDisplayed(47)
+;BEGIN ALIAS PROPERTY Hulda
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Hulda Auto
+;END ALIAS PROPERTY
 
-;Alias_Dexion.GetActorRef().RemoveFromFaction(CrimeFactionHaafingar)
+;BEGIN ALIAS PROPERTY Spectator2
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Spectator2 Auto
+;END ALIAS PROPERTY
 
-Game.GetPlayer().AddToFaction(DLC1DexionThrall)
-Alias_Dexion.GetActorRef().StopCombat()
-
-;kmyQuest.ClearNoRecovery()
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_9
-Function Fragment_9()
-;BEGIN CODE
-;Harkon's speech is over, player must locate a moth priest. Serana will now forcegreet.
-SetObjectiveDisplayed(25,1)
-;END CODE
-EndFunction
-;END FRAGMENT
+;BEGIN ALIAS PROPERTY ForbearsHoldout
+;ALIAS PROPERTY TYPE LocationAlias
+LocationAlias Property Alias_ForbearsHoldout Auto
+;END ALIAS PROPERTY
 
 ;BEGIN FRAGMENT Fragment_22
 Function Fragment_22()
@@ -270,6 +208,48 @@ endif
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_17
+Function Fragment_17()
+;BEGIN CODE
+;Interrogate the moth priest
+;Update objectives
+SetObjectiveCompleted(50,1)
+SetObjectiveDisplayed(60,1)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_28
+Function Fragment_28()
+;BEGIN AUTOCAST TYPE DLC1VQ03MothpriestFightScript
+Quest __temp = self as Quest
+DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
+;END AUTOCAST
+;BEGIN CODE
+;Player has lowered the magic barrier and freed the moth priest
+SetObjectiveCompleted(41)
+
+;Add fx shader and any other fight set up to the mothpriest
+kmyQuest.StartUp()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_25
+Function Fragment_25()
+;BEGIN AUTOCAST TYPE DLC1VQ03MothpriestFightScript
+Quest __temp = self as Quest
+DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
+;END AUTOCAST
+;BEGIN CODE
+;Player has freed the enthralled moth priest and must fight him.
+DLC1VQ03VampireMothPriestScene.Start()
+kmyQuest.StartMothPriestFight()
+SetObjectiveCompleted(41)
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_1
 Function Fragment_1()
 ;BEGIN CODE
@@ -285,10 +265,220 @@ Stop()
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_11
+Function Fragment_11()
+;BEGIN CODE
+;No longer used
+;The player has learned about the moth priest being sighted at the Winking Skeever in Solitude
+SetObjectiveCompleted(25,1)
+SetObjectiveDisplayed(27,1)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_24
+Function Fragment_24()
+;BEGIN AUTOCAST TYPE DLC1VQ03VampireVariables
+Quest __temp = self as Quest
+DLC1VQ03VampireVariables kmyQuest = __temp as DLC1VQ03VampireVariables
+;END AUTOCAST
+;BEGIN CODE
+;Player has picked up the note form the dead soldier's body and now has it in inventory
+
+;Display objective 37 if the player has not already picked up the book
+if kmyquest.VarBook == 0
+SetObjectiveDisplayed(37,1)
+endif
+
+;Manage variables
+((self as quest) as DLC1VQ03VampireVariables).VarDragonBridge = 1
+((self as quest) as DLC1VQ03VampireVariables).VarWagon = 1
+((self as quest) as DLC1VQ03VampireVariables).VarBook = 1
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_15
+Function Fragment_15()
+;BEGIN CODE
+;Serana leaves with moth priest, player is directed to report to Harkon
+SetObjectiveCompleted(38,1)
+SetObjectiveCompleted(47,1)
+SetObjectiveDisplayed(50,1)
+
+;Change Dexion's Factions and set confidence to cowardly
+Alias_Dexion.GetActorRef().AddToFaction(DLC1VampireFeedNoCrimeFaction)
+Alias_Dexion.GetActorRef().RemoveFromFaction(DLC1DexionThrall)
+Alias_Dexion.GetActorRef().RemoveFromFaction(DLC1MothPriestFaction)
+Alias_Dexion.GetActorRef().SetActorValue("Confidence", 0)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_35
+Function Fragment_35()
+;BEGIN AUTOCAST TYPE DLC1VQ03MothpriestFightScript
+Quest __temp = self as Quest
+DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
+;END AUTOCAST
+;BEGIN CODE
+;Dexion seduced, get up for bite
+
+kmyQuest.ClearNoRecovery()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_7
+Function Fragment_7()
+;BEGIN CODE
+;Debug setup
+Alias_Harkon.GetReference().MoveTo(DLC1VQ02HarkonWaitMarker)
+Alias_Serana.GetReference().MoveTo(DLC1VQ03Stage20SeranaStandMarker)
+;DLC1VQ01.SetStage(200)
+;VQ02.SetStage(200)
+SetStage(5)
+;END NEUTRALITY, ADD FACTION
+Utility.Wait(3)
+Game.GetPlayer().AddtoFaction(DLC1VampireFaction)
+DLC1Radiant.SetStage(10)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_2
+Function Fragment_2()
+;BEGIN CODE
+;Stage 10, set up scene elements, Harkon paths to guild hall to make speech
+Alias_Spouse.GetActorReference().AddToFaction(DLC1VampireFaction)
+Alias_Spouse.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+Alias_Spouse.GetActorReference().SetOutfit(VampireOutfit)
+Alias_Spouse.GetActorReference().SetCrimeFaction(DLC1VampireCrimeFaction)
+Alias_SpouseRadiantQAdd.GetActorReference().AddToFaction(DLC1RadiantQuestgiverTopicFaction)
+DLC1DawnguardHQ01.SetFactionOwner(DLC1HunterFaction)
+DLC1DawnguardHQ01.SetPublic(false)
+DLC1HunterHQAlcInitEnabled.Disable()
+DLC1HunterHQBSmithInitEnabled.Disable()
+DLC1HunterHQEncInitEnabled.Disable()
+DLC1HunterHQTrollInitEnabled.Disable()
+DLC1HunterHQBarracksInitEnabled.Disable()
+Alias_Sorine.TryToEnable()
+Alias_Ingjard.TryToEnable()
+Alias_Beleval.TryToEnable()
+Alias_Gunmar.TryToEnable()
+Alias_Florentius.TryToEnable()
+Alias_Sorine.GetActorReference().SetOutfit(DLC1OutfitSorine)
+Alias_Gunmar.GetActorReference().SetOutfit(DLC1OutfitGunmar)
+SetObjectiveCompleted(10,1)
+SetObjectiveDisplayed(20,1)
+DLC1VQ03VampireHarkonSpeechFindScroll.Start()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_19
+Function Fragment_19()
+;BEGIN CODE
+;Moth priest reads the scroll
+SetObjectiveCompleted(60,1)
+SetObjectiveDisplayed(80,1)
+Alias_Dexion.GetActorReference().AllowBleedoutDialogue(false)
+
+;Disable the scroll-reading furniture marker
+DLC1VQ03DexionTortureRead.Disable()
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_20
 Function Fragment_20()
 ;BEGIN CODE
 ;Speak to Harkon
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_14
+Function Fragment_14()
+;BEGIN AUTOCAST TYPE DLC1VQ03MothpriestFightScript
+Quest __temp = self as Quest
+DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
+;END AUTOCAST
+;BEGIN CODE
+;Enthralled moth priest defeated, player must now charm and enthrall to free against Dawnguard
+SetObjectiveCompleted(45)
+SetObjectiveDisplayed(47)
+
+;Alias_Dexion.GetActorRef().RemoveFromFaction(CrimeFactionHaafingar)
+
+Game.GetPlayer().AddToFaction(DLC1DexionThrall)
+Alias_Dexion.GetActorRef().StopCombat()
+
+;kmyQuest.ClearNoRecovery()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_12
+Function Fragment_12()
+;BEGIN AUTOCAST TYPE DLC1VQ03VampireVariables
+Quest __temp = self as Quest
+DLC1VQ03VampireVariables kmyQuest = __temp as DLC1VQ03VampireVariables
+;END AUTOCAST
+;BEGIN CODE
+;Search the road south of Solitude
+
+;Manage objectives
+SetObjectiveCompleted(28,1)
+
+;Display objective 30 if player has not already investigated the scene of the wreckage
+if kmyquest.VarWagon == 0
+SetObjectiveDisplayed(30)
+endif
+
+;Manage variables
+((self as quest) as DLC1VQ03VampireVariables).VarDragonBridge = 1
+
+(RNPCDialogueQuest as DLC1VQ03RNPCQuestScript).LookingForMothPriest = false
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_27
+Function Fragment_27()
+;BEGIN AUTOCAST TYPE DLC1VQ03MothpriestFightScript
+Quest __temp = self as Quest
+DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
+;END AUTOCAST
+;BEGIN CODE
+;The moth priest has finished playing his scene and goes into combat with the player
+
+if GetStageDone(67) == False
+SetObjectiveDisplayed(39)
+endif
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_3
+Function Fragment_3()
+;BEGIN CODE
+;Harkon's speech is over, player must locate a moth priest. Serana will now forcegreet.
+SetObjectiveCompleted(20,1)
+SetObjectiveDisplayed(23,1)
+SetObjectiveDisplayed(24,1)
+SetObjectiveDisplayed(26,1)
+
+;Start the reaction scene
+DLC1VQ03VampireSpeechReactionScene.Start()
+
+;Enable wagon and driver
+DLC1VQ03RoadsideDestroyed.Enable()
+
+;Open Forbears' Holdout cave entrance
+DLC1VQ03DoorEnableMarker.Enable()
+
+(RNPCDialogueQuest as DLC1VQ03RNPCQuestScript).LookingForMothPriest = true
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -345,84 +535,6 @@ Alias_Hulda.Clear()
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_2
-Function Fragment_2()
-;BEGIN CODE
-;Stage 10, set up scene elements, Harkon paths to guild hall to make speech
-Alias_Spouse.GetActorReference().AddToFaction(DLC1VampireFaction)
-Alias_Spouse.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
-Alias_Spouse.GetActorReference().SetOutfit(VampireOutfit)
-Alias_Spouse.GetActorReference().SetCrimeFaction(DLC1VampireCrimeFaction)
-Alias_SpouseRadiantQAdd.GetActorReference().AddToFaction(DLC1RadiantQuestgiverTopicFaction)
-DLC1DawnguardHQ01.SetFactionOwner(DLC1HunterFaction)
-DLC1DawnguardHQ01.SetPublic(false)
-DLC1HunterHQAlcInitEnabled.Disable()
-DLC1HunterHQBSmithInitEnabled.Disable()
-DLC1HunterHQEncInitEnabled.Disable()
-DLC1HunterHQTrollInitEnabled.Disable()
-DLC1HunterHQBarracksInitEnabled.Disable()
-Alias_Sorine.TryToEnable()
-Alias_Ingjard.TryToEnable()
-Alias_Beleval.TryToEnable()
-Alias_Gunmar.TryToEnable()
-Alias_Florentius.TryToEnable()
-Alias_Sorine.GetActorReference().SetOutfit(DLC1OutfitSorine)
-Alias_Gunmar.GetActorReference().SetOutfit(DLC1OutfitGunmar)
-SetObjectiveCompleted(10,1)
-SetObjectiveDisplayed(20,1)
-DLC1VQ03VampireHarkonSpeechFindScroll.Start()
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_15
-Function Fragment_15()
-;BEGIN CODE
-;Serana leaves with moth priest, player is directed to report to Harkon
-SetObjectiveCompleted(38,1)
-SetObjectiveCompleted(47,1)
-SetObjectiveDisplayed(50,1)
-
-;Change Dexion's Factions and set confidence to cowardly
-Alias_Dexion.GetActorRef().AddToFaction(DLC1VampireFeedNoCrimeFaction)
-Alias_Dexion.GetActorRef().RemoveFromFaction(DLC1DexionThrall)
-Alias_Dexion.GetActorRef().RemoveFromFaction(DLC1MothPriestFaction)
-Alias_Dexion.GetActorRef().SetActorValue("Confidence", 0)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_19
-Function Fragment_19()
-;BEGIN CODE
-;Moth priest reads the scroll
-SetObjectiveCompleted(60,1)
-SetObjectiveDisplayed(80,1)
-Alias_Dexion.GetActorReference().AllowBleedoutDialogue(false)
-
-;Disable the scroll-reading furniture marker
-DLC1VQ03DexionTortureRead.Disable()
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_7
-Function Fragment_7()
-;BEGIN CODE
-;Debug setup
-Alias_Harkon.GetReference().MoveTo(DLC1VQ02HarkonWaitMarker)
-Alias_Serana.GetReference().MoveTo(DLC1VQ03Stage20SeranaStandMarker)
-;DLC1VQ01.SetStage(200)
-;VQ02.SetStage(200)
-SetStage(5)
-;END NEUTRALITY, ADD FACTION
-Utility.Wait(3)
-Game.GetPlayer().AddtoFaction(DLC1VampireFaction)
-DLC1Radiant.SetStage(10)
-;END CODE
-EndFunction
-;END FRAGMENT
-
 ;BEGIN FRAGMENT Fragment_16
 Function Fragment_16()
 ;BEGIN CODE
@@ -441,55 +553,21 @@ Alias_Spectator8.GetReference().MoveTo(DLC1VQ03TortureSpectator8)
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_35
-Function Fragment_35()
+;BEGIN FRAGMENT Fragment_21
+Function Fragment_21()
 ;BEGIN AUTOCAST TYPE DLC1VQ03MothpriestFightScript
 Quest __temp = self as Quest
 DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
 ;END AUTOCAST
 ;BEGIN CODE
-;Dexion seduced, get up for bite
+;Startup Stage
+SetObjectiveDisplayed(10,1)
 
-kmyQuest.ClearNoRecovery()
-;END CODE
-EndFunction
-;END FRAGMENT
+; start up Serana's dialogue quest
+RNPCDialogueQuest.Start()
 
-;BEGIN FRAGMENT Fragment_17
-Function Fragment_17()
-;BEGIN CODE
-;Interrogate the moth priest
-;Update objectives
-SetObjectiveCompleted(50,1)
-SetObjectiveDisplayed(60,1)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_25
-Function Fragment_25()
-;BEGIN AUTOCAST TYPE DLC1VQ03MothpriestFightScript
-Quest __temp = self as Quest
-DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
-;END AUTOCAST
-;BEGIN CODE
-;Player has freed the enthralled moth priest and must fight him.
-DLC1VQ03VampireMothPriestScene.Start()
-kmyQuest.StartMothPriestFight()
-SetObjectiveCompleted(41)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_10
-Function Fragment_10()
-;BEGIN CODE
-;No longer used
-;The player has learned that the moth priest went to Solitude
-SetObjectiveCompleted(24,1)
-SetObjectiveCompleted(25,1)
-SetObjectiveDisplayed(26,1)
-SetObjectiveDisplayed(28,1)
+;Add fx shader and any other fight set up to the mothpriest
+kmyQuest.StartUp()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -517,111 +595,33 @@ DragonBridgeMapMarker.AddToMap()
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_28
-Function Fragment_28()
-;BEGIN AUTOCAST TYPE DLC1VQ03MothpriestFightScript
-Quest __temp = self as Quest
-DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
-;END AUTOCAST
-;BEGIN CODE
-;Player has lowered the magic barrier and freed the moth priest
-SetObjectiveCompleted(41)
-
-;Add fx shader and any other fight set up to the mothpriest
-kmyQuest.StartUp()
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_27
-Function Fragment_27()
-;BEGIN AUTOCAST TYPE DLC1VQ03MothpriestFightScript
-Quest __temp = self as Quest
-DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
-;END AUTOCAST
-;BEGIN CODE
-;The moth priest has finished playing his scene and goes into combat with the player
-
-if GetStageDone(67) == False
-SetObjectiveDisplayed(39)
-endif
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_12
-Function Fragment_12()
-;BEGIN AUTOCAST TYPE DLC1VQ03VampireVariables
-Quest __temp = self as Quest
-DLC1VQ03VampireVariables kmyQuest = __temp as DLC1VQ03VampireVariables
-;END AUTOCAST
-;BEGIN CODE
-;Search the road south of Solitude
-
-;Manage objectives
-SetObjectiveCompleted(28,1)
-
-;Display objective 30 if player has not already investigated the scene of the wreckage
-if kmyquest.VarWagon == 0
-SetObjectiveDisplayed(30)
-endif
-
-;Manage variables
-((self as quest) as DLC1VQ03VampireVariables).VarDragonBridge = 1
-
-(RNPCDialogueQuest as DLC1VQ03RNPCQuestScript).LookingForMothPriest = false
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_24
-Function Fragment_24()
-;BEGIN AUTOCAST TYPE DLC1VQ03VampireVariables
-Quest __temp = self as Quest
-DLC1VQ03VampireVariables kmyQuest = __temp as DLC1VQ03VampireVariables
-;END AUTOCAST
-;BEGIN CODE
-;Player has picked up the note form the dead soldier's body and now has it in inventory
-
-;Display objective 37 if the player has not already picked up the book
-if kmyquest.VarBook == 0
-SetObjectiveDisplayed(37,1)
-endif
-
-;Manage variables
-((self as quest) as DLC1VQ03VampireVariables).VarDragonBridge = 1
-((self as quest) as DLC1VQ03VampireVariables).VarWagon = 1
-((self as quest) as DLC1VQ03VampireVariables).VarBook = 1
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_11
-Function Fragment_11()
+;BEGIN FRAGMENT Fragment_10
+Function Fragment_10()
 ;BEGIN CODE
 ;No longer used
-;The player has learned about the moth priest being sighted at the Winking Skeever in Solitude
+;The player has learned that the moth priest went to Solitude
+SetObjectiveCompleted(24,1)
 SetObjectiveCompleted(25,1)
-SetObjectiveDisplayed(27,1)
+SetObjectiveDisplayed(26,1)
+SetObjectiveDisplayed(28,1)
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_21
-Function Fragment_21()
-;BEGIN AUTOCAST TYPE DLC1VQ03MothpriestFightScript
-Quest __temp = self as Quest
-DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
-;END AUTOCAST
+;BEGIN FRAGMENT Fragment_18
+Function Fragment_18()
 ;BEGIN CODE
-;Startup Stage
-SetObjectiveDisplayed(10,1)
+;Moth priest broken, command him to read the scroll
+;Update objectives
+;END CODE
+EndFunction
+;END FRAGMENT
 
-; start up Serana's dialogue quest
-RNPCDialogueQuest.Start()
-
-;Add fx shader and any other fight set up to the mothpriest
-kmyQuest.StartUp()
+;BEGIN FRAGMENT Fragment_9
+Function Fragment_9()
+;BEGIN CODE
+;Harkon's speech is over, player must locate a moth priest. Serana will now forcegreet.
+SetObjectiveDisplayed(25,1)
 ;END CODE
 EndFunction
 ;END FRAGMENT

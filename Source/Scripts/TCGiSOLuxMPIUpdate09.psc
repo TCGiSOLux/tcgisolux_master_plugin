@@ -7,13 +7,16 @@ Function Fragment_0()
 ;BEGIN CODE
 ;Start update
 
-if DLC1IntroCompletedVampire.GetValue() == 1
+if DLC1IntroCompletedVampire.GetValue() == 1 || DLC1IntroCompletedHunter.GetValue() == 1
   SolitudeOpening.setStage(200)
 Endif
 
 Stop()
 ;END CODE
 EndFunction
-;END FRAGMENT  
+;END FRAGMENT
+
+;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 GlobalVariable Property DLC1IntroCompletedVampire  Auto
 Quest Property SolitudeOpening  Auto 
+GlobalVariable Property DLC1IntroCompletedHunter  Auto  

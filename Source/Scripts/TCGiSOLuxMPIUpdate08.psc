@@ -33,12 +33,15 @@ If DLC1RV10.GetStageDone(255) == 1
   DialogueHunterBase.Stop()
   DialogueHunterVampireBlock.Stop()
   DawnguardAgents.Stop()
+  VampireAgents.Stop()
 Endif
 
 Stop()
 ;END CODE
 EndFunction
-;END FRAGMENT  
+;END FRAGMENT
+
+;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 Faction Property VampirePCFaction Auto
 Cell Property SolitudeVittoriaVicisHouse Auto
 Faction Property SolitudeVittoriaVicciHouseFaction Auto
@@ -64,3 +67,4 @@ Quest Property DialogueHunterVampireBlock  Auto
 Quest Property DialogueVampireBase Auto
 Quest Property DialogueVampireCuredBlock Auto
   
+Quest Property VampireAgents  Auto  

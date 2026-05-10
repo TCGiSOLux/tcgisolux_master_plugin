@@ -2,6 +2,31 @@
 ;NEXT FRAGMENT INDEX 1
 Scriptname TCGiSOLuxMPIUpdate07 Extends Quest Hidden
 
+;BEGIN ALIAS PROPERTY NPC8
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_NPC8 Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY NPC5
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_NPC5 Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY NPC3
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_NPC3 Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY NPC10
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_NPC10 Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY NPC7
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_NPC7 Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY NPC1
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_NPC1 Auto
@@ -12,19 +37,9 @@ ReferenceAlias Property Alias_NPC1 Auto
 ReferenceAlias Property Alias_NPC2 Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY NPC3
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_NPC3 Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY NPC4
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_NPC4 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY NPC5
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_NPC5 Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY NPC6
@@ -32,30 +47,14 @@ ReferenceAlias Property Alias_NPC5 Auto
 ReferenceAlias Property Alias_NPC6 Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY NPC7
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_NPC7 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY NPC8
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_NPC8 Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY NPC9
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_NPC9 Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY NPC10
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_NPC10 Auto
-;END ALIAS PROPERTY
-
 ;BEGIN FRAGMENT Fragment_0
 Function Fragment_0()
 ;BEGIN CODE
-;Start update
 if Alias_NPC7.GetActorReference().GetItemCount(RiftenMistveilKeepJarlQuartersKEY) == 0
   Alias_NPC7.GetActorReference().AddItem(RiftenMistveilKeepJarlQuartersKEY,1)
 endif
@@ -104,7 +103,6 @@ if !(Alias_NPC1.GetActorReference().IsDead())
 endif
 
 if MS14Quest.GetStageDone(200) == 1
-;SHUT UP ADDING FACTION TO ALVA'S NPC CRIME FACTION
 Alias_NPC4.TryToDisable()
 Alias_NPC1.GetActorReference().RemoveFromFaction(CrimeFactionHjaalmarch)
 Alias_NPC1.GetActorReference().SetCrimeFaction(None)
@@ -129,6 +127,8 @@ Stop()
 ;END CODE
 EndFunction
 ;END FRAGMENT
+
+;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 Quest Property MS14Quest  Auto 
 Quest Property Favor255  Auto 
 Faction Property CrimeFactionHjaalmarch Auto

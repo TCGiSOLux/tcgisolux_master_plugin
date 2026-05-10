@@ -25,7 +25,7 @@ auto STATE Waiting
         If (triggerRef == (PlayerREF as ObjectReference))
             If TCGGlobalVariable.GetValueInt() == 0
                 If ORFlag == True
-                    If currentstage > TriggerQuestStage && FFRiften03Arrested.GetValue()== 1
+                    If NPCREF.IsDead() == true || currentstage > TriggerQuestStage && FFRiften03Arrested.GetValue()== 1
                         TCGGlobalVariable.SetValueInt(currentgamedays)
                         If ControlStage != 0
                             ControlQuest.SetStage(ControlStage)
@@ -33,7 +33,7 @@ auto STATE Waiting
                         GoToState("Done")
                     Endif
                 Else
-                    If NPCREF.IsDead() == true
+                    If NPCREF.IsDead() == true || currentstage > TriggerQuestStage && FFRiften03Arrested.GetValue()== 1
                      TCGGlobalVariable.SetValueInt(currentgamedays)
                         If ControlStage != 0
                             ControlQuest.SetStage(ControlStage)

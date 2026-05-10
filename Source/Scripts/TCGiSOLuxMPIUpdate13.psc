@@ -13,6 +13,9 @@ Stop()
 ;END CODE
 EndFunction
 ;END FRAGMENT  
+
+;END FRAGMENT CODE - Do not edit anything between this and the begin comment
+
 Cell Property SolitudeBardsCollege Auto
 Quest Property MS05Rumor  Auto  
 Quest Property MS05Start  Auto 
