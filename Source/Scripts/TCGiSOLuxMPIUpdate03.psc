@@ -9,6 +9,7 @@ If DLC1VQ01MiscObjective.GetStageDone(200) == 1 && DLC1VQ01MiscObjective.GetStag
   DLC1VQ01MiscObjective.setStage(250)
 Endif
 
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

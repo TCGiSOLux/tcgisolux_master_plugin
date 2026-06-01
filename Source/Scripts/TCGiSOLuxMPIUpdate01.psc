@@ -53,6 +53,7 @@ If T02.GetStageDone(70) == 1 && TG06.GetStageDone(25) == 1 && dmWQQST.GetStageDo
   DialogueMarkarth.SetStage(120)
 Endif
 
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

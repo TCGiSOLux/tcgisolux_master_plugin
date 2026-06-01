@@ -36,6 +36,7 @@ Alias_NPC3.GetActorReference().AddToFaction(DLC1VolkiharClanFaction)
 Alias_NPC4.GetActorReference().AddToFaction(DLC1VolkiharClanFaction)
 Alias_NPC5.GetActorReference().AddToFaction(DLC1VolkiharClanFaction)
 
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

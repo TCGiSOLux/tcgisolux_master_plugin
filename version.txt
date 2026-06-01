@@ -10,7 +10,6 @@ Redguard race uses MaleCondescending voicetype for males and FemaleCondescending
 Wood Elf race uses MaleYoungEager voicetype for males and FemaleYoungEager voicetype uses for females and vampiric race also uses too
 
 VOICES:
-DLC1MaleVampire completely removed from Vanilla voicetypes.
 Revoiced for DLC1FemaleVampire voicetype some vanilla voicetypes.
 Voiced for FemaleCommander voicetype for Chop Wooding.
 
@@ -77,13 +76,10 @@ FIXED BUGS:
 Fixed navmesh bug to Darene Limax's House.
 Fixed bug some radiant quests for Dawnguard side.
 Fixed bug radiant quest Rings of Blood Magic for Volkihar Clan side.
-Fixed AI-package for Alva (Original) returning back to Alva's House from Movarth's Lair after completing quest Laid to Rest.
-Fixed AI-package for Uthgerd.
-Fixed AI-package for Buckingfords.
+Fixed AI-package for some NPCs.
 Fixed AI-package for Anwen and Orla in the quest The Heart of Dibella.
 Fixed unvoiced dialogue in the quest Elisif's Tribute.
-Fixed AI-Package for Gwynabyth Buckingford.
-Added AI-Package for Jensine.
+Added AI-Package for some NPCs.
 
 Known Issues:
 NPCs still can't share beds in your own house after you getting to married.
@@ -101,7 +97,6 @@ Stormcloaks Guards will replace to Volkihar Vampire Clan Guards on the Stormcloa
 Imperial Guards will replace to Dawnguard Clan Guards on the Imperial faction excluding guards in Dwemer Museum.
 We will add backup 2 members to Volkihar Clan, if they will die and a will to replacement to BackupAlias, where a happened to replacement from Stalf and Salonia Caelia are replaced to BackupAlias
 New game will be required after changes some quests. If you will continue use save after upgrading plugin, this plugin will damage to your save.
-Altmer Vampiric Race will use voicetype MaleSlyCynical for males, FemaleCondescending for females
 
 Credits:
 Google's Simple Vampire Hunting - GOOGLEPOX
@@ -110,3 +105,4 @@ Kalilies Brows - Kalilies
 KS Hairdos SSE - Kalilies
 Diablo 2 resurrected cursor - puffpund
 Dibella's Shrine - superman22dr
+Music DotA 2 - Valve

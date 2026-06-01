@@ -103,7 +103,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_48
 Function Fragment_48()
 ;BEGIN CODE
-;TESTING ONLY
+;FOR INTERNAL ONLY.
 DialogueCrimeGuards.SetupCidhnaMine()
 MS01.SetStage(90)
 MS01.SetStage(100)
@@ -115,7 +115,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_75
 Function Fragment_75()
 ;BEGIN CODE
-;Forsworn are dead ending
+;Forsworn are dead. Quest Finishes
 AchievementsQuest.IncSideQuests()
 SetObjectiveCompleted(220, 1)
 ;CrimeFactionReach.SetCrimeGold(0)
@@ -335,20 +335,18 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_47
 Function Fragment_47()
 ;BEGIN CODE
-;Player is arrested
-pCrimeReachFaction.SendPlayerToJail()
+;Player is arrested. Also disable bed and ore, also fix SetupCidhnaMine
 
-;Disable player bed and ore
+if MS02.GetStageDone(0) == 0
+MS01GuardAmbushQuest.SetStage(100)
+DialogueCrimeGuards.SetupCidhnaMine()
+else
+MS01GuardAmbushQuest.SetStage(100)
+endif
+
+pCrimeReachFaction.SendPlayerToJail()
 Alias_PlayerBed.GetReference().Disable()
 SilverOre.Disable()
-
-;Thonar is no longer Essential
-Alias_Thonar.GetActorReference().GetActorBase().SetEssential(False)
-
-; PATCH1_4: make sure Guard Ambush quest is finished
-MS01GuardAmbushQuest.SetStage(100)
-
-;wait a few seconds so the quest appears after the fadein
 Utility.Wait(3)
 SetObjectiveDisplayed(10)
 ;END CODE
@@ -389,55 +387,31 @@ EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
-
 Weapon Property Shiv  Auto  
-
 Faction Property ForswornAttack  Auto  
-
 Armor Property SilverFishRing  Auto  
-
 Faction Property pCrimeReachFaction  Auto  
-
 ActorBase Property pNeposActorBase  Auto  
-
 Quest Property MS01  Auto  
-
 Potion Property pSkooma  Auto  
-
 Faction Property pCidhnaMineCombatFaction  Auto  
-
 Scene Property pEscapeScene  Auto  
-
 Faction Property pCidhnaMineFaction  Auto  
-
 CrimeGuardsScript Property DialogueCrimeGuards  Auto  
-
 Faction Property CrimeFactionReach  Auto  
-
 Scene Property MS02BorkulOpenDoor  Auto  
-
 Faction Property CidhnaMineCrimeFaction  Auto  
-
 Faction Property CrimeFactionCidhnaMine  Auto  
-
 Scene Property MS02GrisvarScene  Auto  
-
 Faction Property MS02CidhnaMineEnemyFaction  Auto  
-
 Quest Property MS02FIN  Auto  
-
 Faction Property DruadachRedoubtFaction  Auto  
-
 Key Property MS02BorkulKey  Auto  
-
 Faction Property MS02GrisvarEnemyFaction  Auto  
-
 AchievementsScript Property AchievementsQuest  Auto  
-
 Faction Property TownCidhnaMinePrisonerFaction  Auto  
-
 Key Property MS02MadanachKey  Auto  
-
 ObjectReference Property SilverOre  Auto  
-
 Quest Property MS01GuardAmbushQuest  Auto  
+Quest Property MS02  Auto  
+

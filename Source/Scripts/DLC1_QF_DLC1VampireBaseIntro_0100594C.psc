@@ -105,11 +105,11 @@ Quest __temp = self as Quest
 dlc1vampirebaseintroquestscript kmyQuest = __temp as dlc1vampirebaseintroquestscript
 ;END AUTOCAST
 ;BEGIN CODE
+DLC1VampireIntroEnemyFaction.SetEnemy(PlayerFaction, true, true)
 SetObjectiveCompleted(60)
 DLC1VQ03Vampire.Start()
 Game.GetPlayer().RemoveItem(Alias_FilledChaliceAlias.GetReference(), 1)
 SetObjectiveDisplayed(35,0)
-CompleteAllObjectives()
 kmyquest.DLC1Radiant.ChaliceFilled() ;turns on activator
 kmyquest.DLC1Radiant.IntroQuestCompleted(isVampireQuest = true)
 Stop()

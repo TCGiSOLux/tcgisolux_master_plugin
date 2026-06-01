@@ -14,6 +14,7 @@ if Alias_Spouse.GetActorReference().IsInFaction(PlayerMarriedFaction) == 1 && DL
    Alias_Spouse.GetActorReference().AddToFaction(DLC1RQTF)
 endif
 
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

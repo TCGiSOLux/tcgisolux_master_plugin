@@ -173,6 +173,7 @@ If DLC1RV10.GetStageDone(100) == 1 && DLC1RV10.GetStageDone(255) == 1
   DLC1DawnguardHQ01.SetPublic(false)
 Endif
 
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

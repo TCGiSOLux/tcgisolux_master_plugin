@@ -255,6 +255,9 @@ Function Fragment_1()
 ;BEGIN CODE
 ;Completion stage
 SetObjectiveCompleted(80,1)
+Alias_Dexion.GetActorReference().RemoveFromFaction(DLC1VampireFeedNoCrimeFaction)
+Alias_Dexion.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+Alias_Dexion.GetActorReference().SetCrimeFaction(DLC1VampireCrimeFaction)
 RNPCDialogueQuest.Stop()
 DialogueVampireBase.SetStage(300)
 VQ04.SetStage(10)
@@ -408,9 +411,6 @@ DLC1VQ03MothpriestFightScript kmyQuest = __temp as DLC1VQ03MothpriestFightScript
 ;Enthralled moth priest defeated, player must now charm and enthrall to free against Dawnguard
 SetObjectiveCompleted(45)
 SetObjectiveDisplayed(47)
-
-;Alias_Dexion.GetActorRef().RemoveFromFaction(CrimeFactionHaafingar)
-
 Game.GetPlayer().AddToFaction(DLC1DexionThrall)
 Alias_Dexion.GetActorRef().StopCombat()
 

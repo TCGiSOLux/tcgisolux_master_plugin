@@ -2,179 +2,9 @@
 ;NEXT FRAGMENT INDEX 21
 Scriptname DLC1_QF_DLC1VQ08_01007C25 Extends Quest Hidden
 
-;BEGIN ALIAS PROPERTY DLC1VQ08IsranAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08IsranAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY RonthilAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_RonthilAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY HarkonBattleRealHarkon
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HarkonBattleRealHarkon Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Deathhound1Alias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Deathhound1Alias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY HarkonBattleNoNameAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HarkonBattleNoNameAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY HarkonBattleMagicForm
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HarkonBattleMagicForm Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY StalfAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_StalfAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08SorineAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08SorineAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY GaranAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_GaranAlias Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY FuraAlias
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_FuraAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08HarkonAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08HarkonAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08DurakAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08DurakAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY HarkonBossChamberDoorGuildSide
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HarkonBossChamberDoorGuildSide Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08RNPCAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08RNPCAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08IngjardAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08IngjardAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY RargalAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_RargalAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08BelevalAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08BelevalAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY VingalmoAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_VingalmoAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY HarkonBattleHoldPositionMarker
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HarkonBattleHoldPositionMarker Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY TrollAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_TrollAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY HestlaAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HestlaAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY HunterUpdateTriggerAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HunterUpdateTriggerAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08GunmarAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08GunmarAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY FeranAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_FeranAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY OrthjolfAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_OrthjolfAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY ModhnaAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_ModhnaAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08CelannAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08CelannAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08FlorentiusAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08FlorentiusAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08AgmaerAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08AgmaerAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08AurielsBowAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08AurielsBowAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY NamasurAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_NamasurAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY HarkonBattleMeleeForm
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HarkonBattleMeleeForm Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY DLC1VQ08PlayerAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DLC1VQ08PlayerAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Deathhound2Alias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Deathhound2Alias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY HarkonBossChamberDoor
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HarkonBossChamberDoor Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY SaloniaAlias
@@ -182,14 +12,9 @@ ReferenceAlias Property Alias_HarkonBossChamberDoor Auto
 ReferenceAlias Property Alias_SaloniaAlias Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY HertAlias
+;BEGIN ALIAS PROPERTY Deathhound2Alias
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HertAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY LalaineCatiaAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_LalaineCatiaAlias Auto
+ReferenceAlias Property Alias_Deathhound2Alias Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY CaraorilAlias
@@ -197,9 +22,14 @@ ReferenceAlias Property Alias_LalaineCatiaAlias Auto
 ReferenceAlias Property Alias_CaraorilAlias Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY UlenraneAlias
+;BEGIN ALIAS PROPERTY GaranAlias
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_UlenraneAlias Auto
+ReferenceAlias Property Alias_GaranAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08PlayerAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08PlayerAlias Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY JulisandeAlias
@@ -207,35 +37,181 @@ ReferenceAlias Property Alias_UlenraneAlias Auto
 ReferenceAlias Property Alias_JulisandeAlias Auto
 ;END ALIAS PROPERTY
 
-;BEGIN FRAGMENT Fragment_8
-Function Fragment_8()
+;BEGIN ALIAS PROPERTY DLC1VQ08IsranAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08IsranAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY UlenraneAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_UlenraneAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY HestlaAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HestlaAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY NamasurAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_NamasurAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08AurielsBowAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08AurielsBowAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY RargalAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_RargalAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08HarkonAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08HarkonAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY HertAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HertAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08AgmaerAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08AgmaerAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08FlorentiusAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08FlorentiusAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08CelannAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08CelannAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY ModhnaAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_ModhnaAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08GunmarAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08GunmarAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY StalfAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_StalfAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY HarkonBattleHoldPositionMarker
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HarkonBattleHoldPositionMarker Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08BelevalAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08BelevalAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08IngjardAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08IngjardAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08DurakAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08DurakAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY HarkonBossChamberDoor
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HarkonBossChamberDoor Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08RNPCAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08RNPCAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DLC1VQ08SorineAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DLC1VQ08SorineAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY OrthjolfAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_OrthjolfAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY HarkonBattleMagicForm
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HarkonBattleMagicForm Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY HarkonBattleNoNameAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HarkonBattleNoNameAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY FeranAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_FeranAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY RonthilAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_RonthilAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Deathhound1Alias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Deathhound1Alias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY HarkonBossChamberDoorGuildSide
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HarkonBossChamberDoorGuildSide Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY TrollAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_TrollAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY HunterUpdateTriggerAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HunterUpdateTriggerAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY HarkonBattleRealHarkon
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HarkonBattleRealHarkon Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY VingalmoAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_VingalmoAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY HarkonBattleMeleeForm
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HarkonBattleMeleeForm Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY LalaineCatiaAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_LalaineCatiaAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN FRAGMENT Fragment_16
+Function Fragment_16()
 ;BEGIN CODE
-; Change Harkon to vampire lord
-;pDLC1Harkon.SetEssential(false)
-SetObjectiveCompleted(10,1)
-SetObjectiveDisplayed(20,1)
-
-;UDGP 2.0.7 - Move all of the rank & file guys back to Fort Dawnguard for the scene. Some of them might not be here.
-;UDGP 2.0.7 - Move all of the rank & file guys back to Fort Dawnguard for the scene. Some of them might not be here.
-if( !Alias_DLC1VQ08AgmaerAlias.GetActorReference().IsDead() )
-  Alias_DLC1VQ08AgmaerAlias.GetReference().MoveTo(DLC1VQ08DawnguardPreSceneIdle2)
-endif
-
-if( !Alias_DLC1VQ08BelevalAlias.GetActorReference().IsDead() )
-  Alias_DLC1VQ08BelevalAlias.GetReference().MoveTo(DLC1VQ08DawnguardPreSceneIdle2)
-endif
-
-if( !Alias_DLC1VQ08CelannAlias.GetActorReference().IsDead() )
-  Alias_DLC1VQ08CelannAlias.GetReference().MoveTo(DLC1VQ08DawnguardPreSceneIdle2)
-endif
-
-if( !Alias_DLC1VQ08DurakAlias.GetActorReference().IsDead() )
-  Alias_DLC1VQ08DurakAlias.GetReference().MoveTo(DLC1VQ08DawnguardPreSceneIdle2)
-endif
-
-if( !Alias_DLC1VQ08IngjardAlias.GetActorReference().IsDead() )
-  Alias_DLC1VQ08IngjardAlias.GetReference().MoveTo(DLC1VQ08DawnguardPreSceneIdle2)
-endif
+;Scene ends in Harkon's pad - Forcegreet go!
+Alias_DLC1VQ08HarkonAlias.TryToEvaluatePackage()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -251,20 +227,38 @@ SetObjectiveDisplayed(30,1)
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_16
-Function Fragment_16()
+;BEGIN FRAGMENT Fragment_4
+Function Fragment_4()
 ;BEGIN CODE
-;Scene ends in Harkon's pad - Forcegreet go!
-Alias_DLC1VQ08HarkonAlias.TryToEvaluatePackage()
+;Debug Fast Start
+Game.GetPlayer().MoveTo(PlayerStart)
+Game.GetPlayer().AddItem(DLC1AurielsBow, 1)
+Game.GetPlayer().AddITem(DLC1ElvenArrowBlessed, 12)
+Game.GetPlayer().AddITem(DLC1ElvenArrowBlood, 12)
+
+Alias_DLC1VQ08RNPCAlias.TryToMoveTo(RNPCStart)
+Alias_DLC1VQ08RNPCAlias.TryToEvaluatePackage()
+Alias_DLC1VQ08RNPCAlias.GetActorReference().SetPlayerTeammate()
+
+;Game.GetPlayer().MoveTo(DLC1VolkiharFerryRef)
+;Alias_DLC1VQ08RNPCAlias.TryToMoveTo(DLC1VolkiharFerryRef)
+
+SetStage(10)
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_17
-Function Fragment_17()
+;BEGIN FRAGMENT Fragment_10
+Function Fragment_10()
 ;BEGIN CODE
-;Dawnguard - Start the scene for the Dawnguard
-pDLC1VQ08DawnguardCelebrate.Start()
+;Both Paths - Scene Trigger when you hit Harkon's chambers
+;Override Serana and move her into room with Player if necessary
+Alias_DLC1VQ08RNPCAlias.TryToMoveTo(pDLC1VQ08SeranaStartRoomMarker)
+Alias_DLC1VQ08RNPCAlias.TryToStopCombat()
+Alias_DLC1VQ08RNPCAlias.GetActorReference().StopCombatAlarm()
+Game.GetPlayer().StopCombatAlarm()
+MMQuest.SimpleFollow = true
+pDLC1VQ08HarkonConfrontScene.Start()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -305,73 +299,34 @@ Stop()
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_4
-Function Fragment_4()
+;BEGIN FRAGMENT Fragment_8
+Function Fragment_8()
 ;BEGIN CODE
-;Debug Fast Start
-Game.GetPlayer().MoveTo(PlayerStart)
-Game.GetPlayer().AddItem(DLC1AurielsBow, 1)
-Game.GetPlayer().AddITem(DLC1ElvenArrowBlessed, 12)
-Game.GetPlayer().AddITem(DLC1ElvenArrowBlood, 12)
+; Change Harkon to vampire lord
+;pDLC1Harkon.SetEssential(false)
+SetObjectiveCompleted(10,1)
+SetObjectiveDisplayed(20,1)
 
-Alias_DLC1VQ08RNPCAlias.TryToMoveTo(RNPCStart)
-Alias_DLC1VQ08RNPCAlias.TryToEvaluatePackage()
-Alias_DLC1VQ08RNPCAlias.GetActorReference().SetPlayerTeammate()
+;UDGP 2.0.7 - Move all of the rank & file guys back to Fort Dawnguard for the scene. Some of them might not be here.
+;UDGP 2.0.7 - Move all of the rank & file guys back to Fort Dawnguard for the scene. Some of them might not be here.
+if( !Alias_DLC1VQ08AgmaerAlias.GetActorReference().IsDead() )
+  Alias_DLC1VQ08AgmaerAlias.GetReference().MoveTo(DLC1VQ08DawnguardPreSceneIdle2)
+endif
 
-;Game.GetPlayer().MoveTo(DLC1VolkiharFerryRef)
-;Alias_DLC1VQ08RNPCAlias.TryToMoveTo(DLC1VolkiharFerryRef)
+if( !Alias_DLC1VQ08BelevalAlias.GetActorReference().IsDead() )
+  Alias_DLC1VQ08BelevalAlias.GetReference().MoveTo(DLC1VQ08DawnguardPreSceneIdle2)
+endif
 
-SetStage(10)
-;END CODE
-EndFunction
-;END FRAGMENT
+if( !Alias_DLC1VQ08CelannAlias.GetActorReference().IsDead() )
+  Alias_DLC1VQ08CelannAlias.GetReference().MoveTo(DLC1VQ08DawnguardPreSceneIdle2)
+endif
 
-;BEGIN FRAGMENT Fragment_0
-Function Fragment_0()
-;BEGIN CODE
-;Dawnguard - Meet Isran outside of Castle Volkihar and have fun storming the castle
-SetObjectiveCompleted(20,1)
-SetObjectiveDisplayed(30,1)
-if pDLC1PlayingVampireLine.GetValue() == 0
-	
-	;Make sure the gate is open and make any changes to the inside of the castle
-	CastleController.SetGateOpen()
-	pDLC1VCTableThrallEnableParent.Disable()
-	TutorialThrall.TryToDisable()
-	pVQ08ExtGargoyleParent.Enable(pVQ08ExtGargoyleParent)
+if( !Alias_DLC1VQ08DurakAlias.GetActorReference().IsDead() )
+  Alias_DLC1VQ08DurakAlias.GetReference().MoveTo(DLC1VQ08DawnguardPreSceneIdle2)
+endif
 
-	;Make sure no vampires are essential
-	Alias_FuraAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_FeranAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_GaranAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_RargalAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_VingalmoAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_OrthjolfAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_RonthilAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_HestlaAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_SaloniaAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_StalfAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_ModhnaAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_NamasurAlias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_Deathhound1Alias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_Deathhound2Alias.GetActorReference().GetActorBase().SetEssential(False)
-	Alias_LalaineCatiaAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
-	Alias_JulisandeAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
-	Alias_CaraorilAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
-	Alias_UlenraneAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
-	Alias_HertAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
-
-	;Add all the Hunters and the player and serana to a faction to avoid splash damage causing aggro
-	game.getPlayer().AddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08RNPCAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08IsranAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08CelannAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08DurakAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08FlorentiusAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08GunmarAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08IngjardAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08SorineAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_TrollAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+if( !Alias_DLC1VQ08IngjardAlias.GetActorReference().IsDead() )
+  Alias_DLC1VQ08IngjardAlias.GetReference().MoveTo(DLC1VQ08DawnguardPreSceneIdle2)
 endif
 ;END CODE
 EndFunction
@@ -440,8 +395,8 @@ if pDLC1PlayingVampireLine.GetValue() == 0
 	alias_DLC1VQ08SorineAlias.TryToRemoveFromFaction(DLC1VQ08HunterSiegeFaction)
 	alias_TrollAlias.TryToRemoveFromFaction(DLC1VQ08HunterSiegeFaction)
 	
-	DialogueVampireBase.Stop()
-	DialogueVampireCuredBlock.Stop()
+	DLC1DialogueVampireBase.Stop()
+	DLC1DialogueVampireCuredBlock.Stop()
 endif
 ;END CODE
 EndFunction
@@ -483,17 +438,62 @@ DLC1dunHarkonBattleAllyFaction.SetEnemy(DLC1SeranaFaction)
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_10
-Function Fragment_10()
+;BEGIN FRAGMENT Fragment_0
+Function Fragment_0()
 ;BEGIN CODE
-;Both Paths - Scene Trigger when you hit Harkon's chambers
-;Override Serana and move her into room with Player if necessary
-Alias_DLC1VQ08RNPCAlias.TryToMoveTo(pDLC1VQ08SeranaStartRoomMarker)
-Alias_DLC1VQ08RNPCAlias.TryToStopCombat()
-Alias_DLC1VQ08RNPCAlias.GetActorReference().StopCombatAlarm()
-Game.GetPlayer().StopCombatAlarm()
-MMQuest.SimpleFollow = true
-pDLC1VQ08HarkonConfrontScene.Start()
+;Dawnguard - Meet Isran outside of Castle Volkihar and have fun storming the castle
+SetObjectiveCompleted(20,1)
+SetObjectiveDisplayed(30,1)
+if pDLC1PlayingVampireLine.GetValue() == 0
+	
+	;Make sure the gate is open and make any changes to the inside of the castle
+	CastleController.SetGateOpen()
+	pDLC1VCTableThrallEnableParent.Disable()
+	TutorialThrall.TryToDisable()
+	pVQ08ExtGargoyleParent.Enable(pVQ08ExtGargoyleParent)
+
+	;Make sure no vampires are essential
+	Alias_FuraAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_FeranAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_GaranAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_RargalAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_VingalmoAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_OrthjolfAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_RonthilAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_HestlaAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_SaloniaAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_StalfAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_ModhnaAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_NamasurAlias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_Deathhound1Alias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_Deathhound2Alias.GetActorReference().GetActorBase().SetEssential(False)
+	Alias_LalaineCatiaAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
+	Alias_JulisandeAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
+	Alias_CaraorilAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
+	Alias_UlenraneAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
+	Alias_HertAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
+
+	;Add all the Hunters and the player and serana to a faction to avoid splash damage causing aggro
+	game.getPlayer().AddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08RNPCAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08IsranAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08CelannAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08DurakAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08FlorentiusAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08GunmarAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08IngjardAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08SorineAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_TrollAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+endif
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_17
+Function Fragment_17()
+;BEGIN CODE
+;Dawnguard - Start the scene for the Dawnguard
+pDLC1VQ08DawnguardCelebrate.Start()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -536,6 +536,6 @@ ObjectReference Property pVQ08ExtGargoyleParent  Auto
 Faction Property DLC1VQ08HunterSiegeFaction  Auto
 ReferenceAlias Property pAurielBow  Auto  
 ReferenceAlias Property TutorialThrall  Auto  
-Quest Property DialogueVampireBase  Auto  ;UDGP 2.0.0
-Quest Property DialogueVampireCuredBlock Auto ;UDGP 2.0.4
+Quest Property DLC1DialogueVampireBase  Auto  ;UDGP 2.0.0
+Quest Property DLC1DialogueVampireCuredBlock Auto ;UDGP 2.0.4
 ObjectReference Property DLC1VQ08DawnguardPreSceneIdle2 Auto ;UDGP 2.0.7

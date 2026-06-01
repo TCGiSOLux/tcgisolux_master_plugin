@@ -11,6 +11,7 @@ if DLC1IntroCompletedVampire.GetValue() == 1 || DLC1IntroCompletedHunter.GetValu
   SolitudeOpening.setStage(200)
 Endif
 
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

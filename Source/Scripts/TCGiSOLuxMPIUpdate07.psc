@@ -123,6 +123,7 @@ if Alias_NPC6.GetActorReference().IsInFaction(JobJarlFaction) == 1 && MS14Quest.
 EndIf
 
 ;Update completed
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

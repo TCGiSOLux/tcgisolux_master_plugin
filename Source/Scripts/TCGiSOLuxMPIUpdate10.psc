@@ -11,6 +11,7 @@ if VQ03.GetStageDone(200) == 1
   VampireBase.setStage(300)
 Endif
 
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

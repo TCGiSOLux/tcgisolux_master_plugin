@@ -36,6 +36,7 @@ If DLC1RV10.GetStageDone(255) == 1
   VampireAgents.Stop()
 Endif
 
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

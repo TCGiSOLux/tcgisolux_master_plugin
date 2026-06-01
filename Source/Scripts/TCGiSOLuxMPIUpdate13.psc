@@ -9,6 +9,8 @@ Function Fragment_0()
 if MS05Start.GetStage() == 0 && MS05Rumor.GetStage() == 0
   SolitudeBardsCollege.SetPublic(false)
 Endif
+
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

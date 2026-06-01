@@ -14,6 +14,8 @@ Function Fragment_0()
 Alias_Uthgerd.GetActorReference().Reset()
 Utility.Wait(3)
 Alias_Uthgerd.GetActorReference().GetActorBase().SetEssential(true)
+
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

@@ -65,6 +65,7 @@ If SolitudeOpening.GetStageDone(200) == 1 && SolitudeOpening.GetStageDone(30) ==
   SolitudeOpeningPrisonerFaction.SetEnemy(DLC1VampireFaction)
 Endif
 
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

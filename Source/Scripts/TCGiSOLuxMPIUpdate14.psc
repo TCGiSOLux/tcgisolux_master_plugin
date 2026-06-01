@@ -23,6 +23,8 @@ if DLC1RV10.GetStageDone(10) == 1 && DLC1RV10.GetStageDone(255) == 1
   Alias_UthgerdTorbaldsen.GetActorReference().Kill(game.getPlayer())
   Alias_HekatahMoabul.GetActorReference().Kill(game.getPlayer())
 Endif
+
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction
