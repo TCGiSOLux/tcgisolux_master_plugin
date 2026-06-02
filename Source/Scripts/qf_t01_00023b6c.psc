@@ -220,11 +220,20 @@ Function Fragment_1()
 ;BEGIN CODE
 ;QUEST FAILS IF PRIESTESSES OF DIBELLA OR FJOTRA OR ENMON DIES
 ;SEE ALSO 210
+ActorBase PlayerREF = Game.GetPlayer().GetActorBase()
+
+if PlayerREF.GetSex() == 1
+FailAllObjectives()
+Game.QuitToMainMenu()
+stop()
+else
 FailAllObjectives()
 Alias_Hamal.GetActorRef().SetRelationshipRank(Game.GetPlayer(), -3)
 Alias_Orla.GetActorRef().SetRelationshipRank(Game.GetPlayer(), -3)
 Alias_Anwen.GetActorRef().SetRelationshipRank(Game.GetPlayer(), -3)
 Alias_Senna.GetActorRef().SetRelationshipRank(Game.GetPlayer(), -3)
+endif
+
 if (!T01DegaineFavor.GetStageDone(10))
 	T01DegaineFavor.Stop()
 endif
@@ -234,7 +243,11 @@ endif
  		T01Intro.Stop()
  	endif
  endif
+
+if PlayerREF.GetSex() == 0
 Alias_EnmonReserved.Clear()
+endif
+
 Stop()
 ;END CODE
 EndFunction

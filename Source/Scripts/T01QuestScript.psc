@@ -33,12 +33,37 @@ Function PlayerViolatedInnerSanctum()
 EndFunction
 
 Function StuffHitsTheFan()
+	ActorBase Player = Game.GetPlayer().GetActorBase()
 	HamalShouldConfront = False
 	Senna.GetActorReference().GetActorBase().SetEssential(False)
 	HamalEssential.Clear()
 	Senna.Clear()
 	Hamal.GetActorReference().EvaluatePackage()
 	InnerSanctumDoor.GetReference().Lock(false)
+        if Player.GetSex() == 1
 	Hamal.GetActorReference().SendAssaultAlarm()
+	Orla.GetActorReference().SendAssaultAlarm()
+	Anwen.GetActorReference().SendAssaultAlarm()
+	Senna.GetActorReference().SendAssaultAlarm()
 	ToDFaction.SetEnemy(PlayerFaction)
+	Hamal.GetActorReference().StartCombat(Game.GetPlayer())
+	Anwen.GetActorReference().StartCombat(Game.GetPlayer())
+	Orla.GetActorReference().StartCombat(Game.GetPlayer())
+	Senna.GetActorReference().StartCombat(Game.GetPlayer())
+	Utility.Wait(3)
+	MarkarthCrime.ModCrimeGold(1500)
+        Game.QuitToMainMenu()
+        else
+	Hamal.GetActorReference().SendAssaultAlarm()
+	Orla.GetActorReference().SendAssaultAlarm()
+	Anwen.GetActorReference().SendAssaultAlarm()
+	Senna.GetActorReference().SendAssaultAlarm()
+	ToDFaction.SetEnemy(PlayerFaction)
+	Hamal.GetActorReference().StartCombat(Game.GetPlayer())
+	Anwen.GetActorReference().StartCombat(Game.GetPlayer())
+	Orla.GetActorReference().StartCombat(Game.GetPlayer())
+	Senna.GetActorReference().StartCombat(Game.GetPlayer())
+	Utility.Wait(5)
+	MarkarthCrime.ModCrimeGold(1500)
+        endif
 EndFunction
