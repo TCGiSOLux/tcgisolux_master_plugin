@@ -24,7 +24,7 @@ QUESTS:
 The Heart of Dibella quest script are re-worked.
 Some Radiant Quest for Volkihar Clan locations are changed, except quests DLC1RV08, DLC1RV09 and DLC1RV05.
 Reworked quest DLC1RV13.
-Added 3 World Encounters.
+Added 4 World Encounters.
 
 SCENES:
 
