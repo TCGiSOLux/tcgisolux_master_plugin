@@ -6,6 +6,7 @@ VOICES:
 Added vampire dialogue for voicetypes FemaleNord, FemaleCondescending, FemaleSultry, FemaleCommander and FemaleYoungEager. These vampiric dialogues will play only if The Bloodstone Chalice quest are completed.
 
 NPCS:
+Replaced Imperial Guards to Dawnguard Guard in Imperial Legion faction, except Dwemer Museum and some guards.
 Auto-calc stats are activated to some NPCs.
 Assaulting to NPC member on Thieves Guild will launch Reparations quest. Next assaulting to NPC Thieves Guild, system will send you to Main Menu if quest Reparations are active.
 AI-Packages are reworked.
@@ -41,7 +42,6 @@ Will be added Dawnguard Patrols on entire Skyrim. Patrols from Dawnguard will be
 After completing quest Kindred Judgment in the Dawnguard side only, Order of the Virtuous Blood will be begin to reforming and will protect people from Vampires. Also Generic NPCs from Dawnguard will arrive in all cities and protect people from Vampires.
 If you complete quests Kindred Judgment and Destroying the Dawnguard in the Vampire side, Generic NPCs Vampires from Volkihar Clan will arrive in the all cities and protect cities from Dawnguard.
 Zaria, Thonnir, Voldsea Giryon will be added to marriage candidate. You can marry Zaria and Voldsea Giryon by using only with console commands.
-Imperial Guards will replace to Dawnguard Clan Guards on the Imperial faction excluding guards in Dwemer Museum.
 We will add backup 2 members to Volkihar Clan, if they will die and a will to replacement to BackupAlias, where a happened to replacement from Stalf and Salonia Caelia are replaced to BackupAlias
 New game will be required after changes some quests. If you will continue use save after upgrading plugin, this plugin will damage to your save.
 
