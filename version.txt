@@ -8,6 +8,7 @@ Added vampire dialogue for voicetypes FemaleNord, FemaleCondescending, FemaleSul
 NPCS:
 Auto-calc stats are activated to some NPCs.
 Assaulting to NPC member on Thieves Guild will launch Reparations quest. Next assaulting to NPC Thieves Guild, system will send you to Main Menu if quest Reparations are active.
+AI-Packages are reworked.
 
 WORLD ENCOUNTERS:
 
@@ -16,9 +17,13 @@ LOCATIONS:
 BUILDINGS:
 
 FACTIONS:
+DLC2CultistFaction will become to hostile faction IsGuardFaction after ambush are completed.
 
 QUESTS:
 The Heart of Dibella quest script are re-worked.
+Some Radiant Quest for Volkihar Clan locations are changed, except quests DLC1RV08, DLC1RV09 and DLC1RV05.
+Reworked quest DLC1RV13.
+Added 3 World Encounters.
 
 SCENES:
 
