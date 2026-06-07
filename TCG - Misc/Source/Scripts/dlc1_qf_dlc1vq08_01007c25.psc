@@ -221,6 +221,20 @@ Function Fragment_5()
 ;BEGIN CODE
 ; Change Harkon to vampire lord
 ;pDLC1Harkon.SetEssential(false)
+
+;Clear their Alias because they not nothing anymore.
+Alias_DLC1VQ08IsranAlias.Clear()
+Alias_DLC1VQ08CelannAlias.Clear()
+Alias_DLC1VQ08DurakAlias.Clear()
+Alias_DLC1VQ08FlorentiusAlias.Clear()
+Alias_DLC1VQ08GunmarAlias.Clear()
+Alias_DLC1VQ08IngjardAlias.Clear()
+Alias_DLC1VQ08SorineAlias.Clear()
+Alias_SaloniaAlias.Clear()
+Alias_StalfAlias.Clear()
+Alias_ModhnaAlias.Clear()
+Alias_NamasurAlias.Clear()
+
 SetObjectiveCompleted(10,1)
 SetObjectiveDisplayed(30,1)
 ;END CODE
@@ -233,8 +247,8 @@ Function Fragment_4()
 ;Debug Fast Start
 Game.GetPlayer().MoveTo(PlayerStart)
 Game.GetPlayer().AddItem(DLC1AurielsBow, 1)
-Game.GetPlayer().AddITem(DLC1ElvenArrowBlessed, 12)
-Game.GetPlayer().AddITem(DLC1ElvenArrowBlood, 12)
+Game.GetPlayer().AddITem(DLC1ElvenArrowBlessed, 92)
+Game.GetPlayer().AddITem(DLC1ElvenArrowBlood, 92)
 
 Alias_DLC1VQ08RNPCAlias.TryToMoveTo(RNPCStart)
 Alias_DLC1VQ08RNPCAlias.TryToEvaluatePackage()
@@ -452,7 +466,39 @@ if pDLC1PlayingVampireLine.GetValue() == 0
 	TutorialThrall.TryToDisable()
 	pVQ08ExtGargoyleParent.Enable(pVQ08ExtGargoyleParent)
 
-	;Make sure no vampires are essential
+	;Add all the Hunters and the player and serana to a faction to avoid splash damage causing aggro
+	game.getPlayer().AddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08RNPCAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08IsranAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08CelannAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08DurakAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08FlorentiusAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08GunmarAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08IngjardAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_DLC1VQ08SorineAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	alias_TrollAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+
+	;Make sure no vampires are essential. And also remove all NPCs from all factions.
+	Actor Fura = Alias_FuraAlias.GetReference() as Actor
+	Actor Feran = Alias_FeranAlias.GetReference() as Actor
+	Actor Garan = Alias_GaranAlias.GetReference() as Actor
+	Actor Rargal = Alias_RargalAlias.GetReference() as Actor
+	Actor Vingalmo = Alias_VingalmoAlias.GetReference() as Actor
+	Actor Orthjolf = Alias_OrthjolfAlias.GetReference() as Actor
+	Actor Ronthil = Alias_RonthilAlias.GetReference() as Actor
+	Actor Hestla = Alias_HestlaAlias.GetReference() as Actor
+	Actor Salonia = Alias_SaloniaAlias.GetReference() as Actor
+	Actor Stalf = Alias_StalfAlias.GetReference() as Actor
+	Actor Modhna = Alias_ModhnaAlias.GetReference() as Actor
+	Actor Namasur = Alias_NamasurAlias.GetReference() as Actor
+	Actor LalaineCatia = Alias_LalaineCatiaAlias.GetReference() as Actor
+	Actor Julisande = Alias_JulisandeAlias.GetReference() as Actor
+	Actor Caraoril = Alias_CaraorilAlias.GetReference() as Actor
+	Actor Ulenrane = Alias_UlenraneAlias.GetReference() as Actor
+	Actor Hert = Alias_HertAlias.GetReference() as Actor
+
+	Alias_Deathhound1Alias.GetActorReference().GetActorBase().SetProtected(false)
+	Alias_Deathhound2Alias.GetActorReference().GetActorBase().SetProtected(false)
 	Alias_FuraAlias.GetActorReference().GetActorBase().SetEssential(False)
 	Alias_FeranAlias.GetActorReference().GetActorBase().SetEssential(False)
 	Alias_GaranAlias.GetActorReference().GetActorBase().SetEssential(False)
@@ -473,18 +519,61 @@ if pDLC1PlayingVampireLine.GetValue() == 0
 	Alias_UlenraneAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
 	Alias_HertAlias.GetActorReference().GetActorBase().SetEssential(False) ; Added by TCGiSOLux Master Plugin Interior
 
-	;Add all the Hunters and the player and serana to a faction to avoid splash damage causing aggro
-	game.getPlayer().AddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08RNPCAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08IsranAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08CelannAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08DurakAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08FlorentiusAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08GunmarAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08IngjardAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_DLC1VQ08SorineAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
-	alias_TrollAlias.TryToAddToFaction(DLC1VQ08HunterSiegeFaction)
+	;Remove factions. But Restore DLC1VampireFaction and DLC1VampireCrimeFaction factions only
+	Hert.RemoveFromAllFactions()
+	Ulenrane.RemoveFromAllFactions()
+	Caraoril.RemoveFromAllFactions()
+	Julisande.RemoveFromAllFactions()
+	Fura.RemoveFromAllFactions()
+	Feran.RemoveFromAllFactions()
+	Garan.RemoveFromAllFactions()
+	Rargal.RemoveFromAllFactions()
+	Vingalmo.RemoveFromAllFactions()
+	Orthjolf.RemoveFromAllFactions()
+	Salonia.RemoveFromAllFactions()
+	Hestla.RemoveFromAllFactions()
+	Stalf.RemoveFromAllFactions()
+	Modhna.RemoveFromAllFactions()
+	Namasur.RemoveFromAllFactions()
+	Ronthil.RemoveFromAllFactions()
+	LalaineCatia.RemoveFromAllFactions()
+	Utility.Wait(3)
+	Alias_FuraAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_FeranAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_GaranAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_RargalAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_VingalmoAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_OrthjolfAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_RonthilAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_HestlaAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_SaloniaAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_StalfAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_ModhnaAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_NamasurAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_LalaineCatiaAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_JulisandeAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_CaraorilAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_UlenraneAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_HertAlias.GetActorReference().AddToFaction(DLC1VampireFaction)
+	Alias_FuraAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_FeranAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_GaranAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_RargalAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_VingalmoAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_OrthjolfAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_RonthilAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_HestlaAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_SaloniaAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_StalfAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_ModhnaAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_NamasurAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_LalaineCatiaAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_JulisandeAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_CaraorilAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_UlenraneAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
+	Alias_HertAlias.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
 endif
+
 ;END CODE
 EndFunction
 ;END FRAGMENT

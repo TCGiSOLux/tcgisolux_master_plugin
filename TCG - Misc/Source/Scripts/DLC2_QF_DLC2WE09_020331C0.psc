@@ -64,6 +64,8 @@ Function Fragment_5()
 ;***ALL CHANGES NEED TO GO BOTH PLACES!!!****
 
 ;Cultists should attack
+DLC2CultistFaction.SetEnemy(IsGuardFaction)
+
 Actor Cultist1 = Alias_Actor1.GetActorReference()
 Actor Cultist2 = Alias_Actor2.GetActorReference()
 Actor Cultist3 = Alias_Actor3.GetActorReference()
@@ -161,15 +163,11 @@ EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
-
 GlobalVariable Property DLC2WE09Chance  Auto  
-
 Faction Property WEPlayerFriend  Auto  
-
 Faction Property WEPlayerEnemy  Auto  
-
 Faction Property dunPrisonerFaction  Auto  
-
 Quest Property DLC2MQ01  Auto  
-
+Faction Property IsGuardFaction  Auto  
+Faction Property DLC2CultistFaction  Auto  
 ReferenceAlias Property DLC2MQ01AliasForObjective  Auto  

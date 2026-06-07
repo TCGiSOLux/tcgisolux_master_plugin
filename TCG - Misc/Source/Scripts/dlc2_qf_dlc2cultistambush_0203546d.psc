@@ -39,6 +39,7 @@ Function Fragment_0()
 ;***ALL CHANGES NEED TO GO BOTH PLACES!!!****
 
 ;Cultists should attack
+DLC2CultistFaction.SetEnemy(IsGuardFaction)
 Actor Cultist1 = Alias_Cultist1.GetActorReference()
 Actor Cultist2 = Alias_Cultist2.GetActorReference()
 
@@ -79,6 +80,11 @@ Function Fragment_3()
 
 Alias_Cultist1.GetReference().DeleteWhenAble()
 Alias_Cultist2.GetReference().DeleteWhenAble()
+
+if DLC2MQ01.GetStage() >= 5
+CompleteQuest()
+endif
+
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -99,3 +105,5 @@ Faction Property WEPlayerEnemy  Auto
 ReferenceAlias Property DLC2MQ01AliasForObjective  Auto  
 Quest Property DLC2MQ01  Auto  
 GlobalVariable Property DLC2WE09Chance  Auto  
+Faction Property IsGuardFaction  Auto  
+Faction Property DLC2CultistFaction  Auto  

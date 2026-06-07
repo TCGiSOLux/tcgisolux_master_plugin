@@ -69,12 +69,18 @@ ReferenceAlias Property Alias_Dawnguard03 Auto
 
 ;BEGIN FRAGMENT Fragment_5
 Function Fragment_5()
+;BEGIN AUTOCAST TYPE WEScript
+Quest __temp = self as Quest
+WEScript kmyQuest = __temp as WEScript
+;END AUTOCAST
 ;BEGIN CODE
+; debug.trace(self + "stage 255, calling DeleteWhenAble() on created aliases")
+Alias_Dawnguard01.GetReference().DeleteWhenAble()
+Alias_Dawnguard02.GetReference().DeleteWhenAble()
+Alias_Dawnguard03.GetReference().DeleteWhenAble()
+
 ; debug.trace(self + "stage 255, calling ReArmTrigger() on trigger" + Alias_Trigger.GetReference())
 (Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()
-Alias_Dawnguard01.GetReference().Disable()
-Alias_Dawnguard02.GetReference().Disable()
-Alias_Dawnguard03.GetReference().Disable()
 ;END CODE
 EndFunction
 ;END FRAGMENT

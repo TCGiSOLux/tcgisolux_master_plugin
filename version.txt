@@ -1,9 +1,12 @@
 V2.20
 
 OTHERS:
+Changed Sleep Outfit from Belted Tunic to Vampire Royal Armor (Valerica).
+Changed Outfit for Maven Black-Briar.
 
 VOICES:
 Added vampire dialogue for voicetypes FemaleNord, FemaleCondescending, FemaleSultry, FemaleCommander and FemaleYoungEager. These vampiric dialogues will play only if The Bloodstone Chalice quest are completed.
+Added MaleNord, MaleSoldier, MaleYoungEager, MaleEvenToned, FemaleYoungEager, FemaleEventoned, and DLC1FemaleUniqueFura for Guard Voicetypes.
 
 NPCS:
 Replaced Imperial Guards to Dawnguard Guard in Imperial Legion faction, except Dwemer Museum and some guards.
@@ -11,8 +14,10 @@ Auto-calc stats are activated to some NPCs.
 Assaulting to NPC member on Thieves Guild will launch Reparations quest. Next assaulting to NPC Thieves Guild, system will send you to Main Menu if quest Reparations are active.
 AI-Packages are reworked.
 Added new generic members Dunmer and Altmer of Dawnguard faction.
+Replaced Stormcloaks Guard to Vampire Guards in Sons of Skyrim in Dwemer Museum.
 
 WORLD ENCOUNTERS:
+Dawnguard Vampire Hunters now adds Map Maker if you read Writ of Dawn, on World Encounter.
 
 LOCATIONS:
 
@@ -26,6 +31,11 @@ The Heart of Dibella quest script are re-worked.
 Some Radiant Quest for Volkihar Clan locations are changed, except quests DLC1RV08, DLC1RV09 and DLC1RV05.
 Reworked quest DLC1RV13.
 Added 4 World Encounters.
+Quest Kindred Judgment are re-worked.
+Quest In My Time Of Need starts if you complete any quest The Bloodstone Chalice (Volkihar Clan) or A New Order (Dawnguard) and if you reach 45 level and higher.
+Quest Dragonborn no longer starts after completing quest The Way of the Voice. The quest will start only after you complete 3 quests: The Way of the Voice, Discerning the Transmundane and Kindred Judgment.
+Quest Dawnguard no longer starts. The quest will start only after you complete quest Dragonslayer of original main questline.
+Hostile Vampires will now appear after completing quest Alduin's Bane
 
 SCENES:
 
