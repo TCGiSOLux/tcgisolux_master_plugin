@@ -122,6 +122,8 @@ if Alias_LoveInterest.GetActorReference().IsInFaction(CFR) == 1 && Alias_LoveInt
    Alias_LoveInterest.GetActorReference().RemoveFromFaction(CFR)
 endif
 If DLC1PVL.GetValue() == 1 && Alias_LoveInterest.GetActorReference().HasKeyword(Vampire) == 1
+   Alias_LoveInterest.GetActorReference().AddPerk(VampireReduceDamage)
+   Alias_LoveInterest.GetActorReference().AddPerk(VampireIncreaseDamage)
    Alias_LoveInterest.GetActorReference().AddToFaction(DLC1VF)
    Alias_LoveInterest.GetActorReference().AddToFaction(DLC1VCF)
    Alias_LoveInterest.GetActorReference().SetOutfit(VampireOutfit)
@@ -165,3 +167,5 @@ Faction Property CFR Auto
 Keyword Property Vampire Auto
 Quest Property DLC1VQ03V  Auto  
 GlobalVariable Property DLC1PVL  Auto  
+Perk Property VampireReduceDamage  Auto  
+Perk Property VampireIncreaseDamage  Auto  

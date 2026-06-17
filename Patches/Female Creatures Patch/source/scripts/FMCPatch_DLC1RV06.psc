@@ -26,6 +26,8 @@ EndFunction
 Function Fragment_3()
 ;BEGIN CODE
 CompleteAllObjectives()
+Alias_Spouse.GetActorReference().AddPerk(VampireReduceDamage)
+Alias_Spouse.GetActorReference().AddPerk(VampireIncreaseDamage)
 Alias_Spouse.GetActorReference().RemoveFromFaction(DLC1VampireFeedNoCrimeFaction)
 Alias_Spouse.GetActorReference().RemoveFromFaction(DLC1VampireSeductionBoostFaction)
 Alias_Spouse.GetActorReference().SetCrimeFaction(DLC1VampireCrimeFaction)
@@ -39,6 +41,8 @@ EndFunction
 Function Fragment_2()
 ;BEGIN CODE
 CompleteAllObjectives()
+Alias_Spouse.GetActorReference().AddPerk(VampireReduceDamage)
+Alias_Spouse.GetActorReference().AddPerk(VampireIncreaseDamage)
 Alias_Spouse.GetActorReference().SetOutfit(VampireOutfit)
 Alias_Spouse.GetActorReference().RemoveFromFaction(DLC1VampireFeedNoCrimeFaction)
 Alias_Spouse.GetActorReference().RemoveFromFaction(DLC1VampireSeductionBoostFaction)
@@ -162,3 +166,5 @@ Faction Property CrimeFactionWinterhold Auto
 Faction Property CrimeFactionEastmarch Auto					
 Faction Property CrimeFactionRift Auto
 Faction Property DLC1RQTF Auto
+Perk Property VampireReduceDamage  Auto  
+Perk Property VampireIncreaseDamage  Auto  

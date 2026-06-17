@@ -17,6 +17,7 @@ Function Fragment_6()
 ;BEGIN CODE
 DLC1RV06DoOnce.SetValue(0)
 FailAllObjectives()
+Alias_Spouse.GetActorReference().RemoveFromFaction(DLC1VampireSeductionBoostFaction)
 DLC1Radiant.StopQuestAndStartNewOneVampire(self)   ;THIS WILL CALL STOP() ON THIS QUEST
 ;END CODE
 EndFunction
@@ -29,6 +30,8 @@ CompleteAllObjectives()
 Alias_Spouse.GetActorReference().RemoveFromFaction(DLC1VampireFeedNoCrimeFaction)
 Alias_Spouse.GetActorReference().RemoveFromFaction(DLC1VampireSeductionBoostFaction)
 Alias_Spouse.GetActorReference().SetOutfit(VampireOutfit)
+Alias_Spouse.GetActorReference().AddPerk(VampireReduceDamage)
+Alias_Spouse.GetActorReference().AddPerk(VampireIncreaseDamage)
 Alias_Spouse.GetActorReference().SetCrimeFaction(DLC1VampireCrimeFaction)
 DLC1Radiant.GiveQuestReward(ChanceForBloodPotion = 25)
 DLC1Radiant.StopQuestAndStartNewOneVampire(self)   ;THIS WILL CALL STOP() ON THIS QUEST
@@ -149,3 +152,5 @@ Faction Property CrimeFactionWinterhold Auto
 Faction Property CrimeFactionEastmarch Auto					
 Faction Property CrimeFactionRift Auto
 Faction Property DLC1RQTF Auto
+Perk Property VampireReduceDamage  Auto  
+Perk Property VampireIncreaseDamage  Auto  

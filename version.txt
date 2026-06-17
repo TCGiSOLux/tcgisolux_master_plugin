@@ -1,6 +1,14 @@
 V2.20
 
 OTHERS:
+Disabled Reanimation to Eclipse Vampire NPCs and Death Hounds
+Heimskr's Scene will be disabled if you complete quest The Bloodstone Chalice.
+Some Scenes in Solitude will be disabled automatically, if you complete quest A New Order in Dawnguard side.
+Some beds in Blue Palace are changed ownership.
+Vampiric Races overlay are re-activated.
+Added ChildVampireRace for Nord, Redguard and Imperial.
+If you have bounty more 10000, you cannot pay a fine anymore in any holds of Skyrim.
+Services from Bits and Pieces are unavailable for Volkihar Clan members due hostility to Volkihar Clan members.
 Changed Sleep Outfit from Belted Tunic to Vampire Royal Armor (Valerica).
 Changed Outfit for Maven Black-Briar.
 
@@ -9,40 +17,57 @@ Added vampire dialogue for voicetypes FemaleNord, FemaleCondescending, FemaleSul
 Added MaleNord, MaleSoldier, MaleYoungEager, MaleEvenToned, FemaleYoungEager, FemaleEventoned, and DLC1FemaleUniqueFura for Guard Voicetypes.
 
 NPCS:
+Changed some NPCs.
+Replaced hostile Vampires Bosses from Males to Females
+Added hostile vampires in Races Redguard and Bosmers.
+Vampire Follower Marise Rallaron are removed spell Ice Storm to prevent false assaulting to NPCs
+Some NPCs will share you bed if you getting married with console commands.
+Reworked some AI-Packages.
+Added 2 Priestesses of Dibella NPCs.
+Added some NPCs.
 Replaced Imperial Guards to Dawnguard Guard in Imperial Legion faction, except Dwemer Museum and some guards.
 Auto-calc stats are activated to some NPCs.
 Assaulting to NPC member on Thieves Guild will launch Reparations quest. Next assaulting to NPC Thieves Guild, system will send you to Main Menu if quest Reparations are active.
 AI-Packages are reworked.
 Added new generic members Dunmer and Altmer of Dawnguard faction.
 Replaced Stormcloaks Guard to Vampire Guards in Sons of Skyrim in Dwemer Museum.
+Added Stormcloaks Guards DLC1FemaleUniqueFura and FemaleYoungEager voicetypes.
 
 WORLD ENCOUNTERS:
-Dawnguard Vampire Hunters now adds Map Maker if you read Writ of Dawn, on World Encounter.
+Dawnguard Vampire Hunters now adds Map Maker if you read Writ of Dawn.
 
 LOCATIONS:
 
 BUILDINGS:
+Added 2 houses.
 
 FACTIONS:
 DLC2CultistFaction will become to hostile faction IsGuardFaction after ambush are completed.
 
 QUESTS:
+Added Bounty: Warlock Lair / Necromancers quest.
+Added Dawnguard Attacks. Dawnguard Attacks will replace from Vampire Attacks if you complete quest The Bloodstone Chalice.
+Fixed bug The Heart of Dibella where Laila the Unbroken and Camilla Leotelli incorrectly use dialogue.
 The Heart of Dibella quest script are re-worked.
-Some Radiant Quest for Volkihar Clan locations are changed, except quests DLC1RV08, DLC1RV09 and DLC1RV05.
+Some Radiant Quests for Volkihar Clan, locations are changed, except quests DLC1RV08, DLC1RV09 and DLC1RV05.
 Reworked quest DLC1RV13.
 Added 4 World Encounters.
 Quest Kindred Judgment are re-worked.
 Quest In My Time Of Need starts if you complete any quest The Bloodstone Chalice (Volkihar Clan) or A New Order (Dawnguard) and if you reach 45 level and higher.
 Quest Dragonborn no longer starts after completing quest The Way of the Voice. The quest will start only after you complete 3 quests: The Way of the Voice, Discerning the Transmundane and Kindred Judgment.
-Quest Dawnguard no longer starts. The quest will start only after you complete quest Dragonslayer of original main questline.
-Hostile Vampires will now appear after completing quest Alduin's Bane
+Quest Dawnguard no longer starts. The quest will start only after you complete quest A Blade in the Dark of original main questline.
+Hostile Vampires will now appear after completing quest Dragon Rising
+Changed Disguised Vampire Lord encounter.
 
 SCENES:
+
+ITEMS:
+Added items for Evelyssa Services.
 
 FIXED BUGS:
 
 Known Issues:
-Some Disguised NPCs which uses Karliah and Elenwen voicetypes still unvoiced.
+Some Disguised NPCs which uses voicetypes: FemaleShrill, Karliah and Elenwen voicetypes still unvoiced.
 NPCs still can't share beds in your own house after you getting to married.
 Some NPCs are still uses dark face.
 Some Dialogues are still unvoiced.

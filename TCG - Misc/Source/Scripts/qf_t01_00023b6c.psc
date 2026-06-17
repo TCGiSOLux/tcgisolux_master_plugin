@@ -2,6 +2,16 @@
 ;NEXT FRAGMENT INDEX 29
 Scriptname QF_T01_00023B6C Extends Quest Hidden
 
+;BEGIN ALIAS PROPERTY CamillaLeotelli
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_CamillaLeotelli Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY LailatheUnbroken
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_LailatheUnbroken Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY Hometown
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Hometown Auto
@@ -120,6 +130,8 @@ Alias_Hamal.GetActorRef().SetRelationshipRank(Game.GetPlayer(), 1)
 Alias_Orla.GetActorRef().SetRelationshipRank(Game.GetPlayer(), 1)
 Alias_Anwen.GetActorRef().SetRelationshipRank(Game.GetPlayer(), 1)
 Alias_Senna.GetActorRef().SetRelationshipRank(Game.GetPlayer(), 1)
+Alias_LailatheUnbroken.GetActorRef().SetRelationshipRank(Game.GetPlayer(), 1)
+Alias_CamillaLeotelli.GetActorRef().SetRelationshipRank(Game.GetPlayer(), 1)
 T01ConclusionScene.Stop()
 Stop()
 ;END CODE
@@ -176,6 +188,9 @@ T01QuestScript kmyQuest = __temp as T01QuestScript
 ;BEGIN CODE
 SetObjectiveDisplayed(30, 0)
 SetObjectiveDisplayed(60, 1)
+
+;Fix spamming Hamal forcegreeting to Player
+kmyQuest.HamalShouldConfront = False
 
 if (!T01DegaineFavor.GetStageDone(10))
 	T01DegaineFavor.Stop()

@@ -2,6 +2,17 @@
 ;NEXT FRAGMENT INDEX 18
 Scriptname QF_RelationshipMarriageWeddin_0007404E Extends Quest Hidden
 
+
+;BEGIN ALIAS PROPERTY PlayerWitness05
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_PlayerWitness05 Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY PlayerWitness04
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_PlayerWitness04 Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY LoveInterest
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_LoveInterest Auto
@@ -227,6 +238,18 @@ EndIf
 if( Alias_PlayerWitness03.GetActorReference() != None )
   If Alias_PlayerWitness03.GetActorReference().IsInLocation(RiftenTempleofMaraLocation) == False
     Alias_PlayerWitness03.TryToMoveto(PlayerWitnessMarker03)
+  EndIf
+EndIf
+
+if( Alias_PlayerWitness04.GetActorReference() != None )
+  If Alias_PlayerWitness04.GetActorReference().IsInLocation(RiftenTempleofMaraLocation) == False
+    Alias_PlayerWitness04.TryToMoveto(PlayerWitnessMarker03)
+  EndIf
+EndIf
+
+if( Alias_PlayerWitness05.GetActorReference() != None )
+  If Alias_PlayerWitness05.GetActorReference().IsInLocation(RiftenTempleofMaraLocation) == False
+    Alias_PlayerWitness05.TryToMoveto(PlayerWitnessMarker03)
   EndIf
 EndIf
 

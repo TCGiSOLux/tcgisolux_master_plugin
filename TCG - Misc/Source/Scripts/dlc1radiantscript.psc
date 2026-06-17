@@ -41,6 +41,11 @@ GlobalVariable Property DLC1TrollCost auto
 
 MiscObject Property Gold001 auto
 
+Perk Property VampireReduceDamage  Auto  
+Perk Property VampireIncreaseDamage  Auto  
+
+Perk Property DawnguardReduceDamage  Auto  
+Perk Property DawnguardIncreaseDamage  Auto  
 
 objectReference Property DLC1BloodChaliceActivatorEmptyRef auto
 objectReference Property DLC1BloodChaliceActivatorFullRef auto
@@ -130,6 +135,8 @@ function IntroQuestCompleted(bool isHunterQuest = false, bool isVampireQuest = f
 	if isHunterQuest
 		GlobalToSet = DLC1IntroCompletedHunter
 		PlayerRef.AddToFaction(DLC1HunterFaction)
+		PlayerRef.AddPerk(DawnguardReduceDamage)
+		PlayerRef.AddPerk(DawnguardIncreaseDamage)
 		SolitudeOpening.setStage(200)
 		DawnguardAgents.Start()
 		VampireAgents.Start()
@@ -137,6 +144,8 @@ function IntroQuestCompleted(bool isHunterQuest = false, bool isVampireQuest = f
 	elseif isVampireQuest
 		GlobalToSet = DLC1IntroCompletedVampire
 		PlayerRef.addToFaction(DLC1VampireFaction)
+		PlayerRef.AddPerk(VampireReduceDamage)
+		PlayerRef.AddPerk(VampireIncreaseDamage)
 		SolitudeOpening.setStage(200)
 		DawnguardAgents.Start()
 		VampireAgents.Start()

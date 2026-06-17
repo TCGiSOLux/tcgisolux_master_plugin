@@ -67,6 +67,16 @@ ReferenceAlias Property Alias_Spouse Auto
 ReferenceAlias Property Alias_Dawnguard03 Auto
 ;END ALIAS PROPERTY
 
+;BEGIN ALIAS PROPERTY TargetCapitalHQMapMarker
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_TargetCapitalHQMapMarker Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY TargetCapitalHQMap
+;ALIAS PROPERTY TYPE LocationAlias
+LocationAlias Property Alias_TargetCapitalHQMap Auto
+;END ALIAS PROPERTY
+
 ;BEGIN FRAGMENT Fragment_5
 Function Fragment_5()
 ;BEGIN AUTOCAST TYPE WEScript
@@ -81,6 +91,15 @@ Alias_Dawnguard03.GetReference().DeleteWhenAble()
 
 ; debug.trace(self + "stage 255, calling ReArmTrigger() on trigger" + Alias_Trigger.GetReference())
 (Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_2
+Function Fragment_2()
+;BEGIN CODE
+;Add the map marker to the player's map.
+Alias_TargetCapitalHQMapMarker.GetReference().AddToMap()
 ;END CODE
 EndFunction
 ;END FRAGMENT
