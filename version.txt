@@ -1,6 +1,7 @@
 V2.20
 
 OTHERS:
+Reworked some References NPC.
 Disabled Reanimation to Eclipse Vampire NPCs and Death Hounds
 Heimskr's Scene will be disabled if you complete quest The Bloodstone Chalice.
 Some Scenes in Solitude will be disabled automatically, if you complete quest A New Order in Dawnguard side.
@@ -42,6 +43,7 @@ BUILDINGS:
 Added 2 houses.
 
 FACTIONS:
+Added Defenders by Dawnguard attackers to in the cities Faction.
 DLC2CultistFaction will become to hostile faction IsGuardFaction after ambush are completed.
 
 QUESTS:
@@ -89,3 +91,5 @@ KS Hairdos SSE - Kalilies
 Diablo 2 resurrected cursor - puffpund
 Dibella's Shrine - superman22dr
 Music DotA 2 - Valve
+Address Library - All in one - meh321
+Font Overhaul - Natural Typefaces for Skyrim -- FONTS - mfcfbro
