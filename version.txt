@@ -1,6 +1,10 @@
-V2.20
+V2.25
 
 OTHERS:
+Breton Vampire voicetype was changed from DLC1MaleVampire (Males), DLC1FemaleVampire (Females) to DLC1MaleVampire (Males), FemaleSultry (Females) 
+Altmer Vampire voicetype was changed from MaleElfHaughty (Males), FemaleElfHaughty (Females) to MaleSlyCynical (Males), FemaleCondescending (Females) 
+Dunmer Vampire voicetype was changed from DLC1MaleVampire (Males), DLC1FemaleVampire (Females) to DLC1MaleVampire (Males), FemaleCondescending (Females) 
+Added Trigger replacement buildings.
 Reworked some References NPC.
 Disabled Reanimation to Eclipse Vampire NPCs and Death Hounds
 Heimskr's Scene will be disabled if you complete quest The Bloodstone Chalice.
@@ -25,7 +29,7 @@ Vampire Follower Marise Rallaron are removed spell Ice Storm to prevent false as
 Some NPCs will share you bed if you getting married with console commands.
 Reworked some AI-Packages.
 Added 2 Priestesses of Dibella NPCs.
-Added some NPCs.
+Added many NPCs.
 Replaced Imperial Guards to Dawnguard Guard in Imperial Legion faction, except Dwemer Museum and some guards.
 Auto-calc stats are activated to some NPCs.
 Assaulting to NPC member on Thieves Guild will launch Reparations quest. Next assaulting to NPC Thieves Guild, system will send you to Main Menu if quest Reparations are active.
@@ -40,7 +44,7 @@ Dawnguard Vampire Hunters now adds Map Maker if you read Writ of Dawn.
 LOCATIONS:
 
 BUILDINGS:
-Added 2 houses.
+Added 5 houses.
 
 FACTIONS:
 Added Defenders by Dawnguard attackers to in the cities Faction.
