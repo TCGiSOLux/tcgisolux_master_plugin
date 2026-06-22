@@ -98,7 +98,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_2
 Function Fragment_2()
 ;BEGIN CODE
-;Add the map marker to the player's map.
+;Add the map marker to the player's map. KEEP RUNNING
 Alias_TargetCapitalHQMapMarker.GetReference().AddToMap()
 ;END CODE
 EndFunction

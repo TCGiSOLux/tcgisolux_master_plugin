@@ -135,20 +135,20 @@ function IntroQuestCompleted(bool isHunterQuest = false, bool isVampireQuest = f
 	if isHunterQuest
 		GlobalToSet = DLC1IntroCompletedHunter
 		PlayerRef.AddToFaction(DLC1HunterFaction)
-		PlayerRef.AddPerk(DawnguardReduceDamage)
-		PlayerRef.AddPerk(DawnguardIncreaseDamage)
 		SolitudeOpening.setStage(200)
 		DawnguardAgents.Start()
 		VampireAgents.Start()
+		PlayerRef.AddPerk(DawnguardReduceDamage)
+		PlayerRef.AddPerk(DawnguardIncreaseDamage)
 		QuestType = 1
 	elseif isVampireQuest
 		GlobalToSet = DLC1IntroCompletedVampire
 		PlayerRef.addToFaction(DLC1VampireFaction)
-		PlayerRef.AddPerk(VampireReduceDamage)
-		PlayerRef.AddPerk(VampireIncreaseDamage)
 		SolitudeOpening.setStage(200)
 		DawnguardAgents.Start()
 		VampireAgents.Start()
+		PlayerRef.AddPerk(VampireReduceDamage)
+		PlayerRef.AddPerk(VampireIncreaseDamage)
 		QuestType = 2
 	endif
 

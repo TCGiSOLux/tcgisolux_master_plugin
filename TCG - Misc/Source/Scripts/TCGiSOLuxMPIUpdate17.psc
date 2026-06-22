@@ -31,7 +31,7 @@ DLC2CultistFaction.SetEnemy(IsGuardFaction)
 endif
 
 if T01.GetStageDone(60) == 1 && T01.GetStageDone(200) == 0
-;Fix spamming Hamal forcegreeting to Player
+;Fix Senna forcegreeting to Player
 kmyQuest.HamalShouldConfront = False
 endif
 

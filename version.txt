@@ -1,6 +1,8 @@
 V2.25
 
 OTHERS:
+Dawnguard Attacks now limited per 12 hours.
+Vampire Attacks now limited per 8 hours.
 Breton Vampire voicetype was changed from DLC1MaleVampire (Males), DLC1FemaleVampire (Females) to DLC1MaleVampire (Males), FemaleSultry (Females) 
 Altmer Vampire voicetype was changed from MaleElfHaughty (Males), FemaleElfHaughty (Females) to MaleSlyCynical (Males), FemaleCondescending (Females) 
 Dunmer Vampire voicetype was changed from DLC1MaleVampire (Males), DLC1FemaleVampire (Females) to DLC1MaleVampire (Males), FemaleCondescending (Females) 
@@ -22,6 +24,7 @@ Added vampire dialogue for voicetypes FemaleNord, FemaleCondescending, FemaleSul
 Added MaleNord, MaleSoldier, MaleYoungEager, MaleEvenToned, FemaleYoungEager, FemaleEventoned, and DLC1FemaleUniqueFura for Guard Voicetypes.
 
 NPCS:
+Added Guards voicetypes VALERICA, SERANA, HARKON, GARAN, MALEVAMPIRE AND FEMALESHRILL
 Changed some NPCs.
 Replaced hostile Vampires Bosses from Males to Females
 Added hostile vampires in Races Redguard and Bosmers.
@@ -51,6 +54,7 @@ Added Defenders by Dawnguard attackers to in the cities Faction.
 DLC2CultistFaction will become to hostile faction IsGuardFaction after ambush are completed.
 
 QUESTS:
+Removed Swap Sorli Swap Crime Faction
 Added Bounty: Warlock Lair / Necromancers quest.
 Added Dawnguard Attacks. Dawnguard Attacks will replace from Vampire Attacks if you complete quest The Bloodstone Chalice.
 Fixed bug The Heart of Dibella where Laila the Unbroken and Camilla Leotelli incorrectly use dialogue.
