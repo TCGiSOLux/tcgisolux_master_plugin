@@ -140,18 +140,39 @@ ReferenceAlias Property Alias_LucretiaAlias Auto
 ;BEGIN FRAGMENT Fragment_56
 Function Fragment_56()
 ;BEGIN CODE
-Alias_HertAlias.GetActorReference().SetRelationshipRank(Game.GetPlayer(), 1)
-Alias_JulisandeAlias.GetActorReference().SetRelationshipRank(Game.Getplayer(), 1)
-Alias_VirngringAlias.GetActorReference().SetRelationshipRank(Game.Getplayer(), 1)
-Alias_VireveriAlias.GetActorReference().SetRelationshipRank(Game.Getplayer(), 1)
-Alias_BetnarreAlias.GetActorReference().SetRelationshipRank(Game.Getplayer(), 1)
-Alias_RoxwinneAlias.GetActorReference().SetRelationshipRank(Game.Getplayer(), 1)
-Alias_FilbenethAlias.GetActorReference().SetRelationshipRank(Game.GetPlayer(), 1)
-Alias_VolrinaAlias.GetActorReference().SetRelationshipRank(Game.GetPlayer(), 1)
+Alias_HestlaAlias.GetActorReference().AddtoFaction(PotentialFollowerFaction)
+Alias_StalfAliasBackup.GetActorReference().AddtoFaction(PotentialFollowerFaction)
+Alias_RonthilAlias.GetActorReference().AddtoFaction(PotentialFollowerFaction)
+Alias_RargalAlias.GetActorReference().AddtoFaction(PotentialFollowerFaction)
+
+Alias_HestlaAlias.GetActorReference().AddtoFaction(CurrentFollowerFaction)
+Alias_StalfAliasBackup.GetActorReference().AddtoFaction(CurrentFollowerFaction)
+Alias_RonthilAlias.GetActorReference().AddtoFaction(CurrentFollowerFaction)
+Alias_RargalAlias.GetActorReference().AddtoFaction(CurrentFollowerFaction)
+
+Alias_HestlaAlias.GetActorReference().SetFactionRank(CurrentFollowerFaction, -1)
+Alias_StalfAliasBackup.GetActorReference().SetFactionRank(CurrentFollowerFaction, -1)
+Alias_RonthilAlias.GetActorReference().SetFactionRank(CurrentFollowerFaction, -1)
+Alias_RargalAlias.GetActorReference().SetFactionRank(CurrentFollowerFaction, -1)
+Utility.Wait(3)
+Alias_RargalAlias.GetActorReference().MakePlayerFriend()
+Alias_HestlaAlias.GetActorReference().MakePlayerFriend()
+Alias_StalfAliasBackup.GetActorReference().MakePlayerFriend()
+Alias_RonthilAlias.GetActorReference().MakePlayerFriend()
+Alias_HertAlias.GetActorReference().MakePlayerFriend()
+Alias_JulisandeAlias.GetActorReference().MakePlayerFriend()
+Utility.Wait(2)
+Alias_VirngringAlias.GetActorReference().MakePlayerFriend()
+Alias_VireveriAlias.GetActorReference().MakePlayerFriend()
+Alias_BetnarreAlias.GetActorReference().MakePlayerFriend()
+Alias_RoxwinneAlias.GetActorReference().MakePlayerFriend()
+Alias_FilbenethAlias.GetActorReference().MakePlayerFriend()
+Alias_VolrinaAlias.GetActorReference().MakePlayerFriend()
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-
+Faction Property PotentialFollowerFaction  Auto
+Faction Property CurrentFollowerFaction  Auto  

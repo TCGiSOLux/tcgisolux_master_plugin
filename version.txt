@@ -1,8 +1,6 @@
 V2.25
 
 OTHERS:
-Dawnguard Attacks now limited per 12 hours.
-Vampire Attacks now limited per 8 hours.
 Breton Vampire voicetype was changed from DLC1MaleVampire (Males), DLC1FemaleVampire (Females) to DLC1MaleVampire (Males), FemaleSultry (Females) 
 Altmer Vampire voicetype was changed from MaleElfHaughty (Males), FemaleElfHaughty (Females) to MaleSlyCynical (Males), FemaleCondescending (Females) 
 Dunmer Vampire voicetype was changed from DLC1MaleVampire (Males), DLC1FemaleVampire (Females) to DLC1MaleVampire (Males), FemaleCondescending (Females) 
