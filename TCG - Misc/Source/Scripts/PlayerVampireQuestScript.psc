@@ -38,6 +38,7 @@ Faction Property VampirePCFaction  Auto
 Float Property LastFeedTime Auto
 Float Property FeedTimer Auto
 GlobalVariable Property GameDaysPassed Auto
+GlobalVariable Property DLC1IntroCompletedHunter  Auto
 
 Idle Property VampireFeedingBedRight Auto
 Idle Property VampireFeedingBedrollRight Auto
@@ -69,11 +70,12 @@ Event OnUpdateGameTime()
 			;add Stage 4 Vampire buffs and spells
 			VampireFeedReady.SetValue(3)
 			;VampireStageProgressionMessage.Show()
-			VampireStage4Message.Show()
 			VampireStatus = 4
 			VampireProgression(Player, 4)
 			;/ REMOVING HATE ON LEVEL 4 VAMPIRE
-			;All NPCs  hate the evil Vampire
+			;All NPCs hate the evil Vampire
+			VampireStage4Message.Show()
+			Utility.Wait(3)
 			Player.AddtoFaction(VampirePCFaction)
 			Player.SetAttackActorOnSight()
 
@@ -132,44 +134,38 @@ Function VampireChange(Actor Target)
 	imageSpaceModifier.removeCrossFade()
 	VampireChangeFX.stop(Target)
 
-	;Change player's race
-	Race PlayerRace = Target.GetActorBase().GetRace()
-	Race PlayerVampireRace = RaceCompatibility.GetVampireRaceByRace(PlayerRace)
-	If (PlayerVampireRace != None)
-		CureRace = PlayerRace
-		Target.SetRace(PlayerVampireRace)
-	EndIf
-	; if (Target.GetActorBase().GetRace() == ArgonianRace)
-	; 	CureRace = ArgonianRace
-	; 	Target.SetRace(ArgonianRaceVampire)
-	; elseif (Target.GetActorBase().GetRace() == BretonRace)
-	; 	CureRace = BretonRace
-	; 	Target.SetRace(BretonRaceVampire) 
-	; elseif (Target.GetActorBase().GetRace() == DarkElfRace)
-	; 	CureRace = DarkElfRace
-	; 	Target.SetRace(DarkElfRaceVampire) 
-	; elseif (Target.GetActorBase().GetRace() == HighELfRace)
-	; 	CureRace = HighELfRace
-	; 	Target.SetRace(HighELfRaceVampire) 
-	; elseif (Target.GetActorBase().GetRace() == ImperialRace)
-	; 	CureRace = ImperialRace
-	; 	Target.SetRace(ImperialRaceVampire) 
-	; elseif (Target.GetActorBase().GetRace() == KhajiitRace)
-	; 	CureRace = KhajiitRace
-	; 	Target.SetRace(KhajiitRaceVampire) 
-	; elseif (Target.GetActorBase().GetRace() == NordRace)
-	; 	CureRace = NordRace
-	; 	Target.SetRace(NordRaceVampire) 
-	; elseif (Target.GetActorBase().GetRace() == OrcRace)
-	; 	CureRace = OrcRace
-	; 	Target.SetRace(OrcRaceVampire) 
-	; elseif (Target.GetActorBase().GetRace() == RedguardRace)
-	; 	CureRace = RedguardRace
-	; 	Target.SetRace(RedguardRaceVampire) 
-	; elseif (Target.GetActorBase().GetRace() == WoodElfRace)
-	; 	CureRace = WoodElfRace
-	; 	Target.SetRace(WoodElfRaceVampire) 
-	; endif
+	;Change player's race, defaults to Nord Vampire
+	if (Target.GetActorBase().GetRace() == ArgonianRace)
+		CureRace = ArgonianRace
+		Target.SetRace(ArgonianRaceVampire)
+	elseif (Target.GetActorBase().GetRace() == BretonRace)
+		CureRace = BretonRace
+		Target.SetRace(BretonRaceVampire) 
+	elseif (Target.GetActorBase().GetRace() == DarkElfRace)
+		CureRace = DarkElfRace
+		Target.SetRace(DarkElfRaceVampire) 
+	elseif (Target.GetActorBase().GetRace() == HighELfRace)
+		CureRace = HighELfRace
+		Target.SetRace(HighELfRaceVampire) 
+	elseif (Target.GetActorBase().GetRace() == ImperialRace)
+		CureRace = ImperialRace
+		Target.SetRace(ImperialRaceVampire) 
+	elseif (Target.GetActorBase().GetRace() == KhajiitRace)
+		CureRace = KhajiitRace
+		Target.SetRace(KhajiitRaceVampire) 
+	elseif (Target.GetActorBase().GetRace() == NordRace)
+		CureRace = NordRace
+		Target.SetRace(NordRaceVampire) 
+	elseif (Target.GetActorBase().GetRace() == OrcRace)
+		CureRace = OrcRace
+		Target.SetRace(OrcRaceVampire) 
+	elseif (Target.GetActorBase().GetRace() == RedguardRace)
+		CureRace = RedguardRace
+		Target.SetRace(RedguardRaceVampire) 
+	elseif (Target.GetActorBase().GetRace() == WoodElfRace)
+		CureRace = WoodElfRace
+		Target.SetRace(WoodElfRaceVampire) 
+	endif
 
 	;Clear player's diseases
 	;VampireCureDisease.Cast(Target)
@@ -200,7 +196,7 @@ Function VampireChange(Actor Target)
 	VampireProgression(Game.GetPlayer(), 1)
 	
 	;Setup the Feed Timers
-	RegisterForUpdateGameTime(12)
+	RegisterForUpdateGameTime(48)
 	LastFeedTime =  GameDaysPassed.Value
 
 	;Set the Global for stat tracking
@@ -209,7 +205,6 @@ Function VampireChange(Actor Target)
 	Utility.Wait(1)
 	Game.EnablePlayerControls()	
 
-	;If the player has been cured before, restart the cure quest
 	If VC01.GetStageDone(200) == 1
 		VC01.SetStage(25)
 	EndIf
@@ -238,6 +233,7 @@ Function VampireFeed()
 	VampireProgression(Game.GetPlayer(), 1)
 
 	;Player is no longer hated. Only used for players that load DLC as a vampire
+	If Game.GetPlayer().IsInFaction(VampirePCFaction) == 1
 	Game.GetPlayer().RemoveFromFaction(VampirePCFaction)
 	Game.GetPlayer().SetAttackActorOnSight(False)
 
@@ -247,14 +243,15 @@ Function VampireFeed()
 	CrimeFactions = DLC1CrimeFactions
 	;Debug.Trace("VAMPIRE feed: CrimeFactions after = " + CrimeFactions)
 	while (cfIndex < CrimeFactions.GetSize())
-		;Debug.Trace("VAMPIRE: Removing enemy flag from " + CrimeFactions.GetAt(cfIndex))
-		(CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy(false)
-		cfIndex += 1
+	;Debug.Trace("VAMPIRE: Removing enemy flag from " + CrimeFactions.GetAt(cfIndex))
+	(CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy(false)
+	cfIndex += 1
 	endwhile
-	
+	endif
+
 	;Start checking GameTime again if we weren't already
 	UnregisterforUpdateGameTime()
-	RegisterForUpdateGameTime(12)
+	RegisterForUpdateGameTime(24)
 	
 	
 EndFunction
@@ -362,7 +359,7 @@ Function VampireProgression(Actor Player, int VampireStage)
 		Player.RemoveSpell(VampireSunDamage02)
 		Player.RemoveSpell(VampireSunDamage03)
 		Player.AddSpell(VampireSunDamage04, abVerbose = False)
-		
+
 		Player.AddSpell(VampireInvisibilityPC)	
 		
 	ElseIf VampireStage == 1
@@ -374,6 +371,7 @@ Function VampireProgression(Actor Player, int VampireStage)
 		Player.RemoveSpell(AbVampire04b)
 		Player.RemoveSpell(AbVampire02b)
 		Player.RemoveSpell(AbVampire03b)
+
 		Player.AddSpell(AbVampire01, abVerbose = False)
 		Player.AddSpell(AbVampire01b, abVerbose = False)
 		
@@ -402,7 +400,12 @@ Function VampireProgression(Actor Player, int VampireStage)
 		Player.RemoveSpell(VampireSunDamage02)
 		Player.RemoveSpell(VampireSunDamage03)
 		Player.AddSpell(VampireSunDamage01, abVerbose = False)
-		
+		Player.AddSpell(ChainLightningRightHand)
+		Player.AddSpell(IceStormRightHand)
+		Player.AddSpell(ThunderboltRightHand)
+		Player.AddSpell(IcySpearRightHand)
+		Player.AddSpell(IceSpikeLeftHand)
+		Player.AddSpell(LightningBoltRightHand)
 		Player.RemoveSpell(VampireCharm)
 		;Player.RemoveSpell(VampireCloak)
 		Player.RemoveSpell(VampireInvisibilityPC)	
@@ -416,9 +419,22 @@ Function VampireCure(Actor Player)
 	UnregisterforUpdateGameTime()
 
 	VampireStatus = 0
-	;Player is no longer hated
+	;Player is no longer hated. Checks only if player are in faction VampirePCFaction.
+	If Game.GetPlayer().IsInFaction(VampirePCFaction) == 1
 	Player.RemoveFromFaction(VampirePCFaction)
 	Player.SetAttackActorOnSight(False)
+
+	int cfIndex = 0
+	;Debug.Trace("VAMPIRE feed: DLC1CrimeFactions = " + DLC1CrimeFactions)
+	;Debug.Trace("VAMPIRE feed: CrimeFactions before = " + CrimeFactions)
+	CrimeFactions = DLC1CrimeFactions
+	;Debug.Trace("VAMPIRE feed: CrimeFactions after = " + CrimeFactions)
+	while (cfIndex < CrimeFactions.GetSize())
+	;Debug.Trace("VAMPIRE: Removing enemy flag from " + CrimeFactions.GetAt(cfIndex))
+	(CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy(false)
+	cfIndex += 1
+	endwhile
+	endif
 	
 	;Remove all abilities
 	Player.RemoveSpell(DLC1VampireChange)
@@ -453,32 +469,28 @@ Function VampireCure(Actor Player)
 	;Player.RemoveSpell(VampireCloak)
 	Player.RemoveSpell(VampireInvisibilityPC)	
 
-	;Change player's race
-	Race CuredRace = RaceCompatibility.GetRaceByVampireRace(Player.GetRace())
-	If (CuredRace != None)
-		Player.SetRace(CuredRace)
-	EndIf
-	; if (Player.GetRace() == ArgonianRaceVampire)
-	; 	Player.SetRace(ArgonianRace)
-	; elseif (Player.GetRace() == BretonRaceVampire)
-	; 	Player.SetRace(BretonRace) 
-	; elseif (Player.GetRace() == DarkElfRaceVampire)
-	; 	Player.SetRace(DarkElfRace) 
-	; elseif (Player.GetRace() == HighELfRaceVampire)
-	; 	Player.SetRace(HighElfRace) 
-	; elseif (Player.GetRace() == ImperialRaceVampire)
-	; 	Player.SetRace(ImperialRace) 
-	; elseif (Player.GetRace() == KhajiitRaceVampire)
-	; 	Player.SetRace(KhajiitRace) 
-	; elseif (Player.GetRace() == NordRaceVampire)
-	; 	Player.SetRace(NordRace) 
-	; elseif (Player.GetRace() == OrcRaceVampire)
-	; 	Player.SetRace(OrcRace) 
-	; elseif (Player.GetRace() == RedguardRaceVampire)
-	; 	Player.SetRace(RedguardRace) 
-	; elseif (Player.GetRace() == WoodElfRaceVampire)
-	; 	Player.SetRace(WoodElfRace) 
-	; endif
+	;Change player's race, defaults to Nord
+	if (Player.GetRace() == ArgonianRaceVampire)
+		Player.SetRace(ArgonianRace)
+	elseif (Player.GetRace() == BretonRaceVampire)
+		Player.SetRace(BretonRace) 
+	elseif (Player.GetRace() == DarkElfRaceVampire)
+		Player.SetRace(DarkElfRace) 
+	elseif (Player.GetRace() == HighELfRaceVampire)
+		Player.SetRace(HighElfRace) 
+	elseif (Player.GetRace() == ImperialRaceVampire)
+		Player.SetRace(ImperialRace) 
+	elseif (Player.GetRace() == KhajiitRaceVampire)
+		Player.SetRace(KhajiitRace) 
+	elseif (Player.GetRace() == NordRaceVampire)
+		Player.SetRace(NordRace) 
+	elseif (Player.GetRace() == OrcRaceVampire)
+		Player.SetRace(OrcRace) 
+	elseif (Player.GetRace() == RedguardRaceVampire)
+		Player.SetRace(RedguardRace) 
+	elseif (Player.GetRace() == WoodElfRaceVampire)
+		Player.SetRace(WoodElfRace) 
+	endif
 
 	;Set the Global for stat tracking
 	PlayerIsVampire.SetValue(0)
@@ -519,6 +531,12 @@ Spell Property VampireSunDamage02 Auto
 Spell Property VampireSunDamage03 Auto
 Spell Property VampireSunDamage04 Auto
 
+Spell Property ChainLightningRightHand Auto ; Added by TCGiSO
+Spell Property IceSpikeLeftHand Auto ; Added by TCGiSO
+Spell Property IceStormRightHand Auto ; Added by TCGiSO
+Spell Property IcySpearRightHand Auto ; Added by TCGiSO
+Spell Property LightningBoltRightHand Auto ; Added by TCGiSO
+Spell Property ThunderboltRightHand Auto
 Spell Property VampireHuntersSight Auto
 Spell Property VampireCharm Auto
 Spell Property VampireCloak Auto

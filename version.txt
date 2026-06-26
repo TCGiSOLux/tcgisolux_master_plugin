@@ -1,6 +1,7 @@
 V2.25
 
 OTHERS:
+Reworked Vampire System.
 Breton Vampire voicetype was changed from DLC1MaleVampire (Males), DLC1FemaleVampire (Females) to DLC1MaleVampire (Males), FemaleSultry (Females) 
 Altmer Vampire voicetype was changed from MaleElfHaughty (Males), FemaleElfHaughty (Females) to MaleSlyCynical (Males), FemaleCondescending (Females) 
 Dunmer Vampire voicetype was changed from DLC1MaleVampire (Males), DLC1FemaleVampire (Females) to DLC1MaleVampire (Males), FemaleCondescending (Females) 
@@ -22,6 +23,7 @@ Added vampire dialogue for voicetypes FemaleNord, FemaleCondescending, FemaleSul
 Added MaleNord, MaleSoldier, MaleYoungEager, MaleEvenToned, FemaleYoungEager, FemaleEventoned, and DLC1FemaleUniqueFura for Guard Voicetypes.
 
 NPCS:
+Kolskeggr Guards now uses voicetypes Garan and MaleNord.
 Added Guards voicetypes VALERICA, SERANA, HARKON, GARAN, MALEVAMPIRE AND FEMALESHRILL
 Changed some NPCs.
 Replaced hostile Vampires Bosses from Males to Females
@@ -40,7 +42,7 @@ Replaced Stormcloaks Guard to Vampire Guards in Sons of Skyrim in Dwemer Museum.
 Added Stormcloaks Guards DLC1FemaleUniqueFura and FemaleYoungEager voicetypes.
 
 WORLD ENCOUNTERS:
-Dawnguard Vampire Hunters now adds Map Maker if you read Writ of Dawn.
+Dawnguard Vampire Hunters World Encounter, now adds Map Maker if you read Writ of Dawn.
 
 LOCATIONS:
 
@@ -52,6 +54,9 @@ Added Defenders by Dawnguard attackers to in the cities Faction.
 DLC2CultistFaction will become to hostile faction IsGuardFaction after ambush are completed.
 
 QUESTS:
+Reworked Eclipse system. Reduced chance to 45 if Eclipse not active.
+Added Disguised Dawnguard Vampire Hunter encounter.
+Reduced Level Requirement to Start the Quest The Heart of Dibella
 Removed Swap Sorli Swap Crime Faction
 Added Bounty: Warlock Lair / Necromancers quest.
 Added Dawnguard Attacks. Dawnguard Attacks will replace from Vampire Attacks if you complete quest The Bloodstone Chalice.
@@ -73,6 +78,7 @@ ITEMS:
 Added items for Evelyssa Services.
 
 FIXED BUGS:
+Fixed Bug MS08 Quest which doesn't starting.
 
 Known Issues:
 Some Disguised NPCs which uses voicetypes: FemaleShrill, Karliah and Elenwen voicetypes still unvoiced.

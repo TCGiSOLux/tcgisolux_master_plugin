@@ -95,11 +95,28 @@ Alias_Dawnguard03.GetReference().DeleteWhenAble()
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_3
+Function Fragment_3()
+;BEGIN CODE
+;Dawnguard Vampire Hunters are unloaded.
+;Debug.Trace("110: " + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded())
+if (GetStageDone(100) && !Alias_Dawnguard01.GetReference().Is3DLoaded() && !Alias_Dawnguard02.GetReference().Is3DLoaded() && !Alias_Dawnguard03.GetReference().Is3DLoaded())
+     Stop()
+EndIf
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_2
 Function Fragment_2()
 ;BEGIN CODE
-;Add the map marker to the player's map. KEEP RUNNING
+;Add the map marker to the player's map.
 Alias_TargetCapitalHQMapMarker.GetReference().AddToMap()
+
+;Debug.Trace("100: " + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded())
+if (GetStageDone(100) && !Alias_Dawnguard01.GetReference().Is3DLoaded() && !Alias_Dawnguard02.GetReference().Is3DLoaded() && !Alias_Dawnguard03.GetReference().Is3DLoaded())
+     Stop()
+EndIf
 ;END CODE
 EndFunction
 ;END FRAGMENT

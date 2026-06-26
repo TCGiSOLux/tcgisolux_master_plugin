@@ -59,3 +59,5 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 Quest Property DLC1VQ03Vampire  Auto  
+Faction Property PotentialFollowerFaction  Auto
+Faction Property CurrentFollowerFaction  Auto  

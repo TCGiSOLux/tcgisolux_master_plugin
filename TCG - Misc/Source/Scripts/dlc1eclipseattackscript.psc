@@ -123,11 +123,11 @@ Function SetNextChance()
 	int NewChance
 
 	if DLC1EclipseActive.GetValue() == 1
-		NewChance = 100 ;starts game at 100
+		NewChance = 100; starts game at 100 chance for Vampires, at 50 chance for Dawnguard
 		DLC1EclipseAttackNextChanceEclipse.SetValue(NewChance)
 
 	Else ;not an eclipse - just happening because its nighttime
-		NewChance = 100; starts game at 100
+		NewChance = 45; starts game at 100 chance for Vampires, at 50 chance for Dawnguard
 		DLC1EclipseAttackNextChanceNight.SetValue(NewChance)
 
 	endIf
