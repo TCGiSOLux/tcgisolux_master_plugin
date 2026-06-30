@@ -1,6 +1,7 @@
 V2.25
 
 OTHERS:
+Renamed Shadow of Dawn note to Night of Dawn note.
 Reworked Vampire System.
 Breton Vampire voicetype was changed from DLC1MaleVampire (Males), DLC1FemaleVampire (Females) to DLC1MaleVampire (Males), FemaleSultry (Females) 
 Altmer Vampire voicetype was changed from MaleElfHaughty (Males), FemaleElfHaughty (Females) to MaleSlyCynical (Males), FemaleCondescending (Females) 

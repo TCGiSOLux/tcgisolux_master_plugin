@@ -296,12 +296,12 @@ Game.AddAchievement(53)
 ;Swap gargoyles on the bridge back
 pVQ08ExtGargoyleParent.Disable(pVQ08ExtGargoyleParent)
 
-;Quest Completed. Remove hostility for Volkihar Clan agents to Dawnguard.
+;Quest Completed. Remove hostility for Volkihar Clan agents to Dawnguard. Keep hostility only if player are sided with the Vampires.
 if pDLC1PlayingVampireLine.GetValue() == 0
 DawnguardAgents.Stop()
 VampireAgents.Stop()
-endif
-
+DLC1DialogueVampireBase.Stop()
+DLC1DialogueVampireCuredBlock.Stop()
 ;fightController.StopFight()
 MMQuest.IsWillingToWait = true
 MMQuest.CanBeDismissed = true
@@ -309,6 +309,15 @@ MMQuest.QuestLineCompleted = true
 MMQuest.RNPC.TryToEvaluatePackage()
 DLC1VQ08Post.Start()
 Stop()
+else
+;fightController.StopFight()
+MMQuest.IsWillingToWait = true
+MMQuest.CanBeDismissed = true
+MMQuest.QuestLineCompleted = true
+MMQuest.RNPC.TryToEvaluatePackage()
+DLC1VQ08Post.Start()
+Stop()
+endif
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -408,9 +417,11 @@ if pDLC1PlayingVampireLine.GetValue() == 0
 	alias_DLC1VQ08IngjardAlias.TryToRemoveFromFaction(DLC1VQ08HunterSiegeFaction)
 	alias_DLC1VQ08SorineAlias.TryToRemoveFromFaction(DLC1VQ08HunterSiegeFaction)
 	alias_TrollAlias.TryToRemoveFromFaction(DLC1VQ08HunterSiegeFaction)
-	
+
 	DLC1DialogueVampireBase.Stop()
 	DLC1DialogueVampireCuredBlock.Stop()
+	DawnguardAgents.Stop()
+	VampireAgents.Stop()
 endif
 ;END CODE
 EndFunction
