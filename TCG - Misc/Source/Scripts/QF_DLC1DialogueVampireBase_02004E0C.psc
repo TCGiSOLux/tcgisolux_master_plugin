@@ -32,6 +32,11 @@ ReferenceAlias Property Alias_StalfAliasBackup Auto
 ReferenceAlias Property Alias_JulisandeAlias Auto
 ;END ALIAS PROPERTY
 
+;BEGIN ALIAS PROPERTY HestlaAliasBackup
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_HestlaAliasBackup Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY HestlaAlias
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_HestlaAlias Auto
@@ -45,6 +50,11 @@ ReferenceAlias Property Alias_HarkonAlias Auto
 ;BEGIN ALIAS PROPERTY RonthilAlias
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_RonthilAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY RonthilAliasBackup
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_RonthilAliasBackup Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY VingalmoAlias
@@ -141,33 +151,40 @@ ReferenceAlias Property Alias_LucretiaAlias Auto
 Function Fragment_56()
 ;BEGIN CODE
 Alias_HestlaAlias.GetActorReference().AddtoFaction(PotentialFollowerFaction)
-Alias_StalfAliasBackup.GetActorReference().AddtoFaction(PotentialFollowerFaction)
 Alias_RonthilAlias.GetActorReference().AddtoFaction(PotentialFollowerFaction)
 Alias_RargalAlias.GetActorReference().AddtoFaction(PotentialFollowerFaction)
+Alias_StalfAliasBackup.GetActorReference().AddtoFaction(PotentialFollowerFaction)
+Alias_HestlaAliasBackup.GetActorReference().AddtoFaction(PotentialFollowerFaction)
+Alias_RonthilAliasBackup.GetActorReference().AddtoFaction(PotentialFollowerFaction)
 
 Alias_HestlaAlias.GetActorReference().AddtoFaction(CurrentFollowerFaction)
-Alias_StalfAliasBackup.GetActorReference().AddtoFaction(CurrentFollowerFaction)
 Alias_RonthilAlias.GetActorReference().AddtoFaction(CurrentFollowerFaction)
 Alias_RargalAlias.GetActorReference().AddtoFaction(CurrentFollowerFaction)
+Alias_StalfAliasBackup.GetActorReference().AddtoFaction(CurrentFollowerFaction)
+Alias_HestlaAliasBackup.GetActorReference().AddtoFaction(CurrentFollowerFaction)
+Alias_RonthilAliasBackup.GetActorReference().AddtoFaction(CurrentFollowerFaction)
 
 Alias_HestlaAlias.GetActorReference().SetFactionRank(CurrentFollowerFaction, -1)
-Alias_StalfAliasBackup.GetActorReference().SetFactionRank(CurrentFollowerFaction, -1)
 Alias_RonthilAlias.GetActorReference().SetFactionRank(CurrentFollowerFaction, -1)
 Alias_RargalAlias.GetActorReference().SetFactionRank(CurrentFollowerFaction, -1)
-Utility.Wait(3)
+Alias_StalfAliasBackup.GetActorReference().SetFactionRank(CurrentFollowerFaction, -1)
+Alias_HestlaAliasBackup.GetActorReference().SetFactionRank(CurrentFollowerFaction, -1)
+Alias_RonthilAliasBackup.GetActorReference().SetFactionRank(CurrentFollowerFaction, -1)
+
 Alias_RargalAlias.GetActorReference().MakePlayerFriend()
 Alias_HestlaAlias.GetActorReference().MakePlayerFriend()
-Alias_StalfAliasBackup.GetActorReference().MakePlayerFriend()
 Alias_RonthilAlias.GetActorReference().MakePlayerFriend()
 Alias_HertAlias.GetActorReference().MakePlayerFriend()
 Alias_JulisandeAlias.GetActorReference().MakePlayerFriend()
-Utility.Wait(2)
 Alias_VirngringAlias.GetActorReference().MakePlayerFriend()
 Alias_VireveriAlias.GetActorReference().MakePlayerFriend()
 Alias_BetnarreAlias.GetActorReference().MakePlayerFriend()
 Alias_RoxwinneAlias.GetActorReference().MakePlayerFriend()
 Alias_FilbenethAlias.GetActorReference().MakePlayerFriend()
 Alias_VolrinaAlias.GetActorReference().MakePlayerFriend()
+Alias_HestlaAliasBackup.GetActorReference().MakePlayerFriend()
+Alias_StalfAliasBackup.GetActorReference().MakePlayerFriend()
+Alias_RonthilAliasBackup.GetActorReference().MakePlayerFriend()
 ;END CODE
 EndFunction
 ;END FRAGMENT

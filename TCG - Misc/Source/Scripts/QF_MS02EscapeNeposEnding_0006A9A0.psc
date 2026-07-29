@@ -33,9 +33,17 @@ Alias_Thonar.GetActorRef().GetActorBase().SetEssential(False)
 Alias_EvidenceChest.GetRef().RemoveAllItems(akTransferTo = Game.GetPlayer())
 Alias_StolenGoodsChest.GetRef().RemoveAllItems(akTransferTo = Game.GetPlayer())
 
-;Fix bounty for escaping
+;Fix bounty for escaping. Check will be only if player are in faction VampirePCFaction or PlayerWerewolfFaction.
+If Game.GetPlayer().IsInFaction(VampirePCFaction) == 1 || Game.GetPlayer().IsInFaction(WerewolfFaction) == 1
+CrimeFactionReach.SetPlayerEnemy(true)
+CrimeFactionReach.SetEnemy(WerewolfFaction)
+CrimeFactionReach.SetEnemy(VampirePCFaction)
 CrimeFactionReach.SetCrimeGold(0)
 CrimeFactionReach.SetCrimeGoldViolent(0)
+else
+CrimeFactionReach.SetCrimeGold(0)
+CrimeFactionReach.SetCrimeGoldViolent(0)
+endif
 
 ;Player gets the Silver-Fish ring
 Game.GetPlayer().AddItem(pSilverFishRing, 1)
@@ -53,8 +61,14 @@ Function Fragment_0()
 CrimeFactionReach.SetCrimeGold(0)
 CrimeFactionReach.SetCrimeGoldViolent(0)
 
-;Move Thonar into position. Check will be only if player are NOT in faction VampirePCFaction or PlayerWerewolfFaction.
 If Game.GetPlayer().IsInFaction(VampirePCFaction) == 0 && Game.GetPlayer().IsInFaction(WerewolfFaction) == 0
+CrimeFactionReach.SetPlayerEnemy(false)
+endif
+
+;Move Thonar into position. Set Neutral only if player are in faction VampirePCFaction or PlayerWerewolfFaction.
+If Game.GetPlayer().IsInFaction(VampirePCFaction) == 1 || Game.GetPlayer().IsInFaction(WerewolfFaction) == 1
+CrimeFactionReach.SetEnemy(WerewolfFaction, true, true)
+CrimeFactionReach.SetEnemy(VampirePCFaction, true, true)
 CrimeFactionReach.SetPlayerEnemy(false)
 Alias_Thonar.GetActorRef().MoveTo(Alias_ThonarMarker.GetRef())
 else

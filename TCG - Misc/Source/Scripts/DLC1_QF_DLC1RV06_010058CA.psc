@@ -27,12 +27,15 @@ EndFunction
 Function Fragment_2()
 ;BEGIN CODE
 CompleteAllObjectives()
-Alias_Spouse.GetActorReference().RemoveFromFaction(DLC1VampireFeedNoCrimeFaction)
-Alias_Spouse.GetActorReference().RemoveFromFaction(DLC1VampireSeductionBoostFaction)
-Alias_Spouse.GetActorReference().SetOutfit(VampireOutfit)
-Alias_Spouse.GetActorReference().AddPerk(VampireReduceDamage)
-Alias_Spouse.GetActorReference().AddPerk(VampireIncreaseDamage)
-Alias_Spouse.GetActorReference().SetCrimeFaction(DLC1VampireCrimeFaction)
+Actor Spouse = Alias_Spouse.GetActorReference()
+
+Spouse.RemoveFromFaction(DLC1VampireFeedNoCrimeFaction)
+Spouse.RemoveFromFaction(DLC1VampireSeductionBoostFaction)
+Spouse.SetOutfit(VampireOutfit)
+Spouse.AddPerk(VampireReduceDamage)
+Spouse.AddPerk(VampireIncreaseDamage)
+Spouse.SetCrimeFaction(DLC1VampireCrimeFaction)
+
 DLC1Radiant.GiveQuestReward(ChanceForBloodPotion = 25)
 DLC1Radiant.StopQuestAndStartNewOneVampire(self)   ;THIS WILL CALL STOP() ON THIS QUEST
 ;END CODE

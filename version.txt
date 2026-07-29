@@ -24,6 +24,8 @@ Added vampire dialogue for voicetypes FemaleNord, FemaleCondescending, FemaleSul
 Added MaleNord, MaleSoldier, MaleYoungEager, MaleEvenToned, FemaleYoungEager, FemaleEventoned, and DLC1FemaleUniqueFura for Guard Voicetypes.
 
 NPCS:
+Added 3 NPCs in Volkihar Clan faction.
+Added 2 followers.
 Kolskeggr Guards now uses voicetypes Garan and MaleNord.
 Added Guards voicetypes VALERICA, SERANA, HARKON, GARAN, MALEVAMPIRE AND FEMALESHRILL
 Changed some NPCs.
@@ -48,13 +50,14 @@ Dawnguard Vampire Hunters World Encounter, now adds Map Maker if you read Writ o
 LOCATIONS:
 
 BUILDINGS:
-Added 5 houses.
+Added many houses.
 
 FACTIONS:
 Added Defenders by Dawnguard attackers to in the cities Faction.
 DLC2CultistFaction will become to hostile faction IsGuardFaction after ambush are completed.
 
 QUESTS:
+Added more dialogues in TCGiSOLux Dialogue Controller.
 Reworked Eclipse system. Reduced chance to 45 if Eclipse not active.
 Added Disguised Dawnguard Vampire Hunter encounter.
 Reduced Level Requirement to Start the Quest The Heart of Dibella
@@ -65,7 +68,7 @@ Fixed bug The Heart of Dibella where Laila the Unbroken and Camilla Leotelli inc
 The Heart of Dibella quest script are re-worked.
 Some Radiant Quests for Volkihar Clan, locations are changed, except quests DLC1RV08, DLC1RV09 and DLC1RV05.
 Reworked quest DLC1RV13.
-Added 4 World Encounters.
+Added many World Encounters.
 Quest Kindred Judgment are re-worked.
 Quest In My Time Of Need starts if you complete any quest The Bloodstone Chalice (Volkihar Clan) or A New Order (Dawnguard) and if you reach 45 level and higher.
 Quest Dragonborn no longer starts after completing quest The Way of the Voice. The quest will start only after you complete 3 quests: The Way of the Voice, Discerning the Transmundane and Kindred Judgment.

@@ -19,10 +19,6 @@ ReferenceAlias Property Alias_Spouse Auto
 
 ;BEGIN FRAGMENT Fragment_0
 Function Fragment_0()
-;BEGIN AUTOCAST TYPE T01QuestScript
-Quest __temp = self as Quest
-T01QuestScript kmyQuest = __temp as T01QuestScript
-;END AUTOCAST
 ;BEGIN CODE
 ;Start update
 
@@ -32,12 +28,12 @@ endif
 
 if T01.GetStageDone(60) == 1 && T01.GetStageDone(200) == 0
 ;Fix Senna forcegreeting to Player
-kmyQuest.HamalShouldConfront = False
+T01.HamalShouldConfront = false
 endif
 
 if T01.GetStageDone(200) == 1
-Alias_LailatheUnbroken.GetActorRef().SetRelationshipRank(Game.GetPlayer(), 1)
-Alias_CamillaLeotelli.GetActorRef().SetRelationshipRank(Game.GetPlayer(), 1)
+Alias_LailatheUnbroken.GetActorRef().MakePlayerFriend()
+Alias_CamillaLeotelli.GetActorRef().MakePlayerFriend()
 endif
 
 if DLC1IntroCompletedVampire.GetValue() == 1
@@ -65,7 +61,7 @@ EndFunction
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 Quest Property DLC2CultistAmbush  Auto  
 Quest Property DLC2WE09  Auto  
-Quest Property T01  Auto  
+T01QuestScript Property T01  Auto  
 Faction Property IsGuardFaction  Auto  
 Faction Property DLC1VampireCrimeFaction  Auto  
 Faction Property DLC2CultistFaction  Auto  

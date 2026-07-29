@@ -276,9 +276,13 @@ function AddRaceSpells()
 	Actor player = Game.GetPlayer()
 	RemoveRaceSpells(player)
 
+	Race BretonRaceVampire = Game.GetFormFromFile( 0x0008883C, "Skyrim.esm" ) as Race
+	Race DarkElfRaceVampire = Game.GetFormFromFile( 0x0008883D, "Skyrim.esm" ) as Race
+	Race HighElfRaceVampire = Game.GetFormFromFile( 0x00088840, "Skyrim.esm" ) as Race
+
 	; add race spells
 	Race playerRace = player.GetActorBase().GetRace()
-	if playerRace == ArgonianRace || ArgonianRaceVampire
+	if playerRace == ArgonianRace
 
 	elseif playerRace == BretonRace || BretonRaceVampire
 		player.AddSpell(ConjureFamiliar)
@@ -289,17 +293,17 @@ function AddRaceSpells()
 	elseif playerRace == HighElfRace  || HighElfRaceVampire
 		player.AddSpell(Fury)
 
-	elseif playerRace == ImperialRace  || ImperialRaceVampire
+	elseif playerRace == ImperialRace
 
-	elseif playerRace == KhajiitRace  || KhajiitRaceVampire
+	elseif playerRace == KhajiitRace
 
-	elseif playerRace == NordRace  || NordRaceVampire
+	elseif playerRace == NordRace
 
-	elseif playerRace == OrcRace  || OrcRaceVampire
+	elseif playerRace == OrcRace
 
-	elseif playerRace == RedguardRace  || RedguardRaceVampire
+	elseif playerRace == RedguardRace
 
-	elseif playerRace == WoodElfRace  || WoodElfRaceVampire
+	elseif playerRace == WoodElfRace
 
 	endif
 
@@ -358,16 +362,6 @@ Race Property NordRace  Auto
 Race Property OrcRace  Auto  
 Race Property RedguardRace  Auto  
 Race Property WoodElfRace  Auto  
-Race Property ArgonianRaceVampire  Auto  
-Race Property BretonRaceVampire  Auto  
-Race Property DarkElfRaceVampire  Auto  
-Race Property HighElfRaceVampire  Auto  
-Race Property ImperialRaceVampire  Auto  
-Race Property KhajiitRaceVampire  Auto  
-Race Property NordRaceVampire  Auto  
-Race Property OrcRaceVampire  Auto  
-Race Property RedguardRaceVampire  Auto  
-Race Property WoodElfRaceVampire  Auto 
 
 
 ImageSpaceModifier Property PlayerAlduinIMOD  Auto  

@@ -7,11 +7,6 @@ Scriptname QF_DLC1RadiantDisguisedD Extends Quest Hidden
 ReferenceAlias Property Alias_Dawnguard Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY Guard
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Guard Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY Location
 ;ALIAS PROPERTY TYPE LocationAlias
 LocationAlias Property Alias_Location Auto
@@ -27,18 +22,36 @@ ReferenceAlias Property Alias_Player Auto
 ReferenceAlias Property Alias_CenterMarker Auto
 ;END ALIAS PROPERTY
 
+;BEGIN ALIAS PROPERTY Guard
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Guard Auto
+;END ALIAS PROPERTY
+
+;BEGIN FRAGMENT Fragment_1
+Function Fragment_1()
+;BEGIN AUTOCAST TYPE DLC1RadiantDisguisedDawnguardScript
+Quest __temp = self as Quest
+DLC1RadiantDisguisedDawnguardScript kmyQuest = __temp as DLC1RadiantDisguisedDawnguardScript
+;END AUTOCAST
+;BEGIN CODE
+;debug.trace(self + "stage 255, shutting down deletewhenable() Dawnguard")
+
+Alias_Dawnguard.GetReference().DeleteWhenAble()
+kmyQuest.DawnguardDisguisedDelete()
+kmyQuest.SetNeutralFactionsToAttackDawnguardDisguised()
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_2
 Function Fragment_2()
+;BEGIN AUTOCAST TYPE DLC1RadiantDisguisedDawnguardScript
+Quest __temp = self as Quest
+DLC1RadiantDisguisedDawnguardScript kmyQuest = __temp as DLC1RadiantDisguisedDawnguardScript
+;END AUTOCAST
 ;BEGIN CODE
-
-;START COMBAT
-
-int count = 0
-while (count < AttackDisguisedDawnguard.length)
-DawnguardDisguised.SetEnemy(AttackDisguisedDawnguard[count])
-count += 1
-endwhile
-
+kmyQuest.SetAllyFactionsToAttackDawnguardDisguised()
+kmyQuest.DawnguardDisguisedStartCombat()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -47,31 +60,13 @@ EndFunction
 Function Fragment_0()
 ;BEGIN CODE
 ;debug.trace(self + "stage 0")
-
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_1
-Function Fragment_1()
-;BEGIN CODE
-;debug.trace(self + "stage 255, shutting down deletewhenable() Dawnguard")
-
-if (GetStageDone(200) == 0)
-int count = 0
-while (count < AttackDisguisedDawnguard.length)
-DawnguardDisguised.SetEnemy(AttackDisguisedDawnguard[count], true, true)
-count += 1
-endwhile
-endif
-
-Alias_Dawnguard.GetReference().DeleteWhenAble()
-
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
+Faction Property VampirePCFactionB auto
+Faction Property VampirePCFactionA auto
 Faction Property DawnguardDisguised auto
 Faction[] Property AttackDisguisedDawnguard auto

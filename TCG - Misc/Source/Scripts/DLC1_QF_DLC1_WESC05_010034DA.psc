@@ -100,7 +100,7 @@ Function Fragment_3()
 ;BEGIN CODE
 ;Dawnguard Vampire Hunters are unloaded.
 ;Debug.Trace("110: " + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded())
-if (GetStageDone(100) && !Alias_Dawnguard01.GetReference().Is3DLoaded() && !Alias_Dawnguard02.GetReference().Is3DLoaded() && !Alias_Dawnguard03.GetReference().Is3DLoaded())
+if (!Alias_Dawnguard01.GetReference().Is3DLoaded() && !Alias_Dawnguard02.GetReference().Is3DLoaded() && !Alias_Dawnguard03.GetReference().Is3DLoaded())
      Stop()
 EndIf
 ;END CODE
@@ -115,7 +115,7 @@ Alias_TargetCapitalHQMapMarker.GetReference().AddToMap()
 
 ;Debug.Trace("100: " + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded())
 if (GetStageDone(100) && !Alias_Dawnguard01.GetReference().Is3DLoaded() && !Alias_Dawnguard02.GetReference().Is3DLoaded() && !Alias_Dawnguard03.GetReference().Is3DLoaded())
-     Stop()
+     SetStage(110)
 EndIf
 ;END CODE
 EndFunction
@@ -130,6 +130,11 @@ WEScript kmyQuest = __temp as WEScript
 ;BEGIN CODE
 ; debug.trace(self + "stage 0")
 Alias_Dawnguard01.GetReference().AddItem(Alias_Writ.GetReference())
+
+;Debug.Trace("0: " + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded())
+if (!Alias_Dawnguard01.GetReference().Is3DLoaded() && !Alias_Dawnguard02.GetReference().Is3DLoaded() && !Alias_Dawnguard03.GetReference().Is3DLoaded())
+     SetStage(110)
+EndIf
 ;END CODE
 EndFunction
 ;END FRAGMENT

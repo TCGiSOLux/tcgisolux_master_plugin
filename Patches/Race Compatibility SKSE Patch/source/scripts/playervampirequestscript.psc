@@ -207,11 +207,36 @@ Function VampireChange(Actor Target)
 
 	;Set the Global for stat tracking
 	PlayerIsVampire.SetValue(1)
+	Faction DLC1HunterFaction = Game.GetFormFromFile(0x00003375, "Dawnguard.esm") as Faction
+	Faction FemaleVampriesFaction = Game.GetFormFromFile(0x000030DC, "TCGiSOLux Master Plugin Interior.esm") as Faction
+	Spell ChainLightningRightHand = Game.GetFormFromFile( 0x000BB96B, "Skyrim.esm" ) as Spell
+	Spell IceSpikeLeftHand = Game.GetFormFromFile( 0x00040000, "Skyrim.esm" ) as Spell
+	Spell IceStormRightHand = Game.GetFormFromFile( 0x000BB96A, "Skyrim.esm" ) as Spell
+	Spell IcySpearRightHand = Game.GetFormFromFile( 0x0010F7F7, "Skyrim.esm" ) as Spell
+	Spell LightningBoltRightHand = Game.GetFormFromFile( 0x000C96A2, "Skyrim.esm" ) as Spell
+	Spell ThunderboltRightHand = Game.GetFormFromFile( 0x0010F7F8, "Skyrim.esm" ) as Spell
+
+	Target.AddSpell(ChainLightningRightHand)
+	Target.AddSpell(IceStormRightHand)
+	Target.AddSpell(ThunderboltRightHand)
+	Target.AddSpell(IcySpearRightHand)
+	Target.AddSpell(IceSpikeLeftHand)
+	Target.AddSpell(LightningBoltRightHand)
 	
 	Utility.Wait(1)
 	Game.EnablePlayerControls()	
 
-	If VC01.GetStageDone(200) == 1
+	ActorBase PlayerVamp = Game.GetPlayer().GetActorBase()
+
+	If PlayerVamp.GetSex() == 1
+		Target.AddToFaction(FemaleVampriesFaction)
+	EndIf
+
+	If VC01.GetStageDone(200) == 1 && PlayerVamp.GetSex() == 0
+		VC01.SetStage(25)
+	EndIf
+
+	If VC01.GetStageDone(200) == 1 && Game.GetPlayer().IsInFaction(DLC1HunterFaction) == 1
 		VC01.SetStage(25)
 	EndIf
 	
@@ -406,12 +431,6 @@ Function VampireProgression(Actor Player, int VampireStage)
 		Player.RemoveSpell(VampireSunDamage02)
 		Player.RemoveSpell(VampireSunDamage03)
 		Player.AddSpell(VampireSunDamage01, abVerbose = False)
-		Player.AddSpell(ChainLightningRightHand)
-		Player.AddSpell(IceStormRightHand)
-		Player.AddSpell(ThunderboltRightHand)
-		Player.AddSpell(IcySpearRightHand)
-		Player.AddSpell(IceSpikeLeftHand)
-		Player.AddSpell(LightningBoltRightHand)
 		Player.RemoveSpell(VampireCharm)
 		;Player.RemoveSpell(VampireCloak)
 		Player.RemoveSpell(VampireInvisibilityPC)	
@@ -425,6 +444,14 @@ Function VampireCure(Actor Player)
 	UnregisterforUpdateGameTime()
 
 	VampireStatus = 0
+	Faction FemaleVampriesFaction = Game.GetFormFromFile(0x000030DC, "TCGiSOLux Master Plugin Interior.esm") as Faction
+
+	ActorBase PlayerVamp = Game.GetPlayer().GetActorBase()
+
+	If PlayerVamp.GetSex() == 1 && Game.GetPlayer().IsInFaction(FemaleVampriesFaction) == 1
+		Game.GetPlayer().RemoveFromFaction(FemaleVampriesFaction)
+	EndIf
+
 	;Player is no longer hated. Checks only if player are in faction VampirePCFaction.
 	If Game.GetPlayer().IsInFaction(VampirePCFaction) == 1
 	Player.RemoveFromFaction(VampirePCFaction)
@@ -541,12 +568,6 @@ Spell Property VampireSunDamage02 Auto
 Spell Property VampireSunDamage03 Auto
 Spell Property VampireSunDamage04 Auto
 
-Spell Property ChainLightningRightHand Auto ; Added by TCGiSO
-Spell Property IceSpikeLeftHand Auto ; Added by TCGiSO
-Spell Property IceStormRightHand Auto ; Added by TCGiSO
-Spell Property IcySpearRightHand Auto ; Added by TCGiSO
-Spell Property LightningBoltRightHand Auto ; Added by TCGiSO
-Spell Property ThunderboltRightHand Auto
 Spell Property VampireHuntersSight Auto
 Spell Property VampireCharm Auto
 Spell Property VampireCloak Auto

@@ -133,7 +133,14 @@ Function Fragment_9()
 ;BEGIN CODE
 ;Scene outside plays
 
+If Game.GetPlayer().IsInFaction(VampirePCFaction) == 1 || Game.GetPlayer().IsInFaction(WerewolfFaction) == 1
+CrimeFactionReach.SetPlayerEnemy(true)
+CrimeFactionReach.SetEnemy(WerewolfFaction)
+CrimeFactionReach.SetEnemy(VampirePCFaction)
 pMS02.SetStage(100)
+else
+pMS02.SetStage(100)
+endif
 
 ;Add prisoners to the Forsworn faction
 Alias_Madanach.GetActorRef().AddToFaction(pForswornFaction)
@@ -219,13 +226,21 @@ EndFunction
 Function Fragment_13()
 ;BEGIN CODE
 ;Scene between Thonar and Madanach
-If Game.GetPlayer().IsInFaction(VampirePCFaction) == 0 && Game.GetPlayer().IsInFaction(WerewolfFaction) == 0
-CrimeFactionReach.SetPlayerEnemy(false)
-endif
 
 ;Fix bounty for escaping
 CrimeFactionReach.SetCrimeGold(0)
 CrimeFactionReach.SetCrimeGoldViolent(0)
+
+If Game.GetPlayer().IsInFaction(VampirePCFaction) == 0 && Game.GetPlayer().IsInFaction(WerewolfFaction) == 0
+CrimeFactionReach.SetPlayerEnemy(false)
+endif
+
+;Set Neutral only if player are in faction VampirePCFaction or PlayerWerewolfFaction
+If Game.GetPlayer().IsInFaction(VampirePCFaction) == 1 || Game.GetPlayer().IsInFaction(WerewolfFaction) == 1
+CrimeFactionReach.SetPlayerEnemy(false)
+CrimeFactionReach.SetEnemy(WerewolfFaction, true, true)
+CrimeFactionReach.SetEnemy(VampirePCFaction, true, true)
+endif
 
 MS02EscapeThonarScene.Start()
 

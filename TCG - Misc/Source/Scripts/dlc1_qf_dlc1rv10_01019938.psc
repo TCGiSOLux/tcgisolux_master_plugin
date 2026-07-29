@@ -166,10 +166,10 @@ kmyquest.StripEssentialAndEnable(Alias_UthgerdTorbaldsen) ; Added By TCGiSOLux M
 DLC1DawnguardGateRef1.Disable()
 DLC1DawnguardGateRef2.Disable()
 DLC1DawnguardGateRef3.Disable()
-
 Alias_Sorine.GetActorReference().SetOutfit(kmyquest.DLC1OutfitSorine)
 Alias_Gunmar.GetActorReference().SetOutfit(kmyquest.DLC1OutfitGunmar)
 Alias_Florentius.GetActorReference().SetOutfit(DLC1FlorentiusOutfit) ; Added by UDGP 1.1.3
+DLC1HunterFaction.SetPlayerEnemy(true)
 ;END CODE
 EndFunction
 ;END FRAGMENT

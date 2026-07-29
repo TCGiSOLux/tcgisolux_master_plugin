@@ -1,0 +1,14 @@
+Copy SKSE folder into game folder and replace it.
+
+NOTE: In SkyPatcher currently function filterByRaces/Excluded are not connected. They work Independent from each other. Just wait until they fix it.
+
+Voicetypes races which will be patched by Skypatcher:
+Imperial and Imperial Vampire: from: MaleCommander (males) and FemaleCommander (females) to: MaleEvenToned (males), FemaleEvenToned (females)
+Nord: from: MaleNord (males) and FemaleNord (females) to: MaleEvenToned (males), FemaleEvenToned (females)
+Nord Vampire: from: DLC1MaleVampire (males) and DLC1FemaleVampire (females) to: MaleEvenToned (males), FemaleEvenToned (females)
+Breton: from: MaleForsworn (males) and FemaleSultry (females) to: MaleEvenToned (males), FemaleEvenToned (females)
+Breton Vampire: from: DLC1MaleVampire (males) and FemaleSultry (females) to: MaleEvenToned (males), FemaleEvenToned (females)
+Altmer and Dunmer Vampire: from: MaleSlyCynical (males) and FemaleCondescending (females) to: MaleElfHaughty (males), FemaleElfHaughty (females)
+Dunmer: from: MaleDarkElf (males) and FemaleDarkElf (females) to: MaleElfHaughty (males), FemaleElfHaughty (females)
+Bosmer and Bosmer Vampire: from: MaleYoungEager (males) and FemaleYoungEager (females) to: MaleElfHaughty (males), FemaleElfHaughty (females)
+Redguard and Redguard Vampire: from: MaleCondescending (males) and FemaleCondescending (females) to: MaleEvenToned (males), FemaleEvenToned (females)
