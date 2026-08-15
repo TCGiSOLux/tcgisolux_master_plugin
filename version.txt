@@ -71,8 +71,8 @@ Added many World Encounters.
 Quest Kindred Judgment are re-worked.
 Quest In My Time Of Need starts if you complete any quest The Bloodstone Chalice (Volkihar Clan) or A New Order (Dawnguard) and if you reach 45 level and higher.
 Quest Dragonborn no longer starts after completing quest The Way of the Voice. The quest will start only after you complete Alduin's Bane.
-Quest Dawnguard no longer starts. The quest will start only after you complete quest Laid to Rest.
-Hostile Vampires will now appear after reaching level 28
+Quest Dawnguard no longer starts. The quest will start only after you complete quest Dragon Rising and Laid to Rest.
+Hostile Vampires will now appear after reaching level 23
 Changed Disguised Vampire Lord encounter.
 Changed many NPCs.
 Added many Eclipse quests.
@@ -111,3 +111,5 @@ Dibella's Shrine - superman22dr
 Music DotA 2 - Valve
 Address Library - All in one - meh321
 Font Overhaul - Natural Typefaces for Skyrim -- FONTS - mfcfbro
+Wispmother Follower - Vuzoon
+Playable Wispmothers - SirCumference64
