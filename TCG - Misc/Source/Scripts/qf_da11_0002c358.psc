@@ -187,7 +187,7 @@ Function Fragment_38()
 FailAllObjectives()
 
 ;Restore back, if The Bloodstone Chalice quest was completed.
-if DLC1VampireBaseIntro.GetStage() >= 200
+if DLC1VampireBaseIntro.GetStage() == 200
 Game.GetPlayer().AddToFaction(DLC1VampireFaction)
 endif
 

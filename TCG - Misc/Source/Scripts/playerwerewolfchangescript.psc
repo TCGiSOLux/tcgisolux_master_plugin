@@ -82,7 +82,7 @@ float Function GameTimeDaysToRealTimeSeconds(float gametime)
 EndFunction
 
 Function PrepShift()
-;     Debug.Trace("WEREWOLF: Prepping shift...")
+;     Debug.Trace("WEREWOLF: Smena tayyorlash...")
     Actor player = Game.GetPlayer()
 
     ; sets up the UI restrictions
@@ -114,12 +114,12 @@ Function PrepShift()
 EndFunction
 
 Function InitialShift()
-;     Debug.Trace("WEREWOLF: Player beginning transformation.")
+;     Debug.Trace("WEREWOLF: O'yinchi transformatsiyani boshlaydi.")
 
     WerewolfWarn.Apply()
 
     if (Game.GetPlayer().IsDead())
-;         Debug.Trace("WEREWOLF: Player is dead; bailing out.")
+;         Debug.Trace("WEREWOLF: O'yinchi o'ldi; qutqarilmoqda.")
         return
     endif
 
@@ -134,7 +134,7 @@ Function StartTracking()
 
     __trackingStarted = true
 
-;     Debug.Trace("WEREWOLF: Race swap done; starting tracking and effects.")
+;     Debug.Trace("WEREWOLF: Musobaqa almashinuvi amalga oshirildi; kuzatuv va effektlar boshlandi.")
     
     ; take all the player's stuff (since he/she can't use it anyway)
     ; Game.GetPlayer().RemoveAllItems(LycanStash)
@@ -144,22 +144,35 @@ Function StartTracking()
     ;Add Blood Effects
     ;FeedBloodVFX.Play(Game.GetPlayer())
 
-    ; make everyone hate you
+    ; hammani sizdan nafratlanishiga sabab bo'lsin
     Game.GetPlayer().SetAttackActorOnSight(true)
 
-    ; alert anyone nearby that they should now know the player is a werewolf
+    ; Yaqin atrofdagi har bir kishiga o'yinchi endi bo'ri ekanligini bilishlari kerakligi haqida ogohlantiring
+    Faction DLC1HunterFaction = Game.GetFormFromFile(0x00003375, "Dawnguard.esm") as Faction
+    Faction DLC1VampireFaction = Game.GetFormFromFile(0x00003376, "Dawnguard.esm") as Faction
+    GlobalVariable DLC1IntroCompletedHunter = Game.GetFormFromFile( 0x000141A4, "Dawnguard.esm" ) as GlobalVariable
+    GlobalVariable DLC1IntroCompletedVampire = Game.GetFormFromFile( 0x000141A3, "Dawnguard.esm" ) as GlobalVariable
+
     Game.SendWereWolfTransformation()
-    Utility.Wait(3)
+
+    if DLC1IntroCompletedHunter.GetValue() == 1
+    Game.GetPlayer().RemoveFromFaction(DLC1HunterFaction)
+    endif
+
+    if DLC1IntroCompletedVampire.GetValue() == 1
+    Game.GetPlayer().RemoveFromFaction(DLC1VampireFaction)
+    endif
+
     Game.GetPlayer().AddToFaction(PlayerWerewolfFaction)
     Game.GetPlayer().AddToFaction(WerewolfFaction)
     int cfIndex = 0
     while (cfIndex < CrimeFactions.GetSize())
-;         Debug.Trace("WEREWOLF: Setting enemy flag on " + CrimeFactions.GetAt(cfIndex))
-        (CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy()
+;         Debug.Trace("WEREWOLF: Dushman bayrog'ini o'rnatish " + CrimeFactions.GetAt(cfIndex))
+        (CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy(TRUE)
         cfIndex += 1
     endwhile
 
-    ; but they also don't know that it's you
+    ; lekin ular bu siz ekanligingizni ham bilishmaydi
     Game.SetPlayerReportCrime(false)
 
     ; recalc times
@@ -405,11 +418,11 @@ Function ActuallyShiftBackIfNecessary()
     Game.EnablePlayerControls(abMovement = false, abFighting = false, abCamSwitch = true, abLooking = false, abSneaking = false, abMenu = false, abActivate = false, abJournalTabs = false, aiDisablePOVType = 1)
     Game.ShowFirstPersonGeometry(true)
 
-    ; no more howling for you
+    ; endi sen uchun uvillash yo'q
     Game.GetPlayer().UnequipShout(CurrentHowl)
     Game.GetPlayer().RemoveShout(CurrentHowl)
 
-    ; or those claws
+    ; yoki o'sha tirnoqlar
     Game.GetPlayer().RemoveSpell(PlayerWerewolfLvl10AndBelowAbility)
     Game.GetPlayer().RemoveSpell(PlayerWerewolfLvl15AndBelowAbility)
     Game.GetPlayer().RemoveSpell(PlayerWerewolfLvl20AndBelowAbility)
@@ -420,27 +433,41 @@ Function ActuallyShiftBackIfNecessary()
     Game.GetPlayer().RemoveSpell(PlayerWerewolfLvl45AndBelowAbility)
     Game.GetPlayer().RemoveSpell(PlayerWerewolfLvl50AndOverAbility)
 
-    ; gimme back mah stuff
+    ; narsalarimni qaytarib ber
     ; LycanStash.RemoveAllItems(Game.GetPlayer())
 
-    ; people don't hate you no more
-    Game.GetPlayer().SetAttackActorOnSight(false)
+    ; odamlar endi sizdan nafratlanishmaydi
+    Faction DLC1HunterFaction = Game.GetFormFromFile(0x00003375, "Dawnguard.esm") as Faction
+    Faction DLC1VampireFaction = Game.GetFormFromFile(0x00003376, "Dawnguard.esm") as Faction
+    GlobalVariable DLC1IntroCompletedHunter = Game.GetFormFromFile( 0x000141A4, "Dawnguard.esm" ) as GlobalVariable
+    GlobalVariable DLC1IntroCompletedVampire = Game.GetFormFromFile( 0x000141A3, "Dawnguard.esm" ) as GlobalVariable
+
     Game.GetPlayer().RemoveFromFaction(PlayerWerewolfFaction)
     Game.GetPlayer().RemoveFromFaction(WerewolfFaction)
+    Game.GetPlayer().SetAttackActorOnSight(false)
+
+    if DLC1IntroCompletedHunter.GetValue() == 1
+    Game.GetPlayer().AddToFaction(DLC1HunterFaction)
+    endif
+
+    if DLC1IntroCompletedVampire.GetValue() == 1
+    Game.GetPlayer().AddToFaction(DLC1VampireFaction)
+    endif
+
     int cfIndex = 0
     while (cfIndex < CrimeFactions.GetSize())
-;         Debug.Trace("WEREWOLF: Removing enemy flag from " + CrimeFactions.GetAt(cfIndex))
+;         Debug.Trace("WEREWOLF: Dushman bayrog'ini olib tashlash " + CrimeFactions.GetAt(cfIndex))
         (CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy(false)
         cfIndex += 1
     endwhile
 
-    ; and you're now recognized
+    ; va endi siz tanildingiz
     Game.SetPlayerReportCrime(true)
 
-    ; alert anyone nearby that they should now know the player is a werewolf
+    ; yaqin atrofdagi har bir kishiga o'yinchi endi bo'ri odam ekanligini bilishlari kerakligi haqida ogohlantiring
     Game.SendWereWolfTransformation()
 
-    ; give the set race event a chance to come back, otherwise shut us down
+    ; belgilangan poyga tadbiriga qaytish imkoniyatini bering, aks holda bizni to'xtatib qo'ying
     Utility.Wait(5)
     Shutdown()
 EndFunction
@@ -464,15 +491,9 @@ Function Shutdown()
 EndFunction
 
 Float Property DLC1GorgingDurationSeconds  Auto  
-
 Perk Property DLC1GorgingPerk  Auto  
-
 Perk Property DLC1SavageFeedingPerk  Auto  
-
 Keyword Property ActorTypeNPC  Auto  
-
 Perk Property DLC1AnimalVigor  Auto  
-
 GlobalVariable Property DLC1WerewolfTotalPerksEarned  Auto  
-
 GlobalVariable Property DLC1WerewolfMaxPerks  Auto  

@@ -111,6 +111,9 @@ ReferenceAlias Property Alias_Chalice Auto
 Function Fragment_27()
 ;BEGIN CODE
 Alias_EnmonReserved.ForceRefTo(Alias_Enmon.GetRef())
+Alias_Fjotra.GetRef().MoveTo(Alias_FjotraSpot.GetRef())
+Alias_Fjotra.GetActorRef().SetRestrained(1)
+Alias_Fjotra.GetRef().Enable()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -204,9 +207,6 @@ T01Intro.Stop()
 
 UnregisterForUpdate()
 Alias_InnerSanctumDoor.GetRef().Lock(false)
-Alias_Fjotra.GetRef().MoveTo(Alias_FjotraSpot.GetRef())
-Alias_Fjotra.GetActorRef().SetRestrained(1)
-Alias_Fjotra.GetRef().Enable()
 
 KarthwastenMarker.AddToMap()
 ;END CODE

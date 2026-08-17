@@ -46,6 +46,60 @@ DLC1Radiant.StopQuestAndStartNewOneVampire(self)   ;THIS WILL CALL STOP() ON THI
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_6
+Function Fragment_6()
+;BEGIN CODE
+CompleteAllObjectives()
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionHaafingar) == 1
+   Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionHaafingar)
+endif
+
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionReach) == 1
+   Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionReach)
+endif
+
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionHjaalmarch) == 1
+   Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionHjaalmarch)
+endif
+
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionWhiterun) == 1
+   Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionWhiterun)
+endif
+
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionFalkreath) == 1
+   Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionFalkreath)
+endif
+
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionPale) == 1
+   Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionPale)
+endif
+
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionWinterhold) == 1
+   Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionWinterhold)
+endif
+
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionEastmarch) == 1
+   Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionEastmarch)
+endif
+
+if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionRift) == 1
+   Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionRift)
+endif
+
+Actor Candidate = Alias_Candidate.GetActorReference()
+
+Candidate.RemoveFromFaction(DLC1VampireFeedNoCrimeFaction)
+Candidate.RemoveFromFaction(DLC1VampireSeductionBoostFaction)
+Candidate.AddToFaction(FemaleVampiresFaction)
+Candidate.AddToFaction(DLC1VampireCrimeFaction)
+Candidate.SetOutfit(VampireOutfit)
+Candidate.SetCrimeFaction(DLC1VampireCrimeFaction)
+DLC1Radiant.GiveQuestReward(ChanceForBloodPotion = 50)
+DLC1Radiant.StopQuestAndStartNewOneVampire(self)   ;THIS WILL CALL STOP() ON THIS QUEST
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_4
 Function Fragment_4()
 ;BEGIN CODE
@@ -86,11 +140,13 @@ if Alias_Candidate.GetActorReference().IsInFaction(CrimeFactionRift) == 1
    Alias_Candidate.GetActorReference().RemoveFromFaction(CrimeFactionRift)
 endif
 
-Alias_Candidate.GetActorReference().RemoveFromFaction(DLC1VampireFeedNoCrimeFaction)
-Alias_Candidate.GetActorReference().RemoveFromFaction(DLC1VampireSeductionBoostFaction)
-Alias_Candidate.GetActorReference().AddToFaction(DLC1VampireCrimeFaction)
-Alias_Candidate.GetActorReference().SetOutfit(VampireOutfit)
-Alias_Candidate.GetActorReference().SetCrimeFaction(DLC1VampireCrimeFaction)
+Actor Candidate = Alias_Candidate.GetActorReference()
+
+Candidate.RemoveFromFaction(DLC1VampireFeedNoCrimeFaction)
+Candidate.RemoveFromFaction(DLC1VampireSeductionBoostFaction)
+Candidate.AddToFaction(DLC1VampireCrimeFaction)
+Candidate.SetOutfit(VampireOutfit)
+Candidate.SetCrimeFaction(DLC1VampireCrimeFaction)
 DLC1Radiant.GiveQuestReward(ChanceForBloodPotion = 50)
 DLC1Radiant.StopQuestAndStartNewOneVampire(self)   ;THIS WILL CALL STOP() ON THIS QUEST
 ;END CODE
@@ -140,6 +196,7 @@ DLC1RadiantScript Property DLC1Radiant  Auto
 Perk Property DLC1VampireSeductionBoost Auto  
 Faction Property DLC1VampireSeductionBoostFaction  Auto  
 Outfit Property VampireOutfit  Auto  
+Faction Property FemaleVampiresFaction  Auto  
 Faction Property DLC1VampireFaction  Auto  
 Faction Property DLC1VampireCrimeFaction  Auto  
 Faction Property DLC1VampireFeedNoCrimeFaction  Auto  

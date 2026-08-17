@@ -185,7 +185,7 @@ SetObjectiveDisplayed(40,1)
 Alias_StalfAlias.GetActorReference().GetActorBase().SetEssential(False)
 Alias_SaloniaAlias.GetActorReference().GetActorBase().SetEssential(False)
 
-DLC1VampireIntroEnemyFaction.SetEnemy(PlayerFaction)
+DLC1VampireIntroEnemyFaction.SetEnemy(PlayerFaction, false, false)
 
 ;Clean up Serana's room back at the castle
 ;	The player is garunteed not to be in the castle
@@ -194,33 +194,42 @@ CastleController.CleanSeranasRoom()
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_3
+Function Fragment_3()
+;BEGIN CODE
+;run if player are joining to Dawnguard, just to get rid of actors we no longer need for questline and get them back in the Castle
+;also fails quest so it isn't left running for rest of game
+Alias_StalfAlias.TryToStopCombat()
+Alias_SaloniaAlias.TryToStopCombat()
+Game.GetPlayer().StopCombatAlarm()
+Alias_StalfAlias.GetActorReference().StopCombatAlarm()
+Alias_SaloniaAlias.GetActorReference().StopCombatAlarm()
+DLC1VampireIntroEnemyFaction.SetEnemy(PlayerFaction, true, true)
+Game.GetPlayer().RemoveItem(Alias_DLC1VampireBaseIntroChaliceAlias.GetReference(), 1)
+Game.GetPlayer().RemoveItem(Alias_FilledChaliceAlias.GetReference(), 1)
+Alias_GaranAlias.GetActorReference().EvaluatePackage()
+Alias_StalfAlias.GetActorReference().EvaluatePackage()
+Alias_SaloniaAlias.GetActorReference().EvaluatePackage()
+Alias_VingalmoAlias.GetActorReference().EvaluatePackage()
+Alias_OrthjolfAlias.GetActorReference().EvaluatePackage()
+FailAllObjectives()
+Stop()
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
-
 Faction Property DLC1VampireIntroEnemyFaction  Auto  
-
 Faction Property PlayerFaction  Auto  
-
 Quest Property DLC1VQ03Vampire  Auto  
-
 Scene Property DLC1VampireBaseGaranChaliceScene  Auto  
-
 Faction Property DLC1VampireFaction  Auto  
-
 ObjectReference Property VingalmoSceneMarker  Auto  
-
 ObjectReference Property OrthjolfSceneMarker  Auto  
-
 Faction Property DLC1SeranaFaction  Auto  
-
 Actor Property Serana  Auto  
-
 Ammo Property ElderScrollAmmo  Auto  
-
 DLC1VampireCastleControllerScript Property CastleController Auto
-
-
 Quest Property AchievementsQuest  Auto  
-
 ReferenceAlias Property TutorialThrall  Auto  
-
 ObjectReference Property RedwaterDenMapMarker  Auto  

@@ -947,25 +947,17 @@ MQ101QuestScript kmyQuest = __temp as MQ101QuestScript
 ;END AUTOCAST
 ;BEGIN CODE
 GameHour.SetValue(2)
-if SKSE.GetVersion() > 0 && Game.GetGameCount() > 1
-	Game.QuitToMainMenu()
-	Debug.MessageBox("Asosiy menyudan chiqqandan so'ng yangi o'yinni boshlamaslik kerak. Iltimos, avval Skyrimni qayta ishga tushiring.")
-	return
-endif
+Game.PrecacheCharGen()
 ; start at beginning of keep
 ; enable saves
 Game.SetInChargen(false, false, false)
 ; debug.trace("MQ101 stage 0 -- beginning of keep quickstart")
 Game.DisablePlayerControls()
-; remove all player's gear and reequip outfit
-Game.GetPlayer().RemoveAllItems()
-; equip player's prisoner outfit
-Game.GetPlayer().EquipItem(ClothesPrisoner)
-Game.GetPlayer().EquipItem(ClothesPrisonerShoes)
 Game.GetPlayer().moveto(HelgenEndMarker)
-utility.Wait(1)
+utility.Wait(4)
 ; pop race menu
 game.ShowRaceMenu()
+kmyQuest.AddRaceSpells()
 utility.Wait(1)
 ; pop message box to choose sides
 if TempChooseSidesMessage2.Show() == 0
@@ -1100,11 +1092,7 @@ MQ101QuestScript kmyQuest = __temp as MQ101QuestScript
 ;END AUTOCAST
 ;BEGIN CODE
 GameHour.SetValue(6)
-if SKSE.GetVersion() > 0 && Game.GetGameCount() > 1
-	Game.QuitToMainMenu()
-	Debug.MessageBox("Asosiy menyudan chiqqandan so'ng yangi o'yinni boshlamaslik kerak. Iltimos, avval Skyrimni qayta ishga tushiring.")
-	return
-endif
+Game.PrecacheCharGen()
 ; start at end of chargen
 ; enable saves
 Game.SetInChargen(false, false, false)
@@ -1112,7 +1100,7 @@ Game.SetInChargen(false, false, false)
 Game.GetPlayer().moveto(HelgenEndMarker)
 ; imagespace modifier
 Game.FadeOutGame(False, true, 1.0, 1.0)
-utility.Wait(1)
+utility.Wait(4)
 ; pop race menu
 game.ShowRaceMenu()
 utility.Wait(1)
@@ -1601,53 +1589,11 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_191
 Function Fragment_191()
-GameHour.SetValue(0)
-if SKSE.GetVersion() > 0 && Game.GetGameCount() > 1
-	Game.QuitToMainMenu()
-	Debug.MessageBox("Asosiy menyudan chiqqandan so'ng yangi o'yinni boshlamaslik kerak. Iltimos, avval Skyrimni qayta ishga tushiring.")
-	return
-endif
 ;BEGIN CODE
-; enable saves
-Game.SetInChargen(false, false, false)
-; move everybody to town square
-; debug.trace("MQ101 stage 0 -- start at town square")
-; move everybody to approaching town square
-; debug.trace("MQ101 stage 0 -- start at town square")
-setstage(2)
-setstage(10)
-; move NPCs
-Game.GetPlayer().moveto(PlayerMarker5)
-Alias_Ulfric.TryToMoveTo(UlfricMarker5)
-Alias_GeneralTullius.TryToMoveTo(TulliusMarker5)
-Alias_Hadvar.TryToMoveTo(HadvarMarker5)
-Alias_TulliusHorse.TryToMoveTo(TulliusMarker5)
-Alias_HadvarHorse.TryToMoveTo(HadvarMarker5)
-Alias_Ralof.TryToMoveTo(RalofMarker5)
-Alias_ImperialSoldier01.TryToMoveTo(Guard1Marker5)
-Alias_ImperialSoldier02.TryToMoveTo(Guard2Marker5)
-Alias_ImperialSoldierFort01.TryToMoveTo(FortGuard1Marker5)
-Alias_Prisoner01.TryToMoveTo(PrisonerMarker5)
-Alias_StormcloakPrisoner01.TryToMoveTo(Son1Marker5)
-Alias_StormcloakPrisoner02.TryToMoveTo(Son2Marker5)
-Alias_StormcloakPrisoner03.TryToMoveTo(Son3Marker5)
-Alias_StormcloakPrisoner04.TryToMoveTo(Son4Marker5)
-Alias_Elenwen.GetRef().MoveTo(Alias_ElenwenStartMarker.GetRef())
-; move carts & horses
-Alias_Cart1.TryToMoveTo(Cart1Marker5)
-Alias_Cart2.TryToMoveTo(Cart2Marker5)
-Alias_CartHorse1.TryToMoveTo(CartHorse1Marker5)
-Alias_CartHorse2.TryToMoveTo(CartHorse2Marker5)
-
-;disable player activate and map
-Game.DisablePlayerControls(abMovement = false, abCamSwitch = True, abLooking = false, abSneaking = false, abmenu = false, abactivate = True, abJournalTabs = True)
-
-;equip prisoner outfit
-Game.GetPlayer().EquipItem(ClothesPrisoner)
-Game.GetPlayer().EquipItem(ClothesPrisonerShoes)
-
-;disable first person geometry
-Game.ShowFirstPersonGeometry( false )
+GameHour.SetValue(0)
+Game.GetPlayer().moveto(HelgenEndMarker)
+Debug.MessageBox("Bu quickstart buzilgan. Yangi o'yindan yana foydalanish uchun Skyrimni qayta ishga tushiring.")
+Game.QuitToMainMenu()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -1750,11 +1696,6 @@ Function Fragment_2()
 ; debug.trace("MQ101 stage 0 -- normal start")
 GameHour.SetValue(0)
 SetStage(10)
-if SKSE.GetVersion() > 0 && Game.GetGameCount() > 1
-	Game.QuitToMainMenu()
-	Debug.MessageBox("Asosiy menyudan chiqqandan so'ng yangi o'yinni boshlamaslik kerak. Iltimos, avval Skyrimni qayta ishga tushiring.")
-	return
-endif
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -2909,40 +2850,9 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_190
 Function Fragment_190()
 ;BEGIN CODE
-; move everybody to approaching town square
-; debug.trace("MQ101 stage 0 -- start before town square")
-if SKSE.GetVersion() > 0 && Game.GetGameCount() > 1
-	Game.QuitToMainMenu()
-	Debug.MessageBox("Asosiy menyudan chiqqandan so'ng yangi o'yinni boshlamaslik kerak. Iltimos, avval Skyrimni qayta ishga tushiring.")
-	return
-endif
-setstage(10)
-; move NPCs
-GameHour.SetValue(0)
-Game.GetPlayer().MoveTo(PlayerMarker4)
-Alias_Ulfric.TryToMoveTo(UlfricMarker8)
-Alias_GeneralTullius.TryToMoveTo(TulliusMarker4)
-Alias_TulliusHorse.TryToMoveTo(TulliusMarker4)
-Alias_HadvarHorse.TryToMoveTo(HadvarHorseMarker4)
-Alias_Hadvar.TryToMoveTo(HadvarMarker4)
-Alias_Ralof.TryToMoveTo(RalofMarker4)
-Alias_ImperialSoldier01.TryToMoveTo(Guard1Marker4)
-Alias_ImperialSoldier02.TryToMoveTo(Guard2Marker4)
-Alias_Prisoner01.TryToMoveTo(PrisonerMarker4)
-Alias_StormcloakPrisoner01.TryToMoveTo(Son1Marker4)
-Alias_StormcloakPrisoner02.TryToMoveTo(StormcloakPrisoner2Marker8)
-Alias_StormcloakPrisoner03.TryToMoveTo(StormcloakPrisoner3Marker8)
-Alias_StormcloakPrisoner04.TryToMoveTo(StormcloakPrisoner1Marker8)
-Alias_Elenwen.GetRef().MoveTo(Alias_ElenwenStartMarker.GetRef())
-; move player - everything else should happen automatically in stage 12
-Game.GetPlayer().MoveTo(PlayerMarker4)
-; move carts & horses
-Alias_Cart1.TryToMoveTo(Cart1Marker4)
-Alias_Cart2.TryToMoveTo(Cart2Marker4)
-Alias_CartHorse1.TryToMoveTo(CartHorse1Marker4)
-Alias_CartHorse2.TryToMoveTo(CartHorse2Marker4)
-utility.wait(2)
-SetStage(3)
+Game.GetPlayer().moveto(HelgenEndMarker)
+Debug.MessageBox("Bu quickstart buzilgan. Yangi o'yindan yana foydalanish uchun Skyrimni qayta ishga tushiring.")
+Game.QuitToMainMenu()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -2959,6 +2869,8 @@ EndFunction
 Function Fragment_13()
 ;BEGIN CODE
 ; show race menu
+Game.PrecacheCharGen()
+utility.wait(5)
 game.ShowRaceMenu()
 ;END CODE
 EndFunction

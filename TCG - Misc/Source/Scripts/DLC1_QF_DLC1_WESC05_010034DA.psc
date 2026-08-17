@@ -77,6 +77,11 @@ ReferenceAlias Property Alias_TargetCapitalHQMapMarker Auto
 LocationAlias Property Alias_TargetCapitalHQMap Auto
 ;END ALIAS PROPERTY
 
+;BEGIN ALIAS PROPERTY ScriptManager
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_ScriptManager Auto
+;END ALIAS PROPERTY
+
 ;BEGIN FRAGMENT Fragment_5
 Function Fragment_5()
 ;BEGIN AUTOCAST TYPE WEScript
@@ -88,6 +93,7 @@ WEScript kmyQuest = __temp as WEScript
 Alias_Dawnguard01.GetReference().DeleteWhenAble()
 Alias_Dawnguard02.GetReference().DeleteWhenAble()
 Alias_Dawnguard03.GetReference().DeleteWhenAble()
+Alias_ScriptManager.GetReference().DeleteWhenAble()
 
 ; debug.trace(self + "stage 255, calling ReArmTrigger() on trigger" + Alias_Trigger.GetReference())
 (Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()
@@ -98,10 +104,10 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_3
 Function Fragment_3()
 ;BEGIN CODE
-;Dawnguard Vampire Hunters are unloaded.
-;Debug.Trace("110: " + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded())
-if (!Alias_Dawnguard01.GetReference().Is3DLoaded() && !Alias_Dawnguard02.GetReference().Is3DLoaded() && !Alias_Dawnguard03.GetReference().Is3DLoaded())
-     Stop()
+;Script Manager and Vampire Hunters are unloaded.
+;Debug.Trace("110: " Alias_ScriptManager.GetReference().Is3DLoaded() + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded()
+if GetStageDone(100) == 0 && (!Alias_Dawnguard01.GetReference().Is3DLoaded() && !Alias_Dawnguard02.GetReference().Is3DLoaded() && !Alias_Dawnguard03.GetReference().Is3DLoaded() && !Alias_ScriptManager.GetReference().Is3DLoaded())
+Stop()
 EndIf
 ;END CODE
 EndFunction
@@ -110,13 +116,18 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_2
 Function Fragment_2()
 ;BEGIN CODE
-;Add the map marker to the player's map.
+;Player reads Writ of Dawn note
+;Debug.Trace("100: " + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded() + Alias_ScriptManager.GetReference().Is3DLoaded())
 Alias_TargetCapitalHQMapMarker.GetReference().AddToMap()
+Stop()
+;END CODE
+EndFunction
+;END FRAGMENT
 
-;Debug.Trace("100: " + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded())
-if (GetStageDone(100) && !Alias_Dawnguard01.GetReference().Is3DLoaded() && !Alias_Dawnguard02.GetReference().Is3DLoaded() && !Alias_Dawnguard03.GetReference().Is3DLoaded())
-     SetStage(110)
-EndIf
+;BEGIN FRAGMENT Fragment_4
+Function Fragment_4()
+;BEGIN CODE
+;Vampire Hunters are spawned in.
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -130,11 +141,6 @@ WEScript kmyQuest = __temp as WEScript
 ;BEGIN CODE
 ; debug.trace(self + "stage 0")
 Alias_Dawnguard01.GetReference().AddItem(Alias_Writ.GetReference())
-
-;Debug.Trace("0: " + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded())
-if (!Alias_Dawnguard01.GetReference().Is3DLoaded() && !Alias_Dawnguard02.GetReference().Is3DLoaded() && !Alias_Dawnguard03.GetReference().Is3DLoaded())
-     SetStage(110)
-EndIf
 ;END CODE
 EndFunction
 ;END FRAGMENT
