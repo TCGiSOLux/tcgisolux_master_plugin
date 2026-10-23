@@ -42,7 +42,6 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_34
 Function Fragment_34()
 ;BEGIN CODE
-;Player kills love interest or breaks up with love interest
 FailAllObjectives()
 ;END CODE
 EndFunction

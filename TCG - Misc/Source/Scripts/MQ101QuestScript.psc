@@ -269,44 +269,35 @@ endFunction
 ; END exit cart section
 ;********************
 
-
 ; add racial spells to player
 function AddRaceSpells()
 	; remove all racial spells first, just in case
 	Actor player = Game.GetPlayer()
 	RemoveRaceSpells(player)
-
+	; vanilla races
+	Race NordRaceVampire = Game.GetFormFromFile( 0x00088794, "Skyrim.esm" ) as Race
 	Race BretonRaceVampire = Game.GetFormFromFile( 0x0008883C, "Skyrim.esm" ) as Race
 	Race DarkElfRaceVampire = Game.GetFormFromFile( 0x0008883D, "Skyrim.esm" ) as Race
 	Race HighElfRaceVampire = Game.GetFormFromFile( 0x00088840, "Skyrim.esm" ) as Race
-
+	Race ImperialRaceVampire = Game.GetFormFromFile( 0x00088844, "Skyrim.esm" ) as Race
+	Race RedguardRaceVampire = Game.GetFormFromFile( 0x00088846, "Skyrim.esm" ) as Race
+	Race WoodElfRaceVampire = Game.GetFormFromFile( 0x00088884, "Skyrim.esm" ) as Race
 	; add race spells
 	Race playerRace = player.GetActorBase().GetRace()
 	if playerRace == ArgonianRace
-
 	elseif playerRace == BretonRace || BretonRaceVampire
 		player.AddSpell(ConjureFamiliar)
-
 	elseif playerRace == DarkElfRace  || DarkElfRaceVampire
 		player.AddSpell(Sparks)
-
 	elseif playerRace == HighElfRace  || HighElfRaceVampire
 		player.AddSpell(Fury)
-
 	elseif playerRace == ImperialRace
-
 	elseif playerRace == KhajiitRace
-
 	elseif playerRace == NordRace
-
 	elseif playerRace == OrcRace
-
 	elseif playerRace == RedguardRace
-
 	elseif playerRace == WoodElfRace
-
 	endif
-
 endFunction
 
 function RemoveRaceSpells(Actor pActor)

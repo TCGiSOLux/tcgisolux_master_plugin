@@ -2,29 +2,9 @@
 ;NEXT FRAGMENT INDEX 1
 Scriptname DLC1_QF_DLC1VQ08Post_0101A1C1 Extends Quest Hidden
 
-;BEGIN ALIAS PROPERTY RonthilAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_RonthilAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY RargalAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_RargalAlias Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY GaranAlias
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_GaranAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY OrthjolfAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_OrthjolfAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY FeranAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_FeranAlias Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY BelevalAlias
@@ -87,16 +67,6 @@ ReferenceAlias Property Alias_TrollAlias Auto
 ReferenceAlias Property Alias_BossRoomMarkerAlias Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY VingalmoAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_VingalmoAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY HestlaAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HestlaAlias Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY AgmaerAlias
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_AgmaerAlias Auto
@@ -105,36 +75,6 @@ ReferenceAlias Property Alias_AgmaerAlias Auto
 ;BEGIN ALIAS PROPERTY SorineAlias
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_SorineAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY FuraAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_FuraAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY HertAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_HertAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY LalaineCatiaAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_LalaineCatiaAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY CaraorilAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_CaraorilAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY UlenraneAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_UlenraneAlias Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY JulisandeAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_JulisandeAlias Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN FRAGMENT Fragment_0
@@ -157,17 +97,8 @@ EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
-
-GlobalVariable Property pDLC1PlayingVampireLine  Auto  
-
 GlobalVariable Property DLC1PlayingVampireLine  Auto  
-
-
-
 Scene Property DLC1VQ08PostIsranScene  Auto  
-
 Scene Property DLC1VQ08PostGaranScene  Auto  
-
 ObjectReference Property DLC1HunterHQPlayerRoomInitEnabled  Auto  
-
 ObjectReference Property DLC1HarkonCoffinRef  Auto  

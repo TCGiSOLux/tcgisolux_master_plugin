@@ -60,11 +60,10 @@ ReferenceAlias Property Alias_TravelMarker1 Auto
 ;BEGIN FRAGMENT Fragment_5
 Function Fragment_5()
 ;BEGIN CODE
-;THIS IS INDENTICAL TO STAGE 10 IN DLCWE09 & DLC2CultistAmbush quest
+;THIS IS INDENTICAL TO STAGE 10 IN DLCWE09 & DLC2CultistAmbush & DLC2CultistAmbush2 quests
 ;***ALL CHANGES NEED TO GO BOTH PLACES!!!****
 
 ;Cultists should attack
-DLC2CultistFaction.SetEnemy(IsGuardFaction)
 
 Actor Cultist1 = Alias_Actor1.GetActorReference()
 Actor Cultist2 = Alias_Actor2.GetActorReference()
@@ -101,7 +100,9 @@ EndWhile
 DLC2MQ01AliasForObjective.ForceRefTo(Cultist1)
 DLC2MQ01.SetStage(5)
 
-DLC2WE09Chance.setValue(100)
+DLC2WE09Chance.setValue(1)
+DLC2CultistFaction.SetEnemy(IsGuardFaction)
+Stop()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -128,9 +129,17 @@ WEScript kmyQuest = __temp as WEScript
 ;END AUTOCAST
 ;BEGIN CODE
 ; debug.trace(self + "stage 255, calling DeleteWhenAble() on created aliases")
-Alias_Actor1.GetReference().DeleteWhenAble()
+if DLC2MQ01.GetStageDone(5) && !DLC2MQ01.GetStageDone(10)
 Alias_Actor2.GetReference().DeleteWhenAble()
 Alias_Actor3.GetReference().DeleteWhenAble()
+Alias_Actor1.GetReference().DeleteWhenAble()
+endif
+
+if DLC2MQ01.GetStage() >= 10
+Alias_Actor1.GetReference().Delete()
+Alias_Actor2.GetReference().Delete()
+Alias_Actor3.GetReference().Delete()
+endif
 
 ; debug.trace(self + "stage 255, calling ReArmTrigger() on trigger" + Alias_Trigger.GetReference())
 (Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()

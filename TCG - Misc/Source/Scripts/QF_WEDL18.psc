@@ -68,6 +68,8 @@ EndFunction
 Function Fragment_12()
 ;BEGIN CODE
 ;Player asked to her
+Utility.Wait(20)
+Stop()
 ;END CODE
 EndFunction
 ;END FRAGMENT

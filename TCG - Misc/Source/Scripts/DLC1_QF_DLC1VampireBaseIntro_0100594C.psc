@@ -199,6 +199,8 @@ Function Fragment_3()
 ;BEGIN CODE
 ;run if player are joining to Dawnguard, just to get rid of actors we no longer need for questline and get them back in the Castle
 ;also fails quest so it isn't left running for rest of game
+FormList CrimeFactions = Game.GetFormFromFile(0x0000989F, "Dawnguard.esm") as FormList
+
 Alias_StalfAlias.TryToStopCombat()
 Alias_SaloniaAlias.TryToStopCombat()
 Game.GetPlayer().StopCombatAlarm()
@@ -212,6 +214,13 @@ Alias_StalfAlias.GetActorReference().EvaluatePackage()
 Alias_SaloniaAlias.GetActorReference().EvaluatePackage()
 Alias_VingalmoAlias.GetActorReference().EvaluatePackage()
 Alias_OrthjolfAlias.GetActorReference().EvaluatePackage()
+
+int cfIndex = 0
+while (cfIndex < CrimeFactions.GetSize())
+(CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy(FALSE)
+cfIndex += 1
+endwhile
+
 FailAllObjectives()
 Stop()
 ;END CODE

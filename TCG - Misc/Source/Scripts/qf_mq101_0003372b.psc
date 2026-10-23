@@ -957,7 +957,6 @@ Game.GetPlayer().moveto(HelgenEndMarker)
 utility.Wait(4)
 ; pop race menu
 game.ShowRaceMenu()
-kmyQuest.AddRaceSpells()
 utility.Wait(1)
 ; pop message box to choose sides
 if TempChooseSidesMessage2.Show() == 0
@@ -967,6 +966,7 @@ else
 	setstage(7)
 endif
 Game.EnablePlayerControls(abMovement = true, abFighting = false, abCamSwitch = false, abLooking = true, abSneaking = true, abMenu = false, abActivate = false)
+Utility.Wait(6)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -1091,6 +1091,7 @@ Quest __temp = self as Quest
 MQ101QuestScript kmyQuest = __temp as MQ101QuestScript
 ;END AUTOCAST
 ;BEGIN CODE
+Alias_Ulfric.GetActorRef().SetOutFit(UlfricOutfit)
 GameHour.SetValue(6)
 Game.PrecacheCharGen()
 ; start at end of chargen
@@ -1104,8 +1105,6 @@ utility.Wait(4)
 ; pop race menu
 game.ShowRaceMenu()
 utility.Wait(1)
-; add race spells
-kmyQuest.AddRaceSpells()
 ; pop message box to choose sides
 if TempChooseSidesMessage.Show() == 0
 	; move Hadvar
@@ -1131,6 +1130,7 @@ setstage(1000)
 MUSDungeonChargen.Remove()
 MUSCombatBossChargen.Remove()
 ExtHelgenAttackASREF.Disable() ; acoustic space
+Final()
 Stop()
 ;END CODE
 EndFunction
@@ -2444,6 +2444,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_19
 Function Fragment_19()
 ;BEGIN CODE
+
 ;Make sure Hadvar and Ralof no longer ignore friendly hits and affect stealth again and respond to pickpocket
 Alias_Hadvar.GetActorRef().IgnoreFriendlyHits(False)
 Alias_Ralof.GetActorRef().IgnoreFriendlyHits(False)
@@ -2474,7 +2475,14 @@ MQ101OutsideClutterMarker.enableNoWait()
 
 ;make sure Ulfric has the right outfit
 Alias_Ulfric.GetActorRef().SetOutFit(UlfricOutfit)
+
+if (Game.GetFormFromFile(0x0004679E, "Skyrim.esm") as GlobalVariable).getValue() == 0
+Final()
 Stop()
+else
+Stop()
+endif
+
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -3029,7 +3037,6 @@ ObjectReference Property Son2Marker5  Auto
 ObjectReference Property Son3Marker5  Auto  
 ObjectReference Property Son4Marker5  Auto  
 
-
 ; markers for quickstarting at the keep intro
 ObjectReference Property TulliusKeepMarker1  Auto  
 ObjectReference Property HadvarKeepMarker1  Auto  
@@ -3043,37 +3050,25 @@ ObjectReference Property Son1KeepMarker1  Auto
 ObjectReference Property Son2KeepMarker1  Auto  
 
 Scene Property Scene1  Auto  
-
 Scene Property Scene2  Auto  
 {Elenwen scene to town square}
-
 Scene Property Scene3  Auto  
 {town square through Alduin attacking}
-
 Scene Property AlduinAttackScene  Auto  
-
 Outfit Property RalofOutfit  Auto  
 {outfit for Ralof to change into at the end of chargen}
-
 Outfit Property HadvarOutfit  Auto  
 {outfit Hadvar should wear by the end of chargen}
-
 ObjectReference Property AlduinAttackEnableMarker1  Auto  
 {enable marker for first part of Alduin attack}
-
 Scene Property KeepIntroSceneA  Auto  
 {Imperial intro scene}
-
 Scene Property KeepIntroSceneB  Auto  
 {Stormcloak intro scene}
-
 Faction Property TemporaryFriendsFaction  Auto  
 {makes everyone in chargen friends at start}
-
 Scene Property KeepScene2A  Auto  
-
 Scene Property KeepScene2B  Auto  
-
 ; markers for moving everyone into position after dragon attack
 ObjectReference Property Guard1Marker8 Auto  
 ObjectReference Property Guard2Marker8 Auto  
@@ -3086,253 +3081,182 @@ ObjectReference Property PlayerMarker8 Auto
 ObjectReference Property StormcloakPrisoner1Marker8 Auto  
 ObjectReference Property StormcloakPrisoner2Marker8 Auto  
 ObjectReference Property StormcloakPrisoner3Marker8 Auto  
-
-
-
 ImageSpaceModifier Property BlackoutImod  Auto  
 {when dragon attacks, apply this for transition to player movement}
-
 ObjectReference Property Phase2RespawnMarker1  Auto  
-
 ObjectReference Property Phase2RespawnMarker2  Auto  
-
 Book Property TorturerSpellTome  Auto  
-
 Scene Property KeepScene4A  Auto  
 {Imperial version
 }
 
 ObjectReference Property CollapsingBridge  Auto  
 {bridge that separates player and friend from other allies}
-
-
 Faction Property MQ101StormcloakFaction  Auto  
-
 Faction Property MQ101ImperialFaction  Auto  
-
 Faction Property PlayerFaction  Auto  
-
 Scene Property KeepScene5A  Auto  
 {Imperial version}
-
 ObjectReference Property TEMPEndGate  Auto  
 {temporary gate at end}
-
 ObjectReference Property TEMPCartRiders  Auto  
-
 ObjectReference Property Phase3RespawnMarker1  Auto  
-
 ObjectReference Property Phase3RespawnMarker2  Auto  
-
 ObjectReference Property Phase4RespawnMarker1  Auto  
-
 ObjectReference Property Phase4RespawnMarker2  Auto  
-
 Weapon Property ImperialSword  Auto  
-
 Weapon Property ImperialBow  Auto  
-
 ObjectReference Property RalofKeepExteriorMarker  Auto  
-
 Scene Property KeepScene4B  Auto  
-
 Scene Property KeepScene5B  Auto  
-
 Faction Property CaptiveFaction  Auto  
 {faction for caged prisoners in keep}
-
 HelgenHallCollapseScript Property BridgeCollapseTrigger  Auto  
 {possibly temp, holds script to trigger dust, stagger, etc. for bridge collapse}
-
-
 MusicType Property IntroMusic  Auto  
-
 ImageSpaceModifier Property FadeUpFromBlack  Auto  
-
 Sound Property CartSound  Auto  
 {moving cart sound}
-
 Weather Property SkyrimClear  Auto  
-
 Weather Property AlduinAttackWeather  Auto  
-
 Scene Property Scene4  Auto  
-
 ObjectReference Property FortGuard1Marker5  Auto  
 {town square start marker}
-
 ObjectReference Property PlayerInnMoveMarker  Auto  
 {temp - move player into inn from tower
 }
-
 ObjectReference Property TowerDoorExterior  Auto  
-
 Quest Property MQ101DragonAttack  Auto  
-
 ObjectReference Property BlockGateCollisionMarker  Auto  
-
 Outfit Property PrisonerOutfit  Auto  
-
 Armor Property ClothesPrisoner  Auto  
-
 Armor Property ClothesPrisonerShoes  Auto  
-
 ObjectReference Property CiviliansOutsideHelgenMarker  Auto  
-
 ObjectReference Property ExplosionTriggerA01  Auto  
-
 Scene Property IntoTorriScene  Auto  
-
 ObjectReference Property FortNeugradEnableMarker  Auto  
 {marker controlling Fort Neugrad actors}
-
 Weapon Property SteelDagger  Auto  
-
 ObjectReference Property CollapsingBridgeAnim  Auto  
-
 Message Property TempChooseSidesMessage2  Auto  
-
 ObjectReference Property KeepGate1  Auto  
 {first gate from Imperial barracks room}
-
 ObjectReference Property PlayerKeepStartMarker  Auto  
-
 ObjectReference Property CartPathAmbientMarker  Auto  
-
 Sound Property NPCDragonFlightRoar  Auto  
-
 ObjectReference Property MQ101DragonShoutsMarkerREF  Auto  
-
 Idle Property OffsetStop  Auto  
-
 ObjectReference Property BridgeOriginal  Auto  
-
 ObjectReference Property BridgeDragonRoarMarker  Auto  
-
 Sound Property NPCDragonFlightRoarObstructed  Auto  
-
 GlobalVariable Property SittingAngleLimit  Auto  
-
 Idle Property OffsetBoundStandingStart  Auto  
-
 Scene Property MQ101KeepEnemyScene1A  Auto  
-
 Scene Property MQ101KeepEnemyScene1B  Auto  
-
 Scene Property MQ101KeepEnemyScene2A  Auto  
-
 Scene Property MQ101KeepEnemyScene2B  Auto  
-
 ObjectReference Property PostMQ101KeepMarker  Auto  
-
 Armor Property ArmorGag  Auto  
-
 ObjectReference Property MQ101OutsideClutterMarker  Auto  
-
 ObjectReference Property TorriMarker8  Auto  
-
 ObjectReference Property TorolfMarker8  Auto  
-
 Sound Property DragonRoarDistant01  Auto  
-
 Sound Property DragonRoarDistant02  Auto  
-
 ObjectReference Property HadvarHorseMarker4  Auto  
-
 Idle Property IdleExecutionerAlduinReaction  Auto  
-
 MusicType Property ExitMusic  Auto  
-
 Outfit Property UlfricOutfit  Auto  
-
 Armor Property PrisonerCuffs  Auto  
-
 ObjectReference Property MQ102ChargenFriendExitMarker  Auto  
-
 Weapon Property Longbow  Auto  
-
 Ammo Property IronArrow  Auto  
-
 MiscObject Property Lockpick  Auto  
-
 Faction Property MQ101LokirEnemyFaction  Auto  
-
 Idle Property IdleExecutionerAlduinReactionDeath  Auto  
-
 Idle Property IdleCartPrisonerASway  Auto  
-
 Idle Property IdleCartPrisonerBSway  Auto  
-
 Idle Property IdleCartPrisonerCSway  Auto  
-
 Idle Property IdleCaryPrisonerDSway  Auto  
-
 Idle Property IdleCartDriverSway  Auto  
-
 Idle Property IdleCartPrisonerDSway  Auto  
-
 Message Property CharGenActivateOpen  Auto  
-
 Message Property CharGenActivateBody  Auto  
-
 Message Property CharGenOpenInventory  Auto  
-
 Message Property CharGenAttack  Auto  
-
 Message Property CharGenLockpick  Auto  
-
 Message Property CharGenSneak  Auto  
-
 ObjectReference Property MQ101CrowdWallaMarker1  Auto  
-
 ObjectReference Property MQ101CrowdWalla2REF  Auto  
-
 ObjectReference Property MQ101CrowdWalla1REF  Auto  
-
 ObjectReference Property MQ101CrowdOhREF  Auto  
-
 GlobalVariable Property GameHour  Auto  
-
 Message Property CharGenLook  Auto  
-
 Message Property CharGenMove  Auto  
-
 Message Property CharGenReadyWeapon  Auto  
-
 Message Property CharGenBloc  Auto  
-
 Message Property CharGenBlock  Auto  
-
 MusicType Property MUSDungeonChargen  Auto  
-
 MusicType Property MUSCombatBossChargen  Auto  
-
 Idle Property BoundStandingCut  Auto  
-
 ObjectReference Property BridgeDebris  Auto  
-
 Spell Property dunCGDragonVoiceStormCall  Auto  
-
 ObjectReference Property MQ101DragonStormcallMarker  Auto  
-
 ObjectReference Property MQ101AlduinTowerAttackTowerREF  Auto  
-
 ObjectReference Property ExtHelgenAttackASREF  Auto  
-
 ObjectReference Property HelgenCrowdWallaMarker1  Auto
-
 ObjectReference Property HelgenCrowdWallaMarker2  Auto
-
 Message Property CharGenLookPC  Auto  
-
 Message Property CharGenMovePC  Auto  
-
 Armor Property PrisonerCuffsPlayer  Auto  
-
 Message Property CharGenBlock02  Auto  
-
 Message Property CharGenPowerAttack  Auto  
-
 Message Property CharGenAttackwithPower  Auto  
-
 Idle Property IdleCartPrisonerCIdle  Auto  
+
+function Final()
+	Actor player = Game.GetPlayer()
+	Race playerRace = player.GetActorBase().GetRace()
+	if playerRace == Game.GetFormFromFile(0x005C8EB5, "Female_Creatures.esp") as Race
+		Player.SetOutFit(Game.GetFormFromFile(0x005CDFE2, "Female_Creatures.esp") as Outfit)
+		player.AddToFaction(Game.GetFormFromFile(0x005EC631, "Female_Creatures.esp") as Faction)
+	elseif playerRace == Game.GetFormFromFile(0x005C8EB6, "Female_Creatures.esp") as Race
+		Player.SetOutFit(Game.GetFormFromFile(0x005CDFE2, "Female_Creatures.esp") as Outfit)
+		player.AddToFaction(Game.GetFormFromFile(0x005EC631, "Female_Creatures.esp") as Faction)
+	elseif playerRace == Game.GetFormFromFile(0x000345E2, "Female_Creatures.esp") as Race
+		Player.SetOutFit(Game.GetFormFromFile(0x0002549A, "Female_Creatures.esp") as Outfit)
+		player.AddToFaction(Game.GetFormFromFile(0x00048310, "Female_Creatures.esp") as Faction)
+		player.AddItem(Game.GetFormFromFile(0x00036D98, "Female_Creatures.esp") as Weapon, 1, true)
+		player.EquipItem(Game.GetFormFromFile(0x00036D98, "Female_Creatures.esp") as Weapon, false, false)
+	elseif playerRace == Game.GetFormFromFile(0x0004AB02, "Female_Creatures.esp") as Race
+		Player.SetOutFit(Game.GetFormFromFile(0x0002549A, "Female_Creatures.esp") as Outfit)
+		player.AddToFaction(Game.GetFormFromFile(0x00048310, "Female_Creatures.esp") as Faction)
+		player.AddItem(Game.GetFormFromFile(0x00036D98, "Female_Creatures.esp") as Weapon, 1, true)
+		player.EquipItem(Game.GetFormFromFile(0x00036D98, "Female_Creatures.esp") as Weapon, false, false)
+	elseif playerRace == Game.GetFormFromFile(0x0004AB01, "Female_Creatures.esp") as Race
+		Player.SetOutFit(Game.GetFormFromFile(0x0002549A, "Female_Creatures.esp") as Outfit)
+		player.AddToFaction(Game.GetFormFromFile(0x00048310, "Female_Creatures.esp") as Faction)
+		player.AddItem(Game.GetFormFromFile(0x00036D98, "Female_Creatures.esp") as Weapon, 1, true)
+		player.EquipItem(Game.GetFormFromFile(0x00036D98, "Female_Creatures.esp") as Weapon, false, false)
+	elseif playerRace == Game.GetFormFromFile(0x000345E3, "Female_Creatures.esp") as Race
+		Player.SetOutFit(Game.GetFormFromFile(0x0002549A, "Female_Creatures.esp") as Outfit)
+		player.AddItem(Game.GetFormFromFile(0x000572A5, "Female_Creatures.esp") as Weapon, 1, true)
+		player.EquipItem(Game.GetFormFromFile(0x000572A5, "Female_Creatures.esp") as Weapon, false, false)
+		player.AddToFaction(Game.GetFormFromFile(0x00048310, "Female_Creatures.esp") as Faction)
+	endif
+	; init vampire
+	AddFactionVampire()
+endFunction
+
+; add faction to player
+function AddFactionVampire()
+	; keyword
+	Keyword Vampire = Game.GetFormFromFile(0x000A82BB, "Skyrim.esm") as Keyword
+	; add faction
+
+	Actor playerVampire = Game.GetPlayer()
+	ActorBase PlayerVamp = Game.GetPlayer().GetActorBase()
+	if playerVampire.HasKeyword(Vampire) == 1 && PlayerVamp.GetSex() == 1
+		Game.GetPlayer().AddToFaction(Game.GetFormFromFile(0x000030DC, "TCGiSOLux Master Plugin Interior.esm") as Faction)
+	endif
+endFunction
+

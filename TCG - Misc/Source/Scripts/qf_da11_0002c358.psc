@@ -97,6 +97,22 @@ ReferenceAlias Property Alias_Cultist02 Auto
 ReferenceAlias Property Alias_ShrineDoor Auto
 ;END ALIAS PROPERTY
 
+;BEGIN FRAGMENT Fragment_49
+Function Fragment_49()
+;BEGIN CODE
+Utility.Wait(5)
+;Mission Accomplished
+;Glooredhel is now player's ally
+AchievementsQuest.IncDaedricQuests()
+AchievementsQuest.IncDaedricArtifacts()
+Alias_Glooredhel.GetActorRef().SetRelationshipRank(Game.GetPlayer(), 3)
+
+SetObjectiveCompleted(60, 1)
+pDA11FIN.Start()
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_45
 Function Fragment_45()
 ;BEGIN CODE
@@ -277,6 +293,8 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_43
 Function Fragment_43()
 ;BEGIN CODE
+Quest DLC1HunterBaseIntro = Game.GetFormFromFile( 0x00004E24, "Dawnguard.esm" ) as Quest
+
 SetObjectiveCompleted(30, 1)
 SetObjectiveDisplayed(40, 1)
 
@@ -299,7 +317,8 @@ If HogniREF.IsDead() == False
   HogniREF.RemoveFromFaction(CrimeFactionReach)
 EndIf
 
-If LisbetREF.IsDead() == False && LisbetREF.IsInFaction(DLC1VampireFaction) == 1
+;Don't move Lisbet, if A New Order quest are completed.
+If LisbetREF.IsDead() == False && DLC1HunterBaseIntro.GetStageDone(200) == 0
   LisbetREF.MoveTo(FeastHallMarker)
   LisbetREF.SetCrimeFaction(DA11CannibalFaction)
   LisbetREF.RemoveFromFaction(DLC1VampireCrimeFaction)
@@ -337,14 +356,15 @@ If HogniREF.IsDead() == False
   HogniREF.SetCrimeFaction(CrimeFactionReach)
 EndIf
 
-If LisbetREF.IsDead() == False && LisbetREF.IsInFaction(DLC1VampireFaction) == 1
-  LisbetREF.RemoveFromFaction(DA11CannibalFaction)
-  LisbetREF.MoveTo(CenterMarkarthMarker)
+If LisbetREF.IsDead() == False
+LisbetREF.RemoveFromFaction(DA11CannibalFaction)
+LisbetREF.MoveTo(CenterMarkarthMarker)
+endif
+
+If LisbetREF.IsInFaction(DLC1VampireFaction) == 1
   LisbetREF.AddtoFaction(DLC1VampireCrimeFaction)
   LisbetREF.SetCrimeFaction(DLC1VampireCrimeFaction)
 else
-  LisbetREF.RemoveFromFaction(DA11CannibalFaction)
-  LisbetREF.MoveTo(CenterMarkarthMarker)
   LisbetREF.AddtoFaction(CrimeFactionReach)
   LisbetREF.SetCrimeFaction(CrimeFactionReach)
 EndIf
@@ -357,21 +377,6 @@ If BanningREF.IsDead() == False
 EndIf
 
 Stop()
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_49
-Function Fragment_49()
-;BEGIN CODE
-;Quest completes
-;Glooredhel is now player's ally
-AchievementsQuest.IncDaedricQuests()
-AchievementsQuest.IncDaedricArtifacts()
-Alias_Glooredhel.GetActorRef().SetRelationshipRank(Game.GetPlayer(), 3)
-
-SetObjectiveCompleted(60, 1)
-pDA11FIN.Start()
 ;END CODE
 EndFunction
 ;END FRAGMENT

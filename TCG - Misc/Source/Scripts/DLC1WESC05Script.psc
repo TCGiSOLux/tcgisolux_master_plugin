@@ -1,23 +1,24 @@
 Scriptname DLC1WESC05Script extends ObjectReference  
+{When the player or spouse are moves in range, the Dawnguard Vampire Hunters teleports into them.}
 
 ReferenceAlias property SceneCenterMarker Auto
 ReferenceAlias property Spouse Auto
 ReferenceAlias property Dawnguard01 Auto
 ReferenceAlias property Dawnguard02 Auto
 ReferenceAlias property Dawnguard03 Auto
+Quest property DLC1_WESC05 Auto
 bool YUKLANMAGAN = False
 
 Event OnLoad()
-	Quest DLC1_WESC05 = Game.GetFormFromFile( 0x000034DA, "Dawnguard.esm" ) as Quest
 
-	While (DLC1_WESC05.GetStage() <= 4)
-		if (SceneCenterMarker.GetReference().GetDistance(Game.GetPlayer()) > 1000) ||  (SceneCenterMarker.GetReference().GetDistance(Spouse.GetActorRef()) > 1000)
-			Utility.Wait(1)
-		Else
-			Dawnguard01.GetActorRef().Enable()
-			Dawnguard02.GetActorRef().Enable()
-			Dawnguard03.GetActorRef().Enable()
+	While (DLC1_WESC05.GetStage() == 0)
+		if (SceneCenterMarker.GetReference().GetDistance(Game.GetPlayer()) < 2000) ||  (SceneCenterMarker.GetReference().GetDistance(Spouse.GetActorRef()) < 2000)
+			Dawnguard01.TryToEnable()
+			Dawnguard02.TryToEnable()
+			Dawnguard03.TryToEnable()
 			DLC1_WESC05.SetStage(5)
+		Else
+			Utility.Wait(1)
 		EndIf
 	EndWhile
 EndEvent
@@ -36,10 +37,5 @@ EndEvent
 
 Function CheckUnload()
 	YUKLANMAGAN = True
-	Quest DLC1_WESC05 = Game.GetFormFromFile( 0x000034DA, "Dawnguard.esm" ) as Quest
-
-	if (DLC1_WESC05.GetStageDone(100) == 0)
 	DLC1_WESC05.SetStage(110)
-	endif
-
 EndFunction

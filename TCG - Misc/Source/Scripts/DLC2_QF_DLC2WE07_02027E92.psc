@@ -81,6 +81,7 @@ Utility.Wait(3)
 Alias_Actor2.GetActorReference().SetRace(NordRace)
 Utility.Wait(3)
 Alias_Actor3.GetActorReference().SetRace(NordRace)
+Utility.Wait(3)
 
 ;  debug.trace(self + "stage 255, races post change:")
 ; debug.trace(Alias_Actor1.GetActorReference().GetRace())

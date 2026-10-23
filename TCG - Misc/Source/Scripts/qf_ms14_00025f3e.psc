@@ -109,10 +109,15 @@ Quest __temp = self as Quest
 MS14 kmyQuest = __temp as MS14
 ;END AUTOCAST
 ;BEGIN CODE
-;Fix Alva dushman emas, agar hiyla-nayranglar ishlatilgan bo'lsa.
-if GetStageDone(95) == 0 || GetStageDone(100) == 0
+Faction VampirePCFaction = Game.GetFormFromFile(0x000C4DE0, "Skyrim.esm") as Faction
+Faction PlayerWerewolfFaction = Game.GetFormFromFile(0x00091822, "Skyrim.esm") as Faction
+Faction DLC1PlayerVampireLordFaction = Game.GetFormFromFile(0x000071D3, "Dawnguard.esm") as Faction
+FormList CrimeFactions = Game.GetFormFromFile(0x0000989F, "Dawnguard.esm") as FormList
 Faction VampireFaction = Game.GetFormFromFile(0x00027242, "Skyrim.esm") as Faction
 Faction TownMorthalFaction = Game.GetFormFromFile(0x0002817D, "Skyrim.esm") as Faction
+
+Alias_Alva.GetReference().UnregisterForUpdate()
+
 Actor Alva = Alias_Alva.GetActorReference()
 
 Alva.SetRelationshipRank(Alias_Lami.GetActorReference(), 0)
@@ -121,14 +126,28 @@ Alva.RemoveFromFaction(TownMorthalFaction)
 Alva.RemoveFromFaction(CrimeFaction)
 Alva.AddToFaction(VampireFaction)
 Alva.SetCrimeFaction(None)
+
+if Game.IsPluginInstalled("FDE Alva.esp")
+Alias_Alva.TryToEnable()
+Else
 Alva.SetAV( "aggression", 2 )
+EndIf
+
+if !Game.GetPlayer().IsInFaction(VampirePCFaction) ||  !Game.GetPlayer().IsInFaction(PlayerWerewolfFaction) ||  !Game.GetPlayer().IsInFaction(DLC1PlayerVampireLordFaction)
+int cfIndex = 0
+while (cfIndex < CrimeFactions.GetSize())
+(CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy(FALSE)
+cfIndex += 1
+endwhile
 endif
 
 ; Topshiriq tugadi, o'yinchi mukofot oldi
 Alias_Hroggar.GetActorReference().SetActorValue("aggression", 1)
 Alias_Hroggar.TryToStopCombat()
 Alias_Hroggar.GetActorReference().StopCombatAlarm()
+Game.GetPlayer().StopCombatAlarm()
 Alias_Hroggar.GetActorReference().SetCrimeFaction(CrimeFaction)
+
 SetObjectiveCompleted(120, 1)
 Game.GetPlayer().AddItem(Reward, 1)
 AchievementsQuest.IncSideQuests()
@@ -139,6 +158,8 @@ ElseIf  Alias_JarlRebel.GetActorReference().IsInFaction(JobJarlFaction) == True
      Alias_JarlRebel.GetActorReference().SetRelationshipRank(Game.GetPlayer(), 2)
 EndIf
 Alias_BossVampireMorvath.TryToDisable()
+Alias_Helgi.TryToDisable()
+
 Stop()
 ;END CODE
 EndFunction
@@ -150,20 +171,29 @@ Function Fragment_25()
 ; O'yinchi Alvaning jurnalini faollashtirdi
 Faction VampireFaction = Game.GetFormFromFile(0x00027242, "Skyrim.esm") as Faction
 Faction TownMorthalFaction = Game.GetFormFromFile(0x0002817D, "Skyrim.esm") as Faction
+Actor Alva = Alias_Alva.GetActorReference()
+
 SetObjectiveCompleted(70, 1)
 SetObjectiveDisplayed(95, 1)
 ;Agar Alva tirik bo'lsa, u uyada, lekin dushman emas. Bu muammoni hal qiladi.
-Actor Alva = Alias_Alva.GetActorReference()
 Alva.RemoveFromFaction(TownMorthalFaction)
 Alva.RemoveFromFaction(CrimeFaction)
 Alva.AddToFaction(VampireFaction)
-Alva.SetAV( "aggression", 2 )
 Alias_Hroggar.GetActorReference().SetActorValue("aggression", 1)
-Alva.SetRelationshipRank(Alias_Lami.GetActorReference(), 0)
-Alva.SetRelationshipRank(Alias_Hroggar.GetActorReference(), 0)
 Alias_Hroggar.TryToStopCombat()
 Alias_Hroggar.GetActorReference().StopCombatAlarm()
 Alias_Hroggar.GetActorReference().SetCrimeFaction(CrimeFaction)
+Game.GetPlayer().StopCombatAlarm()
+Alva.SetRelationshipRank(Alias_Lami.GetActorReference(), 0)
+Alva.SetRelationshipRank(Alias_Hroggar.GetActorReference(), 0)
+
+Utility.Wait(3)
+
+if Game.IsPluginInstalled("FDE Alva.esp")
+Alias_Alva.TryToDisable()
+Else
+Alva.SetAV( "aggression", 2 )
+EndIf
 
 if !( Alva.IsDead() )
   ;Alva ham xuddi shu kamerada bo'lishi mumkin.
@@ -332,25 +362,34 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_27
 Function Fragment_27()
 ;BEGIN CODE
-; O'yinchi Movartning uyiga yuboriladi
-Alias_Alva.GetReference().UnregisterForUpdate()
 Faction VampireFaction = Game.GetFormFromFile(0x00027242, "Skyrim.esm") as Faction
 Faction TownMorthalFaction = Game.GetFormFromFile(0x0002817D, "Skyrim.esm") as Faction
-;Agar Alva tirik bo'lsa, u uyada, lekin dushman emas. Bu muammoni hal qiladi.
-Actor Alva = Alias_Alva.GetActorReference()
-Alva.RemoveFromFaction(TownMorthalFaction)
-Alva.RemoveFromFaction(CrimeFaction)
-Alva.AddToFaction(VampireFaction)
-Alva.SetAV( "aggression", 2 )
+Quest DLC1VampireBaseIntro = Game.GetFormFromFile(0x0000594C, "Dawnguard.esm") as Quest
 
-Alva.SetRelationshipRank(Alias_Lami.GetActorReference(), 0)
-Alva.SetRelationshipRank(Alias_Hroggar.GetActorReference(), 0)
+Alias_Alva.GetReference().UnregisterForUpdate()
+CrimeFaction.SetPlayerEnemy(false)
+
+Actor Alva = Alias_Alva.GetActorReference()
+
+; O'yinchi Movartning uyiga yuboriladi
 Alias_Hroggar.GetActorReference().SetActorValue("aggression", 1)
 Alias_Hroggar.TryToStopCombat()
 Alias_Hroggar.GetActorReference().StopCombatAlarm()
 Alias_Hroggar.GetActorReference().SetCrimeFaction(CrimeFaction)
+Game.GetPlayer().StopCombatAlarm()
+Alva.RemoveFromFaction(TownMorthalFaction)
+Alva.RemoveFromFaction(CrimeFaction)
+Alva.AddToFaction(VampireFaction)
+Alva.SetRelationshipRank(Alias_Lami.GetActorReference(), 0)
+Alva.SetRelationshipRank(Alias_Hroggar.GetActorReference(), 0)
 
-if !(Alva.IsDead())
+if Game.IsPluginInstalled("FDE Alva.esp")
+Alias_Alva.TryToDisable()
+Else
+Alva.SetAV( "aggression", 2 )
+EndIf
+
+if !(Alva.IsDead() )
   Alva.MoveTo(Alias_BossVampireMorvath.GetReference())
 endif
 
@@ -366,7 +405,7 @@ EndIf
 ; Alias_Thonnir.GetRef().RegisterForUpdate(1)
 Game.GetPlayer().AddItem(FirstReward, 1)
 
-If Alias_Lurbuk.GetActorReference().IsDead() == 0 && Alias_Lurbuk.GetActorReference().IsInFaction(CurrentFollowerFaction) == 0
+If Alias_Lurbuk.GetActorReference().IsDead() == 0 && Alias_Lurbuk.GetActorReference().IsInFaction(CurrentFollowerFaction) == 0 && !DLC1VampireBaseIntro.GetStageDone(200)
     Alias_Lurbuk.TryToMoveTo(LurbukWaitMarker)
     Alias_Lurbuk.TryToEvaluatePackage()
 EndIf
@@ -436,13 +475,16 @@ EndFunction
 Function Fragment_36()
 ;BEGIN CODE
 ; Movart o'ldi
+Actor ThonnirREF = Alias_Thonnir.GetActorRef()
 
 SetObjectiveCompleted(100, 1)
 SetObjectiveDisplayed(120, 1)
 
 Alias_Helgi.TryToEnable()
 Alias_Helgi.TryToMoveTo(MS14HelgiThankYouMarker)
+if !ThonnirREF.IsInFaction(Game.GetFormFromFile(0x00000054, "FDE Alva.esp") as Faction)
 Alias_Thonnir.GetActorReference().MakePlayerFriend()
+endif
 ;END CODE
 EndFunction
 ;END FRAGMENT

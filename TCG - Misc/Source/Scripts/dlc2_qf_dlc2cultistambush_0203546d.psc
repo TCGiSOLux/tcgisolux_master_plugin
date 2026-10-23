@@ -35,17 +35,18 @@ ReferenceAlias Property Alias_CenterMarker Auto
 ;BEGIN FRAGMENT Fragment_0
 Function Fragment_0()
 ;BEGIN CODE
-;THIS IS INDENTICAL TO STAGE 10 IN DLCWE09 & DLC2CultistAmbush quest
+;THIS IS INDENTICAL TO STAGE 10 IN DLCWE09 & DLC2CultistAmbush & DLC2CultistAmbush2 quests
 ;***ALL CHANGES NEED TO GO BOTH PLACES!!!****
 
 ;Cultists should attack
-DLC2CultistFaction.SetEnemy(IsGuardFaction)
 Actor Cultist1 = Alias_Cultist1.GetActorReference()
 Actor Cultist2 = Alias_Cultist2.GetActorReference()
 
+Cultist1.RemoveFromFaction(dunPrisonerFaction)
+Cultist2.RemoveFromFaction(dunPrisonerFaction)
 Cultist1.RemoveFromFaction(WEPlayerFriend)
-Cultist1.AddToFaction(WEPlayerEnemy)
 Cultist2.RemoveFromFaction(WEPlayerFriend)
+Cultist1.AddToFaction(WEPlayerEnemy)
 Cultist2.AddToFaction(WEPlayerEnemy)
 
 Cultist1.SetActorValue("Aggression", 1)
@@ -65,7 +66,10 @@ EndWhile
 DLC2MQ01AliasForObjective.ForceRefTo(Cultist1)
 DLC2MQ01.SetStage(5)
 
-DLC2WE09Chance.setValue(100)
+DLC2WE09Chance.setValue(1)
+
+DLC2CultistFaction.SetEnemy(IsGuardFaction)
+Stop()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -73,17 +77,13 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_3
 Function Fragment_3()
 ;BEGIN CODE
-; debug.trace(self + "stage 255, calling Disable() and DeleteWhenAble() on created aliases")
-;UDBP 2.1.3 - Don't disable. They vanish in front of the player this way. DeleteWhenAble does that.
-;Alias_Cultist1.GetReference().Disable()
-;Alias_Cultist2.GetReference().Disable()
-
-Alias_Cultist1.GetReference().DeleteWhenAble()
-Alias_Cultist2.GetReference().DeleteWhenAble()
-
 if DLC2MQ01.GetStage() >= 5
 CompleteQuest()
 endif
+
+; debug.trace(self + "stage 255, calling DeleteWhenAble() on created aliases")
+Alias_Cultist1.GetReference().DeleteWhenAble()
+Alias_Cultist2.GetReference().DeleteWhenAble()
 
 ;END CODE
 EndFunction

@@ -20,6 +20,7 @@ Alias_RonthilAliasBackup.GetActorReference().MakePlayerFriend()
 CompleteQuest()
 Stop()
 else
+;No updates, quest not completed
 Stop()
 Endif
 ;END CODE

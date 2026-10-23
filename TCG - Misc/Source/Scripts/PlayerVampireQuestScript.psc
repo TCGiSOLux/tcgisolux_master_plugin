@@ -76,6 +76,7 @@ Event OnUpdateGameTime()
 			;All NPCs hate the evil Vampire
 			VampireStage4Message.Show()
 			Utility.Wait(3)
+			Game.SetPlayerReportCrime(false)
 			Player.AddtoFaction(VampirePCFaction)
 			Player.SetAttackActorOnSight()
 
@@ -134,38 +135,44 @@ Function VampireChange(Actor Target)
 	imageSpaceModifier.removeCrossFade()
 	VampireChangeFX.stop(Target)
 
-	;Change player's race, defaults to Nord Vampire
-	if (Target.GetActorBase().GetRace() == ArgonianRace)
-		CureRace = ArgonianRace
-		Target.SetRace(ArgonianRaceVampire)
-	elseif (Target.GetActorBase().GetRace() == BretonRace)
-		CureRace = BretonRace
-		Target.SetRace(BretonRaceVampire) 
-	elseif (Target.GetActorBase().GetRace() == DarkElfRace)
-		CureRace = DarkElfRace
-		Target.SetRace(DarkElfRaceVampire) 
-	elseif (Target.GetActorBase().GetRace() == HighELfRace)
-		CureRace = HighELfRace
-		Target.SetRace(HighELfRaceVampire) 
-	elseif (Target.GetActorBase().GetRace() == ImperialRace)
-		CureRace = ImperialRace
-		Target.SetRace(ImperialRaceVampire) 
-	elseif (Target.GetActorBase().GetRace() == KhajiitRace)
-		CureRace = KhajiitRace
-		Target.SetRace(KhajiitRaceVampire) 
-	elseif (Target.GetActorBase().GetRace() == NordRace)
-		CureRace = NordRace
-		Target.SetRace(NordRaceVampire) 
-	elseif (Target.GetActorBase().GetRace() == OrcRace)
-		CureRace = OrcRace
-		Target.SetRace(OrcRaceVampire) 
-	elseif (Target.GetActorBase().GetRace() == RedguardRace)
-		CureRace = RedguardRace
-		Target.SetRace(RedguardRaceVampire) 
-	elseif (Target.GetActorBase().GetRace() == WoodElfRace)
-		CureRace = WoodElfRace
-		Target.SetRace(WoodElfRaceVampire) 
-	endif
+	;Change player's race
+	Race PlayerRace = Target.GetActorBase().GetRace()
+	Race PlayerVampireRace = RaceCompatibility.GetVampireRaceByRace(PlayerRace)
+	If (PlayerVampireRace != None)
+		CureRace = PlayerRace
+		Target.SetRace(PlayerVampireRace)
+	EndIf
+	; if (Target.GetActorBase().GetRace() == ArgonianRace)
+	; 	CureRace = ArgonianRace
+	; 	Target.SetRace(ArgonianRaceVampire)
+	; elseif (Target.GetActorBase().GetRace() == BretonRace)
+	; 	CureRace = BretonRace
+	; 	Target.SetRace(BretonRaceVampire) 
+	; elseif (Target.GetActorBase().GetRace() == DarkElfRace)
+	; 	CureRace = DarkElfRace
+	; 	Target.SetRace(DarkElfRaceVampire) 
+	; elseif (Target.GetActorBase().GetRace() == HighELfRace)
+	; 	CureRace = HighELfRace
+	; 	Target.SetRace(HighELfRaceVampire) 
+	; elseif (Target.GetActorBase().GetRace() == ImperialRace)
+	; 	CureRace = ImperialRace
+	; 	Target.SetRace(ImperialRaceVampire) 
+	; elseif (Target.GetActorBase().GetRace() == KhajiitRace)
+	; 	CureRace = KhajiitRace
+	; 	Target.SetRace(KhajiitRaceVampire) 
+	; elseif (Target.GetActorBase().GetRace() == NordRace)
+	; 	CureRace = NordRace
+	; 	Target.SetRace(NordRaceVampire) 
+	; elseif (Target.GetActorBase().GetRace() == OrcRace)
+	; 	CureRace = OrcRace
+	; 	Target.SetRace(OrcRaceVampire) 
+	; elseif (Target.GetActorBase().GetRace() == RedguardRace)
+	; 	CureRace = RedguardRace
+	; 	Target.SetRace(RedguardRaceVampire) 
+	; elseif (Target.GetActorBase().GetRace() == WoodElfRace)
+	; 	CureRace = WoodElfRace
+	; 	Target.SetRace(WoodElfRaceVampire) 
+	; endif
 
 	;Clear player's diseases
 	;VampireCureDisease.Cast(Target)
@@ -218,7 +225,8 @@ Function VampireChange(Actor Target)
 	Target.AddSpell(LightningBoltRightHand)
 	
 	Utility.Wait(1)
-	Game.EnablePlayerControls()
+	Game.EnablePlayerControls()	
+
 	ActorBase PlayerVamp = Game.GetPlayer().GetActorBase()
 
 	If PlayerVamp.GetSex() == 1
@@ -260,6 +268,7 @@ Function VampireFeed()
 	If Game.GetPlayer().IsInFaction(VampirePCFaction) == 1
 	Game.GetPlayer().RemoveFromFaction(VampirePCFaction)
 	Game.GetPlayer().SetAttackActorOnSight(False)
+	Game.SetPlayerReportCrime(true)
 
 	int cfIndex = 0
 	;Debug.Trace("VAMPIRE feed: DLC1CrimeFactions = " + DLC1CrimeFactions)
@@ -449,6 +458,7 @@ Function VampireCure(Actor Player)
 	If Game.GetPlayer().IsInFaction(VampirePCFaction) == 1
 	Player.RemoveFromFaction(VampirePCFaction)
 	Player.SetAttackActorOnSight(False)
+	Game.SetPlayerReportCrime(true)
 
 	int cfIndex = 0
 	;Debug.Trace("VAMPIRE feed: DLC1CrimeFactions = " + DLC1CrimeFactions)
@@ -495,28 +505,32 @@ Function VampireCure(Actor Player)
 	;Player.RemoveSpell(VampireCloak)
 	Player.RemoveSpell(VampireInvisibilityPC)	
 
-	;Change player's race, defaults to Nord
-	if (Player.GetRace() == ArgonianRaceVampire)
-		Player.SetRace(ArgonianRace)
-	elseif (Player.GetRace() == BretonRaceVampire)
-		Player.SetRace(BretonRace) 
-	elseif (Player.GetRace() == DarkElfRaceVampire)
-		Player.SetRace(DarkElfRace) 
-	elseif (Player.GetRace() == HighELfRaceVampire)
-		Player.SetRace(HighElfRace) 
-	elseif (Player.GetRace() == ImperialRaceVampire)
-		Player.SetRace(ImperialRace) 
-	elseif (Player.GetRace() == KhajiitRaceVampire)
-		Player.SetRace(KhajiitRace) 
-	elseif (Player.GetRace() == NordRaceVampire)
-		Player.SetRace(NordRace) 
-	elseif (Player.GetRace() == OrcRaceVampire)
-		Player.SetRace(OrcRace) 
-	elseif (Player.GetRace() == RedguardRaceVampire)
-		Player.SetRace(RedguardRace) 
-	elseif (Player.GetRace() == WoodElfRaceVampire)
-		Player.SetRace(WoodElfRace) 
-	endif
+	;Change player's race
+	Race CuredRace = RaceCompatibility.GetRaceByVampireRace(Player.GetRace())
+	If (CuredRace != None)
+		Player.SetRace(CuredRace)
+	EndIf
+	; if (Player.GetRace() == ArgonianRaceVampire)
+	; 	Player.SetRace(ArgonianRace)
+	; elseif (Player.GetRace() == BretonRaceVampire)
+	; 	Player.SetRace(BretonRace) 
+	; elseif (Player.GetRace() == DarkElfRaceVampire)
+	; 	Player.SetRace(DarkElfRace) 
+	; elseif (Player.GetRace() == HighELfRaceVampire)
+	; 	Player.SetRace(HighElfRace) 
+	; elseif (Player.GetRace() == ImperialRaceVampire)
+	; 	Player.SetRace(ImperialRace) 
+	; elseif (Player.GetRace() == KhajiitRaceVampire)
+	; 	Player.SetRace(KhajiitRace) 
+	; elseif (Player.GetRace() == NordRaceVampire)
+	; 	Player.SetRace(NordRace) 
+	; elseif (Player.GetRace() == OrcRaceVampire)
+	; 	Player.SetRace(OrcRace) 
+	; elseif (Player.GetRace() == RedguardRaceVampire)
+	; 	Player.SetRace(RedguardRace) 
+	; elseif (Player.GetRace() == WoodElfRaceVampire)
+	; 	Player.SetRace(WoodElfRace) 
+	; endif
 
 	;Set the Global for stat tracking
 	PlayerIsVampire.SetValue(0)

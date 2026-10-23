@@ -13,6 +13,7 @@ Spell Property PolymorphSpell auto
 Spell Property RevertSpell  Auto
 Spell Property SoundSpell  Auto
 Int Property Stamina Auto
+GlobalVariable Property WispIsPermanently Auto
 
 float PlayerHP
 float PlayerMG
@@ -44,21 +45,34 @@ Game.GetPlayer().Addspell(RevertSpell, 1)
 SoundSpell.Cast(Game.GetPlayer())
 Game.GetPlayer().AddItem(MonsterWeapon)
 Game.GetPlayer().EquipItem(MonsterWeapon, 1)
-endif
-
-if (Game.IsPluginInstalled("WispMotherHumanoidReplacer.esp"))
-Outfit WispMotherOutfit = Game.GetFormFromFile( 0x00000800, "WispMotherHumanoidReplacer.esp" ) as Outfit
-Game.GetPlayer().SetOutfit(WispMotherOutfit)
-Game.GetPlayer().AddItem(MonsterArmor)
-Game.GetPlayer().EquipItem(MonsterArmor)
-else
+WispIsPermanently.SetValue(1)
 Game.GetPlayer().AddItem(MonsterArmor)
 Game.GetPlayer().EquipItem(MonsterArmor)
 endIf
 
+If WispIsPermanently.Value == 1
+Spell PolymorphWispmotherSpell = Game.GetFormFromFile( 0x000034CB, "TCGiSOLux Master Plugin Interior.esm" ) as Spell
+Spell PolymorphWispmotherVampireSpell = Game.GetFormFromFile( 0x000034EB, "TCGiSOLux Master Plugin Interior.esm" ) as Spell
+Spell ShapeShiftWispmother = Game.GetFormFromFile( 0x000034C9, "TCGiSOLux Master Plugin Interior.esm" ) as Spell
+Spell ShapeShiftWispmotherPermanently = Game.GetFormFromFile( 0x00003502, "TCGiSOLux Master Plugin Interior.esm" ) as Spell
+Spell ShapeShiftWispmotherVampire = Game.GetFormFromFile( 0x000034EC, "TCGiSOLux Master Plugin Interior.esm" ) as Spell
+Spell ShapeShiftWispmotherVampirePermanently = Game.GetFormFromFile( 0x000034E7, "TCGiSOLux Master Plugin Interior.esm" ) as Spell
+
+Game.GetPlayer().RemoveSpell(RevertSpell)
+Game.GetPlayer().RemoveSpell(PolymorphSpell)
+
+Game.GetPlayer().RemoveSpell(PolymorphWispmotherSpell)
+Game.GetPlayer().RemoveSpell(PolymorphWispmotherVampireSpell)
+Game.GetPlayer().RemoveSpell(ShapeShiftWispmother)
+Game.GetPlayer().RemoveSpell(ShapeShiftWispmotherPermanently)
+Game.GetPlayer().RemoveSpell(ShapeShiftWispmotherVampire)
+Game.GetPlayer().RemoveSpell(ShapeShiftWispmotherVampirePermanently)
+endif
+
 EndEvent
 
 Event OnEffectFinish(Actor Target, Actor Caster)
+If WispIsPermanently.Value == 0
 Game.GetPlayer().RemoveSpell(PolymorphSpell)
 Game.GetPlayer().RemoveSpell(PolymorphSpell2)
 Game.GetPlayer().RemoveSpell(PolymorphSpell3)
@@ -68,23 +82,11 @@ Game.GetPlayer().RemoveSpell(RevertSpell)
 Game.GetPlayer().UnEquipSpell(PolymorphSpell, 0)
 Game.GetPlayer().RemoveItem(MonsterWeapon)
 Game.GetPlayer().UnEquipItem(MonsterWeapon, 1)
-
 Game.ShowFirstPersonGeometry(true)
 Game.GetPlayer().SetRace(Newrace)
 Game.GetPlayer().SetActorValue("health", (PlayerHP))
 Game.GetPlayer().SetActorValue("magicka", (PlayerMG))
 Game.GetPlayer().SetActorValue("stamina", (PlayerST))
-
-if (Game.IsPluginInstalled("WispMotherHumanoidReplacer.esp"))
-Armor WispCloak = Game.GetFormFromFile( 0x00000D6B, "WispMotherHumanoidReplacer.esp" ) as Armor
-Armor WispHood = Game.GetFormFromFile( 0x00000D6C, "WispMotherHumanoidReplacer.esp" ) as Armor
-Game.GetPlayer().RemoveItem(WispCloak)
-Game.GetPlayer().RemoveItem(WispHood)
-Game.GetPlayer().UnEquipItem(WispCloak)
-Game.GetPlayer().UnEquipItem(WispHood)
-Game.GetPlayer().RemoveItem(MonsterArmor)
-Game.GetPlayer().UnEquipItem(MonsterArmor)
-else
 Game.GetPlayer().RemoveItem(MonsterArmor)
 Game.GetPlayer().UnEquipItem(MonsterArmor)
 endIf
@@ -93,7 +95,7 @@ endEvent
 
 Event OnSpellCast(Form akSpell)
 Spell spellCast = akSpell as Spell
-if spellCast && spellCast == RevertSpell
+if spellCast && spellCast == RevertSpell && WispIsPermanently.Value == 0
 Game.GetPlayer().DispelSpell(MorphingSpell)
 Endif
 EndEvent

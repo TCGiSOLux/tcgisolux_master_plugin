@@ -23,9 +23,11 @@ GlobalVariable Property DLC1EclipseAttackGuardHellos  Auto
 {global to turn on guard hellos}
 
 Function MoveAndEnableAttackersToFathestSpawnPointAlias()
-	;UDGP 2.0.4 - Trying to deal with quests that can be severely disrupted or completely broken by a vampire attack.
 	ObjectReference FarthestRefFromPlayer = GetFarthestAliasFromPlayer()
 	Location AttackLoc = FarthestRefFromPlayer.GetEditorLocation()
+	Location MorthalLocation = Game.GetFormFromFile( 0x00018A53, "Skyrim.esm" ) as Location
+	Location WhiterunLocation = Game.GetFormFromFile( 0x00018A56, "Skyrim.esm" ) as Location
+	Location RiftenLocation = Game.GetFormFromFile( 0x00018A58, "Skyrim.esm" ) as Location
 	Location WindhelmLocation = Game.GetFormFromFile( 0x00018A57, "Skyrim.esm" ) as Location
 	Location SolitudeLocation = Game.GetFormFromFile( 0x00018A5A, "Skyrim.esm" ) as Location
 	Location MarkarthLocation = Game.GetFormFromFile( 0x00018A59, "Skyrim.esm" ) as Location
@@ -35,9 +37,25 @@ Function MoveAndEnableAttackersToFathestSpawnPointAlias()
 	Quest MS01 = Game.GetFormFromFile( 0x00018B4B, "Skyrim.esm" ) as Quest
 	Quest MS02 = Game.GetFormFromFile( 0x00040a5e, "Skyrim.esm" ) as Quest
 	Quest SolitudeOpening = Game.GetFormFromFile( 0x000B2FD9, "Skyrim.esm" ) as Quest
+	Quest RelationshipMarriage = Game.GetFormFromFile( 0x00074793, "Skyrim.esm" ) as Quest
+	Quest MS01IntroWorldScene = Game.GetFormFromFile( 0x000AF75F, "Skyrim.esm" ) as Quest
+	Quest MS01GuardScene = Game.GetFormFromFile( 0x000D66F2, "Skyrim.esm" ) as Quest
+	Quest MS01ForswornScene = Game.GetFormFromFile( 0x000D6710, "Skyrim.esm" ) as Quest
+	Quest MS01Ambush = Game.GetFormFromFile( 0x000210CD, "Skyrim.esm" ) as Quest
+	Quest MS08Argue = Game.GetFormFromFile( 0x00055BFD, "Skyrim.esm" ) as Quest
+	Quest DialogueWhiterun = Game.GetFormFromFile( 0x000270A4, "Skyrim.esm" ) as Quest
+	Quest pMS14 = Game.GetFormFromFile(0x00025F3E, "Skyrim.esm") as Quest
+	Actor Alva = Game.GetFormFromFile(0x0001AA5C, "Skyrim.esm") as Actor
+	Quest AlvaQuest = Game.GetFormFromFile(0x00000810, "FDE Alva.esp") as Quest ; For FDE Alva MOD ONLY.
+	Quest AlvaVolkiharCourt = Game.GetFormFromFile(0x00000025, "FDE Alva.esp") as Quest ; For FDE Alva MOD ONLY.
+	Keyword CWOwner = Game.GetFormFromFile(0x0002A456, "Skyrim.esm") as Keyword ; For FDE Alva MOD ONLY.
 
 	bool StopQuest = False
-	
+
+	if( MS01Ambush.GetStageDone(10) && !MS01Ambush.GetStageDone(100) )
+		StopQuest = True
+	EndIf
+
 	if( AttackLoc == WindhelmLocation )
 		if( MS11.IsRunning() || (DB01.IsRunning() && DB01.GetStage() < 20) )
 			StopQuest = True
@@ -49,16 +67,47 @@ Function MoveAndEnableAttackersToFathestSpawnPointAlias()
 		if( MS05.GetStage() >= 150 && MS05.Getstage() < 300 )
 			StopQuest = true
 		endif
+		if( AlvaQuest.GetStage() >= 5 && AlvaQuest.GetStage() < 119 && !AlvaVolkiharCourt.GetStageDone(20) )
+			StopQuest = true
+		endif
 	ElseIf( AttackLoc == MarkarthLocation )
-		if( MS01.IsRunning() )
+		if( !MS01IntroWorldScene.GetStageDone(500) )
 			StopQuest = True
 		EndIf
-		if( MS02.IsRunning() )
+		if( MS01.GetStageDone(90) == 1 && !MS01.GetStageDone(95) )
 			StopQuest = True
 		EndIf
+		if( MS01GuardScene.IsRunning() )
+			StopQuest = True
+		EndIf
+		if( MS01ForswornScene.IsRunning() )
+			StopQuest = True
+		EndIf
+		if( MS02.GetStageDone(80) == 1 && !MS02.GetStageDone(100) )
+			StopQuest = True
+		EndIf
+		if( MS02.GetStageDone(200) == 1 && !MS02.GetStageDone(250) )
+			StopQuest = True
+		EndIf
+	ElseIf( AttackLoc == RiftenLocation )
+		if( RelationshipMarriage.GetStage() >= 20 && RelationshipMarriage.Getstage() < 99 )
+			StopQuest = true
+		endif
+	ElseIf( AttackLoc == WhiterunLocation )
+		if( MS08Argue.IsRunning() && DialogueWhiterun.Getstage() < 39 )
+			StopQuest = true
+		endif
+	ElseIf( AttackLoc == MorthalLocation )
+		if( pMS14.GetStageDone(95) && !pMS14.GetStageDone(97) )
+			StopQuest = true
+		endif
+		if( AlvaQuest.GetStage() >= 5 && AlvaQuest.GetStage() < 119 )
+			StopQuest = true
+		endif
 	EndIf
 	
 	if( StopQuest )
+		DLC1EclipseAttackGuardHellos.SetValue(0)
 		Stop()
 		Return
 	EndIf	

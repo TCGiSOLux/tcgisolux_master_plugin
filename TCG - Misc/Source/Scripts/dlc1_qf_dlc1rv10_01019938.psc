@@ -169,7 +169,7 @@ DLC1DawnguardGateRef3.Disable()
 Alias_Sorine.GetActorReference().SetOutfit(kmyquest.DLC1OutfitSorine)
 Alias_Gunmar.GetActorReference().SetOutfit(kmyquest.DLC1OutfitGunmar)
 Alias_Florentius.GetActorReference().SetOutfit(DLC1FlorentiusOutfit) ; Added by UDGP 1.1.3
-DLC1HunterFaction.SetPlayerEnemy(true)
+;DLC1HunterFaction.SetPlayerEnemy(true)
 ;END CODE
 EndFunction
 ;END FRAGMENT

@@ -29,6 +29,7 @@ Event OnActivate (ObjectReference ActionRef)
 					Serana.GetReference().MoveTo(DLC1VQ03HunterSeranaStart)
 				EndIf
 				IsranAlias.GetReference().MoveTo(IsranMarker)
+				(Game.GetFormFromFile(0x0002816B, "Skyrim.esm") as Faction).SetPlayerEnemy(false)
 				DLC1HunterBaseIntroEndScene.Start()
 				DoOnce = 1
 			endif

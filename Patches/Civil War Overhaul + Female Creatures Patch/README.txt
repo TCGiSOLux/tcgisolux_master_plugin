@@ -1,0 +1,1 @@
+WARNING! Don't use this patch, if you doesn't installed Female Creatures mod.

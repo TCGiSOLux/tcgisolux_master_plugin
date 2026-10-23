@@ -68,7 +68,9 @@ EndFunction
 Function Fragment_12()
 ;BEGIN CODE
 ;add join up to Dawnguard objective
+if CW00A.GetStageDone(10) == 0
 CW00A.setStage(10)
+endif
 Utility.Wait(8)
 Stop()
 ;END CODE

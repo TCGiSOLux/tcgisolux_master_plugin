@@ -41,9 +41,10 @@ FreeformFalkreathQuest03Script kmyQuest = __temp as FreeformFalkreathQuest03Scri
 ;BEGIN CODE
 ;Quest accepted
 
-;If Vighar is dead already, jump ahead
+;If Vighar already dead, jump ahead
 If Alias_Vighar.GetActorReference().IsDead() == True
 setObjectiveDisplayed(10)
+DengeirQuest.SetStage(20)
 SetStage(20)
 else
 setObjectiveDisplayed(10)

@@ -318,6 +318,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_8
 Function Fragment_8()
 ;BEGIN CODE
+
 ; Change Harkon to vampire lord
 ;pDLC1Harkon.SetEssential(false)
 SetObjectiveCompleted(10,1)
@@ -325,6 +326,12 @@ SetObjectiveDisplayed(20,1)
 
 ;UDGP 2.0.7 - Move all of the rank & file guys back to Fort Dawnguard for the scene. Some of them might not be here.
 ;UDGP 2.0.7 - Move all of the rank & file guys back to Fort Dawnguard for the scene. Some of them might not be here.
+
+(Game.GetFormFromFile(0x0002816B, "Skyrim.esm") as Faction).SetCrimeGold(0)
+(Game.GetFormFromFile(0x0002816B, "Skyrim.esm") as Faction).SetCrimeGoldViolent(0)
+(Game.GetFormFromFile(0x0002816B, "Skyrim.esm") as Faction).SetPlayerEnemy(false)
+Game.GetPlayer().StopCombatAlarm()
+
 if( !Alias_DLC1VQ08AgmaerAlias.GetActorReference().IsDead() )
   Alias_DLC1VQ08AgmaerAlias.GetReference().MoveTo(DLC1VQ08DawnguardPreSceneIdle2)
 endif

@@ -89,11 +89,11 @@ Quest __temp = self as Quest
 WEScript kmyQuest = __temp as WEScript
 ;END AUTOCAST
 ;BEGIN CODE
-; debug.trace(self + "stage 255, calling DeleteWhenAble() on created aliases")
+; debug.trace(self + "stage 255, calling Delete() and DeleteWhenAble() on created aliases")
+Alias_ScriptManager.GetReference().Delete()
+Alias_Dawnguard02.GetReference().Delete()
+Alias_Dawnguard03.GetReference().Delete()
 Alias_Dawnguard01.GetReference().DeleteWhenAble()
-Alias_Dawnguard02.GetReference().DeleteWhenAble()
-Alias_Dawnguard03.GetReference().DeleteWhenAble()
-Alias_ScriptManager.GetReference().DeleteWhenAble()
 
 ; debug.trace(self + "stage 255, calling ReArmTrigger() on trigger" + Alias_Trigger.GetReference())
 (Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()
@@ -104,9 +104,8 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_3
 Function Fragment_3()
 ;BEGIN CODE
-;Script Manager and Vampire Hunters are unloaded.
-;Debug.Trace("110: " Alias_ScriptManager.GetReference().Is3DLoaded() + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded()
-if GetStageDone(100) == 0 && (!Alias_Dawnguard01.GetReference().Is3DLoaded() && !Alias_Dawnguard02.GetReference().Is3DLoaded() && !Alias_Dawnguard03.GetReference().Is3DLoaded() && !Alias_ScriptManager.GetReference().Is3DLoaded())
+;Script Manager are unloaded.
+if !GetStageDone(100)
 Stop()
 EndIf
 ;END CODE
@@ -117,7 +116,6 @@ EndFunction
 Function Fragment_2()
 ;BEGIN CODE
 ;Player reads Writ of Dawn note
-;Debug.Trace("100: " + Alias_Dawnguard01.GetReference().Is3DLoaded() + Alias_Dawnguard02.GetReference().Is3DLoaded() + Alias_Dawnguard03.GetReference().Is3DLoaded() + Alias_ScriptManager.GetReference().Is3DLoaded())
 Alias_TargetCapitalHQMapMarker.GetReference().AddToMap()
 Stop()
 ;END CODE
@@ -128,6 +126,9 @@ EndFunction
 Function Fragment_4()
 ;BEGIN CODE
 ;Vampire Hunters are spawned in.
+Alias_Dawnguard01.TryToEnable()
+Alias_Dawnguard02.TryToEnable()
+Alias_Dawnguard03.TryToEnable()
 ;END CODE
 EndFunction
 ;END FRAGMENT
