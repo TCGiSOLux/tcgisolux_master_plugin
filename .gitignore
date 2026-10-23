@@ -806,4 +806,4 @@ TCG - Textures/textures/Actors/Character/FaceGenData/FaceTint/TCGiSOLux Master P
 TCG - Textures/textures/Actors/Character/FaceGenData/FaceTint/TCGiSOLux Master Plugin Interior.esm/00019631.dds
 clear.bat
 *.bsa
-Data/SKSE/Plugins/*.dll
+Data/SKSE/Plugins/YesImSure.dll
