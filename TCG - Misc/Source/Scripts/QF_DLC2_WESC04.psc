@@ -83,6 +83,10 @@ WEScript kmyQuest = __temp as WEScript
 Alias_ScriptManager.GetReference().DeleteWhenAble()
 Alias_Bandit.GetReference().DeleteWhenAble()
 
+if (Alias_TargetBanditCampMapMarker.GetReference() != None) && !GetStageDone(100)
+Alias_TargetBanditCampMapMarker.GetReference().AddToMap()
+EndIf
+
 ; debug.trace(self + "stage 255, calling ReArmTrigger() on trigger" + Alias_Trigger.GetReference())
 (Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()
 ;END CODE
@@ -105,10 +109,12 @@ EndFunction
 Function Fragment_2()
 ;BEGIN CODE
 ;Player reads Assassin's Writ note
+if (Alias_TargetBanditCampMapMarker.GetReference() != None)
 Alias_TargetBanditCampMapMarker.GetReference().AddToMap()
-if !GetStageDone(110)
 Stop()
-endif
+else
+Stop()
+EndIf
 ;END CODE
 EndFunction
 ;END FRAGMENT

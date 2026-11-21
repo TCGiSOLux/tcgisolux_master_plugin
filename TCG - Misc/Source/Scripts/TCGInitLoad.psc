@@ -1,5 +1,7 @@
 Scriptname TCGInitLoad extends ReferenceAlias
 
+int CurrentVersion
+
 Race Property DremoraRace Auto
 Race Property SnowElfRace Auto
 Formlist Property HairColorList Auto
@@ -32,10 +34,17 @@ bool Property IDESpousesInitialized Auto Hidden
 bool Property FDEAlvaInitialized Auto Hidden
 bool Property DraeneiandFemaleCreaturesInitialized Auto Hidden
 bool Property FDEAelaInitialized Auto Hidden
+bool Property NFGuardInit Auto Hidden
 bool Property FDEBorgakhInitialized Auto Hidden
 bool Property FDEJenassaInitialized Auto Hidden
 bool Property IDEStormcloaksInitialized Auto Hidden
 bool Property IDEDawnguardVigilantsInitialized Auto Hidden
+
+Event OnInit()
+
+CurrentVersion = 2159
+
+EndEvent
 
 Event OnPlayerLoadGame()
 	Race playerRace = Game.GetPlayer().GetActorBase().GetRace()
@@ -49,6 +58,42 @@ Event OnPlayerLoadGame()
 	Quest pMS14 = Game.GetFormFromFile(0x00025F3E, "Skyrim.esm") as Quest
 	FormList DLC1VampireHateFactions = Game.GetFormFromFile(0x0000989F, "Dawnguard.esm") as FormList
 	Quest aaAlvaOther = Game.GetFormFromFile(0x00000025, "FDE Alva.esp") as Quest
+
+	if CurrentVersion < 2159 ; This script handles TCGiSOLux.esm updates, DO NOT MODIFY THIS PAGE.
+		Debug.Notification("Old version (2159) are found")
+		Debug.Notification("Updating to v2.5 (2178)")
+
+		; Adding VO to DLC1RV16 formlist
+		Debug.Notification("Adding Voices to DLC1RV16 formlist...")
+		(Game.GetFormFromFile(0x000037F4, "TCGiSOLux Master Plugin Interior.esm") as FormList).AddForm(Game.GetFormFromFile(0x00013AE8, "Skyrim.esm") as VoiceType)
+		(Game.GetFormFromFile(0x000037F4, "TCGiSOLux Master Plugin Interior.esm") as FormList).AddForm(Game.GetFormFromFile(0x00013AE9, "Skyrim.esm") as VoiceType)
+		Debug.Notification("Updating to DLC1RV16 formlist are completed")
+		; Adding Voices non unique to Dawnguard DLC formlist
+		Debug.Notification("Adding Voices to DLC1VoicesNonUnique formlist...")
+		(Game.GetFormFromFile(0x00005E57, "Dawnguard.esm") as FormList).AddForm(Game.GetFormFromFile(0x000176F7, "Dawnguard.esm") as VoiceType)
+		Debug.Notification("Updating to DLC1VoicesNonUnique formlist are completed")
+		; Adding Voices non unique to Dragonborn DLC formlists
+		Debug.Notification("Adding Voices to DLC2VoicesNonUnique formlist...")
+		(Game.GetFormFromFile(0x00024CAA, "Dragonborn.esm") as FormList).AddForm(Game.GetFormFromFile(0x000176F7, "Dawnguard.esm") as VoiceType)
+		(Game.GetFormFromFile(0x00024CAA, "Dragonborn.esm") as FormList).AddForm(Game.GetFormFromFile(0x000176F8, "Dawnguard.esm") as VoiceType)
+		Debug.Notification("Updating to DLC2VoicesNonUnique formlist are completed")
+
+		Debug.Notification("Adding Voices to DLC2VoiceTypesNonUniquePlusFrea formlist...")
+		(Game.GetFormFromFile(0x000398EA, "Dragonborn.esm") as FormList).AddForm(Game.GetFormFromFile(0x000176F7, "Dawnguard.esm") as VoiceType)
+		(Game.GetFormFromFile(0x000398EA, "Dragonborn.esm") as FormList).AddForm(Game.GetFormFromFile(0x000176F8, "Dawnguard.esm") as VoiceType)
+		Debug.Notification("Updating to DLC2VoiceTypesNonUniquePlusFrea formlist are completed")
+
+		Debug.Notification("Adding Voices to DLC2VoiceTypesNonUniquePlusRiekling formlist...")
+		(Game.GetFormFromFile(0x0003B062, "Dragonborn.esm") as FormList).AddForm(Game.GetFormFromFile(0x000176F7, "Dawnguard.esm") as VoiceType)
+		(Game.GetFormFromFile(0x0003B062, "Dragonborn.esm") as FormList).AddForm(Game.GetFormFromFile(0x000176F8, "Dawnguard.esm") as VoiceType)
+		Debug.Notification("Updating to DLC2VoiceTypesNonUniquePlusRiekling formlist are completed")
+
+		Debug.Notification("Updating are completed. Setting current version to 2178.")
+		CurrentVersion = 2178
+	else
+		Debug.Notification("Current version (2178) are detected. Skipping update")
+	endif ; This script handles TCGiSOLux.esm updates, DO NOT MODIFY THIS PAGE.
+
 
 	if (FDEAlvaSampleForm && !FDEAlvaInitialized)
 		;-----------------------------------------------------------------------------------------------------
@@ -187,7 +232,6 @@ Event OnPlayerLoadGame()
 		(Game.GetFormFromFile(0x005597BA, "Female_Creatures.esp") as Faction).SetAlly(PlayerFaction)
 		(Game.GetFormFromFile(0x005597BA, "Female_Creatures.esp") as Faction).SetEnemy(Game.GetFormFromFile(0x0042436B, "Female_Creatures.esp") as Faction, false, false)
 		(Game.GetFormFromFile(0x005597BA, "Female_Creatures.esp") as Faction).SetEnemy(Game.GetFormFromFile(0x00048310, "Female_Creatures.esp") as Faction, false, false)
-		;Mermaid Faction
 		;--------------------------------
 		; Add Faction
 		;--------------------------------
@@ -208,6 +252,15 @@ Event OnPlayerLoadGame()
 		;--------------------------------
 
 	EndIf
+
+	if Game.IsPluginInstalled("New Female Guard.esp") && !NFGuardInit
+	NFGuardInit = True
+	VoiceType FemaleBreton = Game.GetFormFromFile( 0x84A, "New Female Guard.esp" ) as VoiceType
+	VoiceType FemaleGuard = Game.GetFormFromFile( 0x800, "New Female Guard.esp" ) as VoiceType
+	FormList DGArrestingGuardVoiceTypes = Game.GetFormFromFile( 0x00001327, "TCGiSOLux Master Plugin Interior.esm" ) as FormList
+	DGArrestingGuardVoiceTypes.AddForm(FemaleGuard)
+	DGArrestingGuardVoiceTypes.AddForm(FemaleBreton)
+	endif
 
 	if Game.IsPluginInstalled("FDE Aela.esp") && Game.IsPluginInstalled("FDE Aela Part 2.esp") && Game.IsPluginInstalled("FDE Aela Part 3.esp") && !FDEAelaInitialized
 	FDEAelaInitialized = True

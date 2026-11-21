@@ -4,29 +4,45 @@ Scriptname DawnguardAgentScript extends Actor
 bool NPCLoaded = False
 
 Event OnLoad()
-	if !NPCLoaded && !self.isdead() && Game.GetPlayer().GetDistance(self) <= 512 && (Game.GetFormFromFile(0x0000594C, "Dawnguard.esm") as Quest).GetStageDone(200) && !(Game.GetFormFromFile(0x00019938, "Dawnguard.esm") as Quest).GetStageDone(255)
+	if !NPCLoaded && !self.isdead() && (Game.GetFormFromFile(0x0000594C, "Dawnguard.esm") as Quest).GetStageDone(200) && !(Game.GetFormFromFile(0x00019938, "Dawnguard.esm") as Quest).GetStageDone(255)
 	NPCLoaded = TRUE
-	(Game.GetFormFromFile(0x00106ADE, "Skyrim.esm") as visualeffect).Play(self)
-	self.setAV("Aggression", 2)
-	self.setAV("confidence", 4)
-	self.SetAttackActorOnSight(true)
+	if (Game.GetFormFromFile(0x0002c358, "Skyrim.esm") as Quest).GetStageDone(100) && self.GetItemCount(Game.GetFormFromFile(0x0000D098, "Dawnguard.esm") as Weapon) == 0
 	self.AddItem(Game.GetFormFromFile(0x0000D098, "Dawnguard.esm") as Weapon)
 	self.EquipItem(Game.GetFormFromFile(0x0000D098, "Dawnguard.esm") as Weapon)
+	else
+	self.EquipItem(Game.GetFormFromFile(0x0000D098, "Dawnguard.esm") as Weapon)
+	endif
+	self.setcrimefaction(none)
+	self.setAV("Aggression", 2)
+	self.setAV("confidence", 0)
+	self.SetAttackActorOnSight(true)
 	endif
 EndEvent
 
-Event Onunload()
-	if NPCLoaded && (Game.GetFormFromFile(0x0000594C, "Dawnguard.esm") as Quest).GetStageDone(200) && !(Game.GetFormFromFile(0x00019938, "Dawnguard.esm") as Quest).GetStageDone(255)
-	self.setAV("Aggression", 1)
-	self.SetAttackActorOnSight(false)
-	NPCLoaded = FALSE
+Event OnCellAttach()
+	if !NPCLoaded && !self.isdead() && (Game.GetFormFromFile(0x0000594C, "Dawnguard.esm") as Quest).GetStageDone(200) && !(Game.GetFormFromFile(0x00019938, "Dawnguard.esm") as Quest).GetStageDone(255)
+	NPCLoaded = TRUE
+	if (Game.GetFormFromFile(0x0002c358, "Skyrim.esm") as Quest).GetStageDone(100) && self.GetItemCount(Game.GetFormFromFile(0x0000D098, "Dawnguard.esm") as Weapon) == 0
+	self.AddItem(Game.GetFormFromFile(0x0000D098, "Dawnguard.esm") as Weapon)
+	self.EquipItem(Game.GetFormFromFile(0x0000D098, "Dawnguard.esm") as Weapon)
+	else
+	self.EquipItem(Game.GetFormFromFile(0x0000D098, "Dawnguard.esm") as Weapon)
+	endif
+	self.setcrimefaction(none)
+	self.setAV("Aggression", 2)
+	self.setAV("confidence", 0)
+	self.SetAttackActorOnSight(true)
 	endif
 EndEvent
 
 Event OnCellDetach()
-	if NPCLoaded && (Game.GetFormFromFile(0x0000594C, "Dawnguard.esm") as Quest).GetStageDone(200) && !(Game.GetFormFromFile(0x00019938, "Dawnguard.esm") as Quest).GetStageDone(255)
+	if (Game.GetFormFromFile(0x0000594C, "Dawnguard.esm") as Quest).GetStageDone(200) && !(Game.GetFormFromFile(0x00019938, "Dawnguard.esm") as Quest).GetStageDone(255)
 	self.setAV("Aggression", 1)
+	self.setAV("confidence", 4)
 	self.SetAttackActorOnSight(false)
+	self.stopcombatalarm()
+	game.getplayer().stopcombatalarm()
+	self.setcrimefaction(Game.GetFormFromFile(0x000007DF, "TCGiSOLux Master Plugin Interior.esm") as Faction)
 	NPCLoaded = FALSE
 	endif
 EndEvent

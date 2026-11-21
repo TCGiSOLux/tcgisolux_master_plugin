@@ -92,9 +92,19 @@ Function Fragment_5()
 ;BEGIN CODE
 ; debug.trace(self + "stage 255, calling ReArmTrigger() on trigger" + Alias_Trigger.GetReference())
 (Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()
+
 Alias_Vampire01.GetReference().Disable()
 Alias_Vampire02.GetReference().Disable()
 Alias_Vampire03.GetReference().Disable()
+
+if (Alias_TargetCapitalHQMapMarker.GetReference() != None) && !GetStageDone(100)
+Alias_TargetCapitalHQMapMarker.GetReference().AddToMap()
+EndIf
+
+if (Alias_TargetDungeonMapMarker.GetReference() != None) && !GetStageDone(100)
+Alias_TargetDungeonMapMarker.GetReference().AddToMap()
+EndIf
+
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -103,8 +113,16 @@ EndFunction
 Function Fragment_2()
 ;BEGIN CODE
 ;Add the map markers to the player's map.
-Alias_TargetDungeonMapMarker.GetReference().AddToMap()
+if (Alias_TargetCapitalHQMapMarker.GetReference() != None)
 Alias_TargetCapitalHQMapMarker.GetReference().AddToMap()
+EndIf
+
+if (Alias_TargetDungeonMapMarker.GetReference() != None)
+Alias_TargetDungeonMapMarker.GetReference().AddToMap()
+EndIf
+
+Utility.Wait(45)
+Stop()
 ;END CODE
 EndFunction
 ;END FRAGMENT

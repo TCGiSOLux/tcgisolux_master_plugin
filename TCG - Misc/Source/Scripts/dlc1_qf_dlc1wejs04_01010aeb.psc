@@ -64,6 +64,7 @@ Function Fragment_3()
 
 Actor Babette = Alias_Babette.getReference() as Actor
 Babette.EvaluatePackage()
+Utility.Wait(20)
 Stop()
 ;END CODE
 EndFunction

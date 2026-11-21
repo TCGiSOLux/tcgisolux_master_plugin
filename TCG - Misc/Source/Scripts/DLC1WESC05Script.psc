@@ -12,13 +12,13 @@ bool YUKLANMAGAN = False
 Event OnLoad()
 
 	While (DLC1_WESC05.GetStage() == 0)
-		if (SceneCenterMarker.GetReference().GetDistance(Game.GetPlayer()) < 2000) ||  (SceneCenterMarker.GetReference().GetDistance(Spouse.GetActorRef()) < 2000)
-			Dawnguard01.TryToEnable()
-			Dawnguard02.TryToEnable()
-			Dawnguard03.TryToEnable()
-			DLC1_WESC05.SetStage(5)
-		Else
+		if (SceneCenterMarker.GetReference().GetDistance(Game.GetPlayer()) > 1000) ||  (SceneCenterMarker.GetReference().GetDistance(Spouse.GetActorRef()) > 1000)
 			Utility.Wait(1)
+		Else
+			Dawnguard03.TryToEnable()
+			Dawnguard02.TryToEnable()
+			Dawnguard01.TryToEnable()
+			DLC1_WESC05.SetStage(5)
 		EndIf
 	EndWhile
 EndEvent

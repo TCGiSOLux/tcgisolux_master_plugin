@@ -63,6 +63,7 @@ Alias_Actor2.GetActorReference().AddToFaction(WEEnemiesFactionB)
 
 Alias_Actor1.GetActorReference().setActorValue("aggression", 1)
 Alias_Actor2.GetActorReference().setActorValue("aggression", 1)
+CompleteQuest()
 Stop()
 ;END CODE
 EndFunction

@@ -2,6 +2,7 @@ Scriptname DLC1WE09Script extends ReferenceAlias
 
 Event OnDeath(Actor akKiller)
 	If GetOwningQuest().GetStageDone(10)
+	Utility.Wait(25)
 	GetOwningQuest().Stop()
 	endif
 EndEvent

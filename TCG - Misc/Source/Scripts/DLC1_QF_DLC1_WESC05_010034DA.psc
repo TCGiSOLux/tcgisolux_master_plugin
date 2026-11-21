@@ -90,10 +90,15 @@ WEScript kmyQuest = __temp as WEScript
 ;END AUTOCAST
 ;BEGIN CODE
 ; debug.trace(self + "stage 255, calling Delete() and DeleteWhenAble() on created aliases")
-Alias_ScriptManager.GetReference().Delete()
+
 Alias_Dawnguard02.GetReference().Delete()
 Alias_Dawnguard03.GetReference().Delete()
 Alias_Dawnguard01.GetReference().DeleteWhenAble()
+Alias_ScriptManager.GetReference().DeleteWhenAble()
+
+if (Alias_TargetCapitalHQMapMarker.GetReference() != None) && !GetStageDone(100)
+Alias_TargetCapitalHQMapMarker.GetReference().AddToMap()
+EndIf
 
 ; debug.trace(self + "stage 255, calling ReArmTrigger() on trigger" + Alias_Trigger.GetReference())
 (Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()
@@ -116,8 +121,12 @@ EndFunction
 Function Fragment_2()
 ;BEGIN CODE
 ;Player reads Writ of Dawn note
+if (Alias_TargetCapitalHQMapMarker.GetReference() != None)
 Alias_TargetCapitalHQMapMarker.GetReference().AddToMap()
 Stop()
+else
+Stop()
+EndIf
 ;END CODE
 EndFunction
 ;END FRAGMENT

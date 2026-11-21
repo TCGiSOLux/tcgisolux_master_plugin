@@ -103,7 +103,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_8
 Function Fragment_8()
 ;BEGIN CODE
-;Player reached to Lynoit/Sybille Wicking.
+;Player is reached to Lynoit/Sybille Wicking. Make this quest completed
 CompleteQuest()
 Stop()
 ;END CODE
@@ -111,7 +111,5 @@ EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
-Activator Property FXbatGroupACT  Auto  
-Quest Property DLC01WESC03  Auto  
 Book Property DLC1_WESC08Orders  Auto  
 Quest Property DLC1_WESC08  Auto  

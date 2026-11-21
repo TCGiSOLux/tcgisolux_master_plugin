@@ -90,6 +90,10 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_6
 Function Fragment_6()
+;BEGIN AUTOCAST TYPE WEScript
+Quest __temp = self as Quest
+WEScript kmyQuest = __temp as WEScript
+;END AUTOCAST
 ;BEGIN CODE
 ;Taron Dreth and Guards are unloaded.
 ;Debug.Trace("Stage 100: "Alias_Taron.GetReference().Is3DLoaded() + Alias_Guard01.GetReference().Is3DLoaded() + Alias_Guard02.GetReference().Is3DLoaded() + Alias_Guard03.GetReference().Is3DLoaded()")
@@ -99,13 +103,18 @@ Alias_Guard01.GetActorRef().RemoveFromFaction(Game.GetFormFromFile(0x0001DD09, "
 Alias_Guard02.GetActorRef().RemoveFromFaction(Game.GetFormFromFile(0x0001DD09, "Skyrim.esm") as Faction)
 Alias_Guard03.GetActorRef().RemoveFromFaction(Game.GetFormFromFile(0x0001DD09, "Skyrim.esm") as Faction)
 
-if !GetStageDone(50)
-Alias_Taron.GetActorReference().kill()
-Alias_Guard01.GetActorReference().kill()
-Alias_Guard02.GetActorReference().kill()
-Alias_Guard03.GetActorReference().kill()
-CompleteQuest()
 DLC1_WESC09Faction.SetEnemy(PlayerFaction)
+
+if !GetStageDone(50)
+kmyquest.makeAliasAggressiveAndAttackPlayer(Alias_Taron)
+kmyquest.makeAliasAggressiveAndAttackPlayer(Alias_Guard01)
+kmyquest.makeAliasAggressiveAndAttackPlayer(Alias_Guard02)
+kmyquest.makeAliasAggressiveAndAttackPlayer(Alias_Guard03)
+Alias_Taron.GetActorReference().kill(Game.GetPlayer())
+Alias_Guard01.GetActorReference().kill(Game.GetPlayer())
+Alias_Guard02.GetActorReference().kill(Game.GetPlayer())
+Alias_Guard03.GetActorReference().kill(Game.GetPlayer())
+CompleteQuest()
 Stop()
 endif
 
@@ -115,6 +124,10 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_8
 Function Fragment_8()
+;BEGIN AUTOCAST TYPE WEScript
+Quest __temp = self as Quest
+WEScript kmyQuest = __temp as WEScript
+;END AUTOCAST
 ;BEGIN CODE
 ;Begin combat with Taron and guards.
 ;Debug.Trace("Stage 50 - Starting Combat" + "Alias_Taron.GetReference().Is3DLoaded() + Alias_Guard01.GetReference().Is3DLoaded() + Alias_Guard02.GetReference().Is3DLoaded() + Alias_Guard03.GetReference().Is3DLoaded()")
@@ -128,6 +141,10 @@ Alias_Guard02.GetActorRef().EvaluatePackage()
 Alias_Guard03.GetActorRef().EvaluatePackage()
 DLC1_WESC09Faction.SetEnemy(PlayerFaction)
 CompleteQuest()
+kmyquest.makeAliasAggressiveAndAttackPlayer(Alias_Taron)
+kmyquest.makeAliasAggressiveAndAttackPlayer(Alias_Guard01)
+kmyquest.makeAliasAggressiveAndAttackPlayer(Alias_Guard02)
+kmyquest.makeAliasAggressiveAndAttackPlayer(Alias_Guard03)
 Stop()
 ;END CODE
 EndFunction

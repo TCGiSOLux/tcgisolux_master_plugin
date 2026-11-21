@@ -81,19 +81,23 @@ if(GoldGivenF1 == 1) && Alias_Farmer01.GetActorReference().IsInFaction(Game.GetF
 (Alias_Farmer01.getReference() as Actor).additem(Gold, goldGiven)
 Alias_Farmer01.GetActorReference().AddToFaction(Game.GetFormFromFile(0x00017F71, "Dawnguard.esm") as Faction)
 Alias_Farmer01.GetActorReference().SetCrimeFaction(Game.GetFormFromFile(0x00017F71, "Dawnguard.esm") as Faction)
+Alias_Farmer02.GetActorReference().AddToFaction(Game.GetFormFromFile(0x00017F71, "Dawnguard.esm") as Faction)
+Alias_Farmer02.GetActorReference().SetCrimeFaction(Game.GetFormFromFile(0x00017F71, "Dawnguard.esm") as Faction)
 else
 (Alias_Farmer01.getReference() as Actor).additem(Gold, goldGiven)
 endif
 
 if(GoldGivenF1 == 2) && Alias_Farmer02.GetActorReference().IsInFaction(Game.GetFormFromFile(0x00003376, "Dawnguard.esm") as Faction) && !Alias_Farmer02.GetActorReference().IsInFaction(Game.GetFormFromFile(0x00017F71, "Dawnguard.esm") as Faction)
 (Alias_Farmer02.getReference() as Actor).additem(Gold, goldGiven)
+Alias_Farmer01.GetActorReference().AddToFaction(Game.GetFormFromFile(0x00017F71, "Dawnguard.esm") as Faction)
+Alias_Farmer01.GetActorReference().SetCrimeFaction(Game.GetFormFromFile(0x00017F71, "Dawnguard.esm") as Faction)
 Alias_Farmer02.GetActorReference().AddToFaction(Game.GetFormFromFile(0x00017F71, "Dawnguard.esm") as Faction)
 Alias_Farmer02.GetActorReference().SetCrimeFaction(Game.GetFormFromFile(0x00017F71, "Dawnguard.esm") as Faction)
 else
 (Alias_Farmer02.getReference() as Actor).additem(Gold, goldGiven)
 endif
 
-if getstagedone(10) && getstagedone(15)
+if getstagedone(10) || getstagedone(15)
 stop()
 endif
 

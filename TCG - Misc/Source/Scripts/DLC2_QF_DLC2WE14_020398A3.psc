@@ -67,6 +67,7 @@ Function Fragment_5()
 ;BEGIN CODE
 DLC2dunFrostmoonQSTMisc.SetStage(11)
 Alias_Actor1.GetActorReference().EvaluatePackage()
+Utility.Wait(2)
 Stop()
 ;END CODE
 EndFunction

@@ -45,10 +45,30 @@ Function Fragment_2()
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_5
+Function Fragment_5()
+;BEGIN CODE
+;cultist dead
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_1
+Function Fragment_1()
+;BEGIN CODE
+;player taken book make complete quest and stop
+(Game.GetFormFromFile(0x0004D8D6, "Skyrim.esm" ) as Quest).setstage(1)
+setObjectiveCompleted(10,1)
+CompleteQuest()
+Stop()
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_4
 Function Fragment_4()
 ;BEGIN CODE
-;cultist dead
+;cultist start combat
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -60,17 +80,15 @@ Quest __temp = self as Quest
 WEScript kmyQuest = __temp as WEScript
 ;END AUTOCAST
 ;BEGIN CODE
-(Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()
+Alias_Cultist.GetReference().DeleteWhenAble()
 
-if !GetStageDone(1)
-Alias_Cultist.GetReference().Delete()
+if !GetStageDone(20)
 setObjectiveDisplayed(10,0)
 else
-Alias_Cultist.GetReference().DeleteWhenAble()
 SetObjectiveCompleted(10)
-CompleteQuest()
 endif
 
+(Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()
 ;END CODE
 EndFunction
 ;END FRAGMENT

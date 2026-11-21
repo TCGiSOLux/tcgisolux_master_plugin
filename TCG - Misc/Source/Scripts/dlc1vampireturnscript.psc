@@ -15,6 +15,23 @@ ReferenceAlias Property NewVampire10 auto
 ReferenceAlias Property NewVampire11 auto
 ReferenceAlias Property NewVampire12 auto
 ReferenceAlias Property NewVampire13 auto
+ReferenceAlias Property NewVampire14 auto
+ReferenceAlias Property NewVampire15 auto
+ReferenceAlias Property NewVampire16 auto
+ReferenceAlias Property NewVampire17 auto
+ReferenceAlias Property NewVampire18 auto
+ReferenceAlias Property NewVampire19 auto
+ReferenceAlias Property NewVampire20 auto
+ReferenceAlias Property NewVampire21 auto
+ReferenceAlias Property NewVampire22 auto
+ReferenceAlias Property NewVampire23 auto
+ReferenceAlias Property NewVampire24 auto
+ReferenceAlias Property NewVampire25 auto
+ReferenceAlias Property NewVampire26 auto
+ReferenceAlias Property NewVampire27 auto
+ReferenceAlias Property NewVampire28 auto
+ReferenceAlias Property NewVampire29 auto
+ReferenceAlias Property NewVampire30 auto
 
 Race Property ArgonianRace auto
 Race Property BretonRace auto

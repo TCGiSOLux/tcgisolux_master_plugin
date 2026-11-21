@@ -130,6 +130,7 @@ Alva.SetCrimeFaction(None)
 if Game.IsPluginInstalled("FDE Alva.esp")
 Alias_Alva.TryToEnable()
 Else
+Alva.RemoveFromFaction(Game.GetFormFromFile(0x000030DC, "TCGiSOLux Master Plugin Interior.esm") as Faction)
 Alva.SetAV( "aggression", 2 )
 EndIf
 
@@ -192,6 +193,7 @@ Utility.Wait(3)
 if Game.IsPluginInstalled("FDE Alva.esp")
 Alias_Alva.TryToDisable()
 Else
+Alva.RemoveFromFaction(Game.GetFormFromFile(0x000030DC, "TCGiSOLux Master Plugin Interior.esm") as Faction)
 Alva.SetAV( "aggression", 2 )
 EndIf
 
@@ -386,6 +388,7 @@ Alva.SetRelationshipRank(Alias_Hroggar.GetActorReference(), 0)
 if Game.IsPluginInstalled("FDE Alva.esp")
 Alias_Alva.TryToDisable()
 Else
+Alva.RemoveFromFaction(Game.GetFormFromFile(0x000030DC, "TCGiSOLux Master Plugin Interior.esm") as Faction)
 Alva.SetAV( "aggression", 2 )
 EndIf
 

@@ -71,11 +71,15 @@ WEScript kmyQuest = __temp as WEScript
 ;END AUTOCAST
 ;BEGIN CODE
 ;debug.trace(self + "stage 255, calling DeleteWhenAble() on created aliases")
-
-DLC1WE01AttackPlayerFaction.setPlayerEnemy(false)
-
 Alias_Actor1.GetReference().DeleteWhenAble()
 Alias_Actor2.GetReference().DeleteWhenAble()
+
+if !Game.GetPlayer().IsInFaction(Game.GetFormFromFile(0x000C4DE0, "Skyrim.esm") as Faction) && !Game.GetPlayer().IsInFaction(Game.GetFormFromFile(0x00091822, "Skyrim.esm") as Faction) && !Game.GetPlayer().IsInFaction(Game.GetFormFromFile(0x000071d3, "Dawnguard.esm") as Faction)
+Shutdown()
+else
+DLC1WE01AttackPlayerFaction.setPlayerEnemy(false)
+game.getplayer().stopcombatalarm()
+endif
 
 ;debug.trace(self + "stage 255, calling ReArmTrigger() on trigger" + Alias_Trigger.GetReference())
 (Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()
@@ -86,3 +90,14 @@ EndFunction
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
 Faction Property DLC1WE01AttackPlayerFaction Auto  
+
+Function Shutdown()
+        DLC1WE01AttackPlayerFaction.setPlayerEnemy(false)
+        int cfIndex = 0
+        while (cfIndex < (Game.GetFormFromFile(0x0000989F, "Dawnguard.esm") as FormList).GetSize())
+            ;Debug.Trace("DLC1WE01: Removing enemy flag from " + (Game.GetFormFromFile(0x0000989F, "Dawnguard.esm") as FormList).GetAt(cfIndex))
+            ((Game.GetFormFromFile(0x0000989F, "Dawnguard.esm") as FormList).GetAt(cfIndex) as Faction).SetPlayerEnemy(false)
+            cfIndex += 1
+        endwhile
+	game.getplayer().stopcombatalarm()
+EndFunction

@@ -9,11 +9,11 @@ bool YUKLANMAGAN = False
 Event OnLoad()
 
 	While (DLC1_WESC06.GetStage() == 0)
-		if (LocationCenterMarker.GetReference().GetDistance(Game.GetPlayer()) > 2644) 
-			Utility.Wait(1)
-		Else
+		if (LocationCenterMarker.GetReference().GetDistance(Game.GetPlayer()) < 1024) 
 			Dawnguard.TryToEnable()
 			DLC1_WESC06.SetStage(2)
+		Else
+			Utility.Wait(1)
 		EndIf
 	EndWhile
 EndEvent

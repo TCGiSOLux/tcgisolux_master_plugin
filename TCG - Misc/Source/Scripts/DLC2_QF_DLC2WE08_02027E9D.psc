@@ -61,9 +61,11 @@ LocationAlias Property Alias_myHoldContested Auto
 Function Fragment_4()
 ;BEGIN CODE
 ; debug.trace(self + "stage 0")
+if (Alias_Note.GetReference() != None)
 ObjectReference Note = Alias_Note.GetReference()
 Note.enable()
 Alias_Actor1.GetReference().AddItem(Note)
+EndIf
 ;END CODE
 EndFunction
 ;END FRAGMENT

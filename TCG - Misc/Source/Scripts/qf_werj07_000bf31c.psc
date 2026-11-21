@@ -98,6 +98,7 @@ Vamp.setActorValue( "Aggression", 2 ) ;USSEP 4.3.4 Bug #34500
 Thrall.setActorValue( "Aggression", 2 ) ;USSEP 4.3.4 Bug #34500
 Vamp.startCombat(playerRef)
 Thrall.startCombat(playerRef)
+Utility.Wait(5) ; give time to scene attack start properly
 Stop()
 ;END CODE
 EndFunction

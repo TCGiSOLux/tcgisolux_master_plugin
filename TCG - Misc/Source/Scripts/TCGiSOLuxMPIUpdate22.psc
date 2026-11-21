@@ -10,6 +10,7 @@ Function Fragment_0()
 Actor GabriellaREF = Game.GetFormFromFile(0x0001BDEB, "Skyrim.esm") as Actor
 
 ;Factions
+
 Faction DarkBrotherhoodFaction = Game.GetFormFromFile(0x0001BDB3, "Skyrim.esm") as Faction
 Faction ForswornFaction = Game.GetFormFromFile(0x00043599, "Skyrim.esm") as Faction
 Faction BanditFaction = Game.GetFormFromFile(0x0001BCC0, "Skyrim.esm") as Faction
@@ -31,49 +32,37 @@ Faction DLC1HunterFaction = Game.GetFormFromFile(0x00003375, "Dawnguard.esm") as
 Faction DLC1VampireFaction = Game.GetFormFromFile(0x00003376, "Dawnguard.esm") as Faction
 Faction DLC2HunterFaction = Game.GetFormFromFile(0x0003A4CA, "Dragonborn.esm") as Faction
 
-DLC1VampireFaction.SetEnemy(VigilantOfStendarrFaction, false, false)
+DLC1VampireFaction.SetEnemy(VigilantOfStendarrFaction)
 
 ;molag bals vampires
-MolagBalsVampiresFaction.SetAlly(VampireFaction, true, true)
-MolagBalsVampiresFaction.SetAlly(DLC1VampireFaction, true, true)
-MolagBalsVampiresFaction.SetAlly(DLC2VampireFaction, true, true)
-MolagBalsVampiresFaction.SetAlly(DLC1VampireAgentsFaction, true, true)
-MolagBalsVampiresFaction.SetEnemy(CompanionsFaction, false, false)
-MolagBalsVampiresFaction.SetEnemy(HunterFaction, false, false)
-MolagBalsVampiresFaction.SetEnemy(DLC1HunterFaction, false, false)
-MolagBalsVampiresFaction.SetEnemy(DLC1HunterAgentsFaction, false, false)
-MolagBalsVampiresFaction.SetEnemy(DLC2HunterFaction, false, false)
+
+
+
 
 ;patrol factions
-DLC1VampirePatrolFaction.SetEnemy(BanditFaction, false, false)
-DLC1VampirePatrolFaction.SetEnemy(PredatorFaction, false, false)
-DLC1VampirePatrolFaction.SetEnemy(DragonFaction, false, false)
-DLC1VampirePatrolFaction.SetEnemy(WerewolfFaction, false, false)
-DLC1VampirePatrolFaction.SetEnemy(DA13AfflictedFaction, false, false)
-DLC1VampirePatrolFaction.SetEnemy(WIThugFaction, false, false)
-DLC1VampirePatrolFaction.SetEnemy(DLC1_WESC09Faction, false, false)
-DLC1VampirePatrolFaction.SetEnemy(DLC2CultistFaction, false, false)
-DLC1VampirePatrolFaction.SetEnemy(VigilantOfStendarrFaction, false, false)
-DLC1VampirePatrolFaction.SetEnemy(DLC1HunterFaction, false, false)
-DLC1VampirePatrolFaction.SetEnemy(DLC1HunterAgentsFaction, false, false)
-DLC1VampirePatrolFaction.SetAlly(DLC1VampireFaction)
-DLC1VampirePatrolFaction.SetAlly(DLC1VampireAgentsFaction)
-DLC1VampirePatrolFaction.SetAlly(DLC1PlayerVampireLordFaction)
-DLC1VampirePatrolFaction.SetAlly(DLC1VolkiharExteriorGuardFaction)
-DLC1DawnguardPatrolFaction.SetEnemy(BanditFaction, false, false)
-DLC1DawnguardPatrolFaction.SetEnemy(PredatorFaction, false, false)
-DLC1DawnguardPatrolFaction.SetEnemy(DragonFaction, false, false)
-DLC1DawnguardPatrolFaction.SetEnemy(WerewolfFaction, false, false)
-DLC1DawnguardPatrolFaction.SetEnemy(DA13AfflictedFaction, false, false)
-DLC1DawnguardPatrolFaction.SetEnemy(WIThugFaction, false, false)
-DLC1DawnguardPatrolFaction.SetEnemy(DLC1_WESC09Faction, false, false)
-DLC1DawnguardPatrolFaction.SetEnemy(DLC2CultistFaction, false, false)
-DLC1DawnguardPatrolFaction.SetEnemy(DLC1VampireFaction, false, false)
-DLC1DawnguardPatrolFaction.SetEnemy(DLC1VampireAgentsFaction, false, false)
-DLC1DawnguardPatrolFaction.SetEnemy(DLC1PlayerVampireLordFaction, false, false)
-DLC1DawnguardPatrolFaction.SetAlly(DLC1HunterFaction)
-DLC1DawnguardPatrolFaction.SetAlly(DLC1HunterAgentsFaction)
-DLC1DawnguardPatrolFaction.SetAlly(VigilantOfStendarrFaction)
+DLC1VampirePatrolFaction.SetEnemy(BanditFaction)
+DLC1DawnguardPatrolFaction.SetEnemy(BanditFaction)
+DLC1VampirePatrolFaction.SetEnemy(PredatorFaction)
+DLC1DawnguardPatrolFaction.SetEnemy(PredatorFaction)
+DLC1VampirePatrolFaction.SetEnemy(DragonFaction)
+DLC1DawnguardPatrolFaction.SetEnemy(DragonFaction)
+DLC1VampirePatrolFaction.SetEnemy(WerewolfFaction)
+DLC1DawnguardPatrolFaction.SetEnemy(WerewolfFaction)
+DLC1VampirePatrolFaction.SetEnemy(DA13AfflictedFaction)
+DLC1DawnguardPatrolFaction.SetEnemy(DA13AfflictedFaction)
+DLC1VampirePatrolFaction.SetEnemy(WIThugFaction)
+DLC1DawnguardPatrolFaction.SetEnemy(WIThugFaction)
+DLC1VampirePatrolFaction.SetEnemy(DLC1_WESC09Faction)
+DLC1DawnguardPatrolFaction.SetEnemy(DLC1_WESC09Faction)
+DLC1VampirePatrolFaction.SetEnemy(DLC2CultistFaction)
+DLC1DawnguardPatrolFaction.SetEnemy(DLC2CultistFaction)
+DLC1VampirePatrolFaction.SetEnemy(VigilantOfStendarrFaction)
+DLC1VampirePatrolFaction.SetEnemy(DLC1HunterFaction)
+DLC1VampirePatrolFaction.SetEnemy(DLC1HunterAgentsFaction)
+DLC1DawnguardPatrolFaction.SetEnemy(DLC1VampireFaction)
+DLC1DawnguardPatrolFaction.SetEnemy(DLC1VampireAgentsFaction)
+DLC1DawnguardPatrolFaction.SetEnemy(DLC1PlayerVampireLordFaction)
+
 
 ;radiant factions
 DLC1RadiantVampireBanditNecroAllys.SetAlly(ForswornFaction)
@@ -84,7 +73,6 @@ DLC1HunterFactionNPC.SetEnemy(DLC1_WESC09Faction)
 DLC1VampireFactionNPC.SetEnemy(DLC1_WESC09Faction)
 
 ;crime faction
-GabriellaREF.SetCrimeFaction(DarkBrotherhoodFaction)
 ;END UPDATE
 
 CompleteQuest()

@@ -116,7 +116,7 @@ Alias_Vampire01.GetReference().DeleteWhenAble()
 Alias_Vampire02.GetReference().DeleteWhenAble()
 Alias_ScriptManager.GetReference().DeleteWhenAble()
 
-if !GetStageDone(10)
+if !getstagedone(10)
 Alias_Dawnguard.GetReference().DeleteWhenAble()
 endif
 
@@ -164,7 +164,7 @@ Quest __temp = self as Quest
 WEScript kmyQuest = __temp as WEScript
 ;END AUTOCAST
 ;BEGIN CODE
-;STARTUP
+;Starting WE...
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -176,12 +176,12 @@ Function Fragment_2()
 ;Debug.Trace("Starting Dawnguard")
 Utility.Wait(10)
 if !getstagedone(10)
-Stop()
-else
 Utility.Wait(10)
 ;Debug.Trace("Starting Vampires")
 Alias_Vampire01.GetReference().Enable()
 Alias_Vampire02.GetReference().Enable()
+else
+Stop()
 EndIf
 ;END CODE
 EndFunction

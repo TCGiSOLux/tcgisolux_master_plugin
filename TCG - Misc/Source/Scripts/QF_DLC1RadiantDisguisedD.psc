@@ -35,10 +35,15 @@ DLC1RadiantDisguisedDawnguardScript kmyQuest = __temp as DLC1RadiantDisguisedDaw
 ;END AUTOCAST
 ;BEGIN CODE
 ;debug.trace(self + "stage 255, shutting down deletewhenable() Dawnguard")
+Actor Dawnguard = Alias_Dawnguard.GetActorReference()
 
-Alias_Dawnguard.GetReference().DeleteWhenAble()
+if getstagedone (200)
+Dawnguard.SetAttackActorOnSight(false)
 kmyQuest.DawnguardDisguisedDelete()
 kmyQuest.SetNeutralFactionsToAttackDawnguardDisguised()
+endif
+
+Alias_Dawnguard.GetReference().DeleteWhenAble()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -50,6 +55,9 @@ Quest __temp = self as Quest
 DLC1RadiantDisguisedDawnguardScript kmyQuest = __temp as DLC1RadiantDisguisedDawnguardScript
 ;END AUTOCAST
 ;BEGIN CODE
+Actor Dawnguard = Alias_Dawnguard.GetActorReference()
+
+Dawnguard.SetAttackActorOnSight(true)
 kmyQuest.SetAllyFactionsToAttackDawnguardDisguised()
 kmyQuest.DawnguardDisguisedStartCombat()
 ;END CODE

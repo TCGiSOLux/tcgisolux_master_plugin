@@ -4,12 +4,9 @@ import form
 quest property WEDA02 auto
 book  property DA02book auto
 
-
 Event OnCombatStateChanged(Actor akTarget, int aeCombatState)
-	if akTarget == game.getPlayer() && WEDA02.getstage() < 1
-	WEDA02.setstage(1)
-	else
-	WEDA02.stop()
+	if akTarget == game.getPlayer() && GetOwningQuest().getstage() < 1
+	GetOwningQuest().setstage(1)
 	endif
 endEvent
 
@@ -23,25 +20,22 @@ EndEvent
 
 Event onDeath(Actor AkKiller)
 	if akKiller == Game.GetPlayer()
-	WEDA02.setStage(1)
-	WEDA02.setObjectiveDisplayed(10,1)
+	GetOwningQuest().setStage(10)
+	GetOwningQuest().setObjectiveDisplayed(10,1)
 	else
-	WEDA02.stop()
+	GetOwningQuest().Stop()
 	endif
 endEvent
 
 Event OnActivate(ObjectReference akActionRef)
 	if akActionRef == Game.GetPlayer()
-	WEDA02.setStage(1)
-	else
-	WEDA02.stop()
+	GetOwningQuest().setStage(10)
 	endif
 endEvent
 
 Event OnItemRemoved(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer)
 	if akBaseItem == DA02book
-	WEDA02.setObjectiveCompleted(10,1)
-	WEDA02.stop()
+	GetOwningQuest().setStage(20)
 	endif
 endEvent
 	

@@ -4,3 +4,11 @@ Scriptname DLC1RadiantDDTravelerKilled extends ReferenceAlias
 Event OnDeath(Actor akKiller)
 	GetOwningQuest().Stop()
 EndEvent
+
+Event OnUnload()
+	GetOwningQuest().Stop()
+EndEvent
+
+Event OnCellDetach()
+	GetOwningQuest().Stop()
+EndEvent

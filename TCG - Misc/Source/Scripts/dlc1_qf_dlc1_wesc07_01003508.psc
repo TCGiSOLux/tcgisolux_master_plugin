@@ -74,9 +74,8 @@ WEScript kmyQuest = __temp as WEScript
 ;END AUTOCAST
 ;BEGIN CODE
 ; debug.trace(self + "stage 255, calling DeleteWhenAble() on created aliases")
-if (!GetStageDone(100))
+
 Alias_Outrider.GetReference().DeleteWhenAble()
-EndIf
 Alias_OutriderHorse.GetReference().DeleteWhenAble()
 
 ;debug.trace(self + "stage 255, calling ReArmTrigger() on trigger" + Alias_Trigger.GetReference())
@@ -88,7 +87,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_28
 Function Fragment_28()
 ;BEGIN CODE
-;Player kills Saliah.
+;Player kills Saliah/Endarie Larethwatch. Make this World Encounter Quest completed.
 CompleteQuest()
 Stop()
 ;END CODE

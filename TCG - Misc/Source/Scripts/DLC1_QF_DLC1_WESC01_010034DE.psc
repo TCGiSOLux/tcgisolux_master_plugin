@@ -76,14 +76,34 @@ WEScript kmyQuest = __temp as WEScript
 ;BEGIN CODE
 ;debug.trace(self + "stage 255, calling ReArmTrigger() on trigger" + Alias_Trigger.GetReference())
 (Alias_Trigger.GetReference() as WETriggerScript).ReArmTrigger()
+
+if (!Alias_Vampire.GetReference().Is3DLoaded())
+Alias_VigilantHunter.GetReference().Delete()
+
 if (Alias_Vigilant01.GetReference() != None)
      Alias_Vigilant01.GetReference().Delete()
 EndIf
 if (Alias_Vigilant02.GetReference() != None)
      Alias_Vigilant02.GetReference().Delete()
 EndIf
+
+endif
+
+if (Alias_Vampire.GetReference().Is3DLoaded())
 Alias_VigilantHunter.GetReference().DeleteWhenAble()
+
+if (Alias_Vigilant01.GetReference() != None)
+     Alias_Vigilant01.GetReference().DeleteWhenAble()
+EndIf
+if (Alias_Vigilant02.GetReference() != None)
+     Alias_Vigilant02.GetReference().DeleteWhenAble()
+EndIf
+
+endif
+
 Alias_Vampire.GetReference().DeleteWhenAble()
+
+
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -95,10 +115,10 @@ Quest __temp = self as Quest
 WEScript kmyQuest = __temp as WEScript
 ;END AUTOCAST
 ;BEGIN CODE
-;Debug.Trace("Starting Vampire")
+;Debug.Trace("Starting Vampire/Criminal")
 Utility.Wait(10)
-;Debug.Trace("Starting Vigilants")
-if !GetStageDone(20) || (!Alias_Vampire.GetReference().Is3DLoaded())
+;Debug.Trace("Starting Vigilants/Volkihar Clan Vampires, if vampire/criminal are not loaded make stop quest")
+if GetStageDone(20) || (!Alias_Vampire.GetReference().Is3DLoaded())
 Stop()
 else
 Alias_VigilantHunter.GetReference().Enable()

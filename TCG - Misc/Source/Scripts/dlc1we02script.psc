@@ -33,5 +33,5 @@ function changeIntoWerewolf()
 	WerewolfChangeFX.Cast(ActorRef)
 	ActorRef.setAv("aggression", 3)
 	ActorRef.AddToFaction(WerewolfFaction); alert everyone to werewolf
-
+	DLC1WE02.Stop()
 endfunction
